@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/splide.min.css" />
+  <link rel="stylesheet" href="css/main.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="app/bootstrap/css/bootstrap.min.css" />
+
+  <link rel="stylesheet" href="app/dist/app.css" />
+  <link href="app/dist/aos.css" rel="stylesheet" />
+  <!-- end Styles -->
+
+  <!-- Icon font -->
+  <link rel="stylesheet" href="webfont/tabler-icons.min.css" />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="img/logo.png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="img/logo.png" />
+
+  <title>Brokerage Calculator - TheAlgoMan</title>
+  <style>
+    .calculator-section {
+      padding: 6rem 0;
+      background: linear-gradient(150deg,
+          rgba(255, 255, 255, 0.03) 0%,
+          rgba(255, 255, 255, 0.01) 100%);
+    }
+
+    .calculator-card {
+      background: linear-gradient(150deg,
+          rgba(255, 255, 255, 0.03) 0%,
+          rgba(255, 255, 255, 0.01) 100%);
+      border: 1px solid #2c5d72;
+      border-radius: 24px;
+      padding: 3rem;
+      margin-bottom: 3rem;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .calculator-card h2 {
+      color: #2c5d72;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      font-weight: 700;
+      position: relative;
+      padding-bottom: 1rem;
+      text-align: center;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .calculator-card h2::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #2c5d72, transparent);
+      border-radius: 3px;
+    }
+
+    .calculator-card h3 {
+      color: #2c5d72;
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      font-weight: 600;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .broker-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .broker-item {
+      background: linear-gradient(150deg,
+          rgba(255, 255, 255, 0.02) 0%,
+          rgba(255, 255, 255, 0.01) 100%);
+      border: 1px solid #2c5d72;
+      border-radius: 16px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .broker-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(44, 93, 114, 0.2);
+      border-color: #012131;
+    }
+
+    .broker-item h3 {
+      color: #2c5d72;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .broker-item p {
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .broker-item .btn {
+      background: linear-gradient(135deg, #2c5d72 0%, #012131 100%);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 12px;
+      border: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      width: 100%;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .broker-item .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(44, 93, 114, 0.4);
+      background: linear-gradient(135deg, #012131 0%, #2c5d72 100%);
+    }
+
+    .calculator-form {
+      background: linear-gradient(150deg,
+          rgba(255, 255, 255, 0.02) 0%,
+          rgba(255, 255, 255, 0.01) 100%);
+      border: 1px solid #2c5d72;
+      border-radius: 16px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-label {
+      color: #fff;
+      margin-bottom: 0.75rem;
+      display: block;
+      font-size: 1rem;
+      font-weight: 500;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .form-control {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid #2c5d72;
+      color: #fff;
+      padding: 0.75rem 1rem;
+      border-radius: 12px;
+      width: 100%;
+      transition: all 0.3s ease;
+    }
+
+    .form-control:focus {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: #012131;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(44, 93, 114, 0.2);
+    }
+
+    .result-card {
+      background: linear-gradient(150deg,
+          rgba(255, 255, 255, 0.02) 0%,
+          rgba(255, 255, 255, 0.01) 100%);
+      border: 1px solid #2c5d72;
+      border-radius: 16px;
+      padding: 2rem;
+      margin-top: 2rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .result-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(44, 93, 114, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .result-item:hover {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .result-item:last-child {
+      border-bottom: none;
+    }
+
+    .result-label {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.1rem;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .result-value {
+      color: #2c5d72;
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    .calculate-btn {
+      background: linear-gradient(135deg, #2c5d72 0%, #012131 100%);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      border: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      width: 100%;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 1rem;
+    }
+
+    .calculate-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(44, 93, 114, 0.4);
+      background: linear-gradient(135deg, #012131 0%, #2c5d72 100%);
+    }
+
+    @media (max-width: 768px) {
+      .calculator-section {
+        padding: 4rem 0;
+      }
+
+      .calculator-card {
+        padding: 1rem;
+      }
+
+      .calculator-card h2 {
+        font-size: 2rem;
+      }
+
+      .broker-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body class="body body--home home-nft">
+  <!-- Header -->
+  <!-- Header -->
+  <header id="header_main" class="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="header__body">
+              <div class="header__logo">
+                <a href="index.html">
+                  <img
+                    id="site-logo"
+                    src="assets/images/logo/logo.png"
+                    alt="Monteno"
+                    width="65"
+                    height="60"
+                  />
+                </a>
+              </div>
+
+              <div class="header__right">
+                <nav id="main-nav" class="main-nav">
+                  <ul id="menu-primary-menu" class="menu">
+                    <li class="menu-item ">
+                      <a href="index.html">Home</a>
+                    </li>
+                    <li class="menu-item ">
+                      <a href="about.html">About </a>
+                    </li>
+                    <li class="menu-item header__dropdown">
+                      <a
+                        class="dropdown-link dropdown-toggle"
+                        href="#"
+                        role="button"
+                      >
+                        Products
+                      </a>
+
+                      <ul class="dropdown-menu header__dropdown-menu">
+                        <li style="padding-right: 0px !important">
+                          <a href="invest.html">Option Buying</a>
+                        </li>
+                        <li style="padding-right: 0px !important">
+                          <a href="404.html">Option Selling</a>
+                        </li>
+                        <li style="padding-right: 0px !important">
+                          <a href="404.html">Futures</a>
+                        </li>
+                        <li style="padding-right: 0px !important">
+                          <a href="404.html">Equity</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="menu-item">
+                      <a href="contact.html">Contact Us</a>
+                    </li>
+                    <li class="menu-item current-menu-item">
+                      <a href="calculator.html">Calculator</a>
+                    </li>
+                  </ul>
+                </nav>
+                <div class="group-button">
+                  <a href="#" class="btn-action-outline style-1">
+                    <span>Sign Up</span>
+                  </a>
+                  <a class="btn-action style-2" href="#">
+                    <span>Login</span>
+                  </a>
+                </div>
+                <div class="mobile-button"><span></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+  <!-- Custom CSS -->
+  <style>
+    .header {
+      background: transparent;
+      transition: background 0.3s ease;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .header.scrolled {
+      background: #182124;
+      /* Darker background with opacity */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .header__dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #082f3e75;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      padding: 0px;
+      z-index: 1000;
+    }
+
+    .header__dropdown-menu.show {
+      display: block;
+    }
+
+    .header__dropdown {
+      position: relative;
+    }
+
+    .header__dropdown-menu li {
+      padding: 0px;
+    }
+
+    .header__dropdown-menu li a {
+      color: #fff;
+      text-decoration: none;
+      display: block;
+      font-size: 14px !important;
+      padding: 5px 20px;
+    }
+
+    .header__dropdown-menu li a:hover {
+      background: #0f3543;
+    }
+  </style>
+
+  <!-- Custom JavaScript -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const header = document.querySelector("#header_main");
+      const dropdownToggle = document.querySelector(".dropdown-link");
+      const dropdownMenu = document.querySelector(".header__dropdown-menu");
+
+      // Scroll event listener for header background
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 50) { // Trigger after scrolling 50px
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
+
+      // Dropdown toggle functionality
+      dropdownToggle.addEventListener("click", function (e) {
+        e.preventDefault();
+        dropdownMenu.classList.toggle("show");
+      });
+
+      // Close dropdown when clicking outside
+      document.addEventListener("click", function (e) {
+        if (
+          !dropdownToggle.contains(e.target) &&
+          !dropdownMenu.contains(e.target)
+        ) {
+          dropdownMenu.classList.remove("show");
+        }
+      });
+    });
+  </script>
+
+  <!-- end Header -->
+
+  <!-- head -->
+  <div class="section section--head">
+    <div class="container">
+      <div class="row">
+        <!-- title -->
+        <div class="col-12">
+          <div class="section__title">
+            <h1>Brokerage Calculator</h1>
+          </div>
+        </div>
+        <!-- end title -->
+      </div>
+    </div>
+  </div>
+  <!-- end head -->
+
+  <!-- calculator section -->
+  <section class="section calculator-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="calculator-card">
+            <h2 class="text-white">Brokerage Calculators</h2>
+
+            <div class="broker-list">
+              <div class="broker-list">
+                <div class="broker-item">
+                  <h3 class="text-white">Zerodha</h3>
+                  <p>Equity Delivery (₹0)</p>
+                  <p>Equity Intraday (0.03% | ₹20)</p>
+                  <a class="btn" href="zerodha-calculator.html">Calculate</a>
+                </div>
+
+                <div class="broker-item">
+                  <h3 class="text-white">Upstox</h3>
+                  <p>Equity Delivery (₹0)</p>
+                  <p>Equity Intraday (0.05% | ₹20)</p>
+                  <a class="btn" href="upstox-calculator.html">Calculate</a>
+                </div>
+
+                <div class="broker-item">
+                  <h3 class="text-white">Angel One</h3>
+                  <p>Equity Delivery (₹0)</p>
+                  <p>Equity Intraday (0.03% | ₹20)</p>
+                  <a href="angelone-calculator.html" class="btn">Calculate</a>
+                </div>
+
+                <div class="broker-item">
+                  <h3 class="text-white">Groww</h3>
+                  <p>Equity Delivery (₹0)</p>
+                  <p>Equity Intraday (0.05% | ₹20)</p>
+                  <a class="btn" href="groww-calculator.html">Calculate</a>
+                </div>
+
+                <div class="broker-item">
+                  <h3 class="text-white">5Paisa</h3>
+                  <p>Equity Delivery (₹20)</p>
+                  <p>Equity Intraday (0.05% | ₹20)</p>
+                  <a class="btn" href="5paisa-calculator.html">Calculate</a>
+                </div>
+
+                <div class="broker-item">
+                  <h3 class="text-white">ICICI Direct</h3>
+                  <p>Equity Delivery (₹20 or Plan-based)</p>
+                  <p>Equity Intraday (0.275%)</p>
+                  <a href="icici-direct-calculator.html" class="btn">Calculate</a>
+                </div>
+
+                <div class="broker-item">
+                  <h3 class="text-white">HDFC Securities</h3>
+                  <p>Equity Delivery (0.50%)</p>
+                  <p>Equity Intraday (0.05%)</p>
+                  <a class="btn" href="hdfc-securities-calculator.html">Calculate</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end calculator section -->
+
+  <!-- footer -->
+
+  <!-- Footer -->
+ <footer class="footer style-1">
+    <style>
+      .footer__nav {
+        display: flex;
+        flex-direction: column;
+      }
+    </style>
+    <div class="footer__top">
+      <div class="container">
+        <div class="row align-items-start">
+          <div class="col-xl-3 col-lg-3 col-md-3 col-12">
+            <div class="content-left">
+              <h5 class="fs-22">Don't miss out, Stay updated</h5>
+              <p>
+                TheAlgoman is India's most trusted algo trading platform —
+                helping you earn consistent profits through fully automated,
+                data-driven strategies connected directly to your trading
+                account.
+              </p>
+              <form action="#" id="subscribe-form">
+                <input type="email" placeholder="Enter your email" required="" id="subscribe-email" />
+                <button class="btn-action style-2" type="submit" id="subscribe-button">
+                  <span class="effect">SUBSCRIBE</span>
+                </button>
+              </form>
+            </div>
+          </div>
+          <div class="col-xl-2 col-lg-2 col-md-2 col-12">
+            <h6 class="footer__title">Company</h6>
+            <div class="footer__nav">
+              <a href="about.html">About us</a>
+              <a href="disclaimer">Legal Disclaimer</a>
+              <a href="contact.html">Contact Us</a>
+            </div>
+          </div>
+          <div class="col-xl-2 col-lg-2 col-md-2 col-12">
+            <h6 class="footer__title">Products</h6>
+            <div class="footer__nav">
+              <a href="invest.html">Option Buying</a>
+              <a href="404.html">Option Selling</a>
+              <a href="404.html">Futures</a>
+              <a href="404.html">Equity</a>
+            </div>
+          </div>
+          <div class="col-xl-2 col-lg-2 col-md-2 col-12 ">
+            <h6 class="footer__title">Support</h6>
+            <div class="footer__nav">
+              <a href="contact.html">Help center</a>
+              <a href="faq.html">How it works</a>
+              <a href="#">Privacy policy</a>
+              <a href="#">Terms & conditions</a>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-3 col-md-3 col-12">
+            <div class="conten">
+              <p>
+                TheAlgoman is India's most trusted algo trading platform —
+                helping you earn consistent profits through fully automated,
+                data-driven strategies connected directly to your trading
+                account.
+              </p>
+              <ul class="list-social">
+                <li><span class="icon-twitter"></span></li>
+                <li><span class="icon-facebook"></span></li>
+                <li><span class="icon-youtobe"></span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <p>© 2025. All rights reserved by <a href="#">TheAlgoman</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+  <!-- JS -->
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/smooth-scrollbar.js"></script>
+  <script src="js/splide.min.js"></script>
+  <script src="js/three.min.js"></script>
+  <script src="js/vanta.fog.min.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    function openCalculator(broker) {
+      document.getElementById("calculatorForm").style.display = "block";
+      // Here you would typically set the broker-specific rates
+    }
+
+    function calculateBrokerage() {
+      const quantity = parseFloat(document.getElementById("quantity").value);
+      const price = parseFloat(document.getElementById("price").value);
+      const tradeType = document.getElementById("tradeType").value;
+
+      if (!quantity || !price) {
+        alert("Please enter valid quantity and price");
+        return;
+      }
+
+      const totalValue = quantity * price;
+      let brokerage = 0;
+      let stt = 0;
+      let transactionCharges = 0;
+      let gst = 0;
+      let sebiCharges = 0;
+      let stampDuty = 0;
+
+      // Example calculations (you should adjust these based on actual broker rates)
+      if (tradeType === "delivery") {
+        brokerage = Math.min(20, totalValue * 0.0003); // 0.03% or ₹20 whichever is lower
+        stt = totalValue * 0.001; // 0.1%
+      } else {
+        brokerage = Math.min(20, totalValue * 0.0003); // 0.03% or ₹20 whichever is lower
+        stt = totalValue * 0.00025; // 0.025%
+      }
+
+      transactionCharges = totalValue * 0.0000345; // 0.00345%
+      gst = brokerage * 0.18; // 18% of brokerage
+      sebiCharges = totalValue * 0.000001; // 0.0001%
+      stampDuty = totalValue * 0.00003; // 0.003%
+
+      const totalCharges =
+        brokerage + stt + transactionCharges + gst + sebiCharges + stampDuty;
+
+      // Update the result card
+      document.getElementById("totalValue").textContent =
+        "₹" + totalValue.toFixed(2);
+      document.getElementById("brokerage").textContent =
+        "₹" + brokerage.toFixed(2);
+      document.getElementById("stt").textContent = "₹" + stt.toFixed(2);
+      document.getElementById("transactionCharges").textContent =
+        "₹" + transactionCharges.toFixed(2);
+      document.getElementById("gst").textContent = "₹" + gst.toFixed(2);
+      document.getElementById("sebiCharges").textContent =
+        "₹" + sebiCharges.toFixed(2);
+      document.getElementById("stampDuty").textContent =
+        "₹" + stampDuty.toFixed(2);
+      document.getElementById("totalCharges").textContent =
+        "₹" + totalCharges.toFixed(2);
+
+      document.getElementById("resultCard").style.display = "block";
+    }
+  </script>
+
+  <script src="app/js/jquery.min.js"></script>
+  <script src="app/js/jquery.easing.js"></script>
+  <script src="app/js/app.js"></script>
+  <script src="app/js/count-down.js"></script>
+  <script src="app/js/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script src="app/js/mouse.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+</body>
+
+</html>

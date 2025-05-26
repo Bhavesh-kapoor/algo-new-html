@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Algo Man</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="app/bootstrap/css/bootstrap.min.css" />
+
+  <link rel="stylesheet" href="app/dist/app.css" />
+  <link href="app/dist/aos.css" rel="stylesheet" />
+  <!-- end Styles -->
+
+  <!-- Favicon and Touch Icons  -->
+  <link rel="shortcut icon" href="assets/images/logo/logo.png" />
+  <link rel="apple-touch-icon-precomposed" href="assets/images/logo/logo.png" />
+  <style>
+    tr {
+      color: white;
+    }
+
+    td {
+      color: white;
+    }
+
+    .bouncing-logos {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+      /* Space between banner and logos */
+      flex-wrap: wrap;
+      /* Responsive for smaller screens */
+    }
+
+
+
+    .bouncing-logo {
+      width: 60px;
+      /* Adjust size as needed */
+      height: auto;
+      animation: bounce 1.5s ease-in-out infinite;
+      /* Bouncing animation */
+    }
+
+    /* Bouncing animation keyframes */
+    @keyframes bounce {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-20px);
+        /* Bounce height */
+      }
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 767px) {
+      .bouncing-logo {
+        width: 50px;
+        /* Smaller logos on mobile */
+        margin: 10px auto;
+        /* Center logos */
+      }
+
+      .bouncing-logos {
+        justify-content: center;
+        /* Center logos on smaller screens */
+        gap: 15px;
+        /* Space between logos */
+      }
+    }
+  </style>
+
+  <style>
+    /* Pricing section styling */
+    .pricing-section.style-2 {
+      padding: 60px 0;
+      /* Vertical padding for spacing */
+      color: white;
+      /* White text */
+    }
+
+    /* Title styling */
+    .pricing-section .title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .pricing-section .title span {
+      color: #00b4d8;
+      /* Cyan accent for "EVERYONE" */
+    }
+
+    /* Image styling */
+    .pricing-section__image {
+      text-align: center;
+      /* Center image */
+      width: 400px;
+    }
+
+    .price-tags {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Pricing card styling */
+    .pricing-section__card {
+      background-color: #1a2d3a;
+      color: #333;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+
+    /* Price styling */
+    .price {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+
+    .original-price {
+      font-size: 1.5rem;
+      color: #999;
+      text-decoration: line-through;
+      /* Strikethrough for original price */
+    }
+
+    .discounted-price {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #26bdf4;
+    }
+
+    .launch-offer {
+      background-color: #1880a6e6;
+      /* Green badge */
+      color: white;
+      padding: 5px 10px;
+      border-radius: 15px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    /* Description */
+    .desc {
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    /* Features list */
+    .features {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+
+    .features li {
+      font-size: 1rem;
+      color: white;
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 25px;
+    }
+
+    .features li::before {
+      content: "✔";
+      color: #28a745;
+      /* Green checkmark */
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    /* Button styling */
+    .btn-action.style-2 {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 30px;
+      background-color: #00b4d8;
+      /* Cyan button */
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-action.style-2:hover {
+      background-color: #0096b7;
+      /* Darker on hover */
+    }
+
+    .btn-action.style-2 i {
+      font-size: 0.9rem;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 767px) {
+      .pricing-section__image {
+        margin-bottom: 30px;
+        /* Space between image and card on mobile */
+      }
+
+      .pricing-section .title {
+        font-size: 2rem;
+        /* Smaller title on mobile */
+      }
+
+      .pricing-section__card {
+        padding: 20px;
+        /* Less padding on mobile */
+      }
+
+      .discounted-price {
+        font-size: 1.5rem;
+        /* Smaller price on mobile */
+      }
+
+      .original-price {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+
+  <style>
+    /* Container for bouncing logos */
+    .bouncing-logos {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      /* Space above logos */
+      flex-wrap: wrap;
+      /* Responsive for smaller screens */
+    }
+
+    /* Individual logo container with white background and border radius */
+    .logo-container {
+      background-color: white;
+      /* White background */
+      border-radius: 10px;
+      /* Rounded corners */
+      padding: 10px;
+      /* Space between image and background edge */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 80px;
+      /* Fixed width for consistency */
+      height: 80px;
+      /* Fixed height for consistency */
+      animation: bounce 1.5s ease-in-out infinite;
+      /* Apply bounce to container */
+    }
+
+    /* Logo image styling */
+    .bouncing-logo {
+      max-width: 100%;
+      /* Ensure image fits within container */
+      max-height: 100%;
+      /* Ensure image fits within container */
+      object-fit: contain;
+      /* Scale image to fit without distortion */
+    }
+
+    /* Keyframes for up-and-down bounce */
+    @keyframes bounce {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-20px);
+        /* Bounce height */
+      }
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 767px) {
+      .logo-container {
+        width: 60px;
+        /* Smaller size on mobile */
+        height: 60px;
+        margin: 10px auto;
+        /* Center logos */
+      }
+
+      .bouncing-logos {
+        justify-content: center;
+        /* Center logos on smaller screens */
+        gap: 15px;
+        /* Space between logos */
+      }
+    }
+  </style>
+</head>
+
+<body class="home-nft header-fixed" data-magic-cursor="show">
+  <!-- Preloading -->
+  <!-- <div class="preloader">
+        <div class=" loader">
+            <div class="square"></div>
+            <div class="path">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <p class="text-load">Loading :</p>
+        </div>
+    </div> -->
+  <!-- End Preloading -->
+
+  <!-- MAGIC CURSOR -->
+  <div class="mouse-cursor cursor-outer"></div>
+  <div class="mouse-cursor cursor-inner"></div>
+  <!-- /MAGIC CURSOR -->
+
+  <!-- Header -->
+  <!-- Header -->
+  <header id="header_main" class="header">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="header__body">
+            <div class="header__logo">
+              <a href="index.html">
+                <img id="site-logo" src="assets/images/logo/logo.png" alt="Monteno" width="65" height="60" />
+              </a>
+            </div>
+
+            <div class="header__right">
+              <nav id="main-nav" class="main-nav">
+                <ul id="menu-primary-menu" class="menu">
+                  <li class="menu-item current-menu-item">
+                    <a href="index.html">Home</a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="about.html">About </a>
+                  </li>
+                  <li class="menu-item header__dropdown">
+                    <a class="dropdown-link dropdown-toggle" href="#" role="button">
+                      Products
+                    </a>
+
+                    <ul class="dropdown-menu header__dropdown-menu">
+                      <li style="padding-right: 0px !important">
+                        <a href="invest.html">Option Buying</a>
+                      </li>
+                      <li style="padding-right: 0px !important">
+                        <a href="404.html">Option Selling</a>
+                      </li>
+                      <li style="padding-right: 0px !important">
+                        <a href="404.html">Futures</a>
+                      </li>
+                      <li style="padding-right: 0px !important">
+                        <a href="404.html">Equity</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="menu-item">
+                    <a href="contact.html">Contact Us</a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="calculator.html">Calculator</a>
+                  </li>
+                </ul>
+              </nav>
+              <div class="group-button">
+                <a href="#" class="btn-action-outline style-1">
+                  <span>Sign Up</span>
+                </a>
+                <a class="btn-action style-2" href="#">
+                  <span>Login</span>
+                </a>
+              </div>
+              <div class="mobile-button"><span></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- end Header -->
+
+  <!-- Custom CSS -->
+  <style>
+    .header__dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #082f3e75;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      padding: 0px;
+      z-index: 1000;
+    }
+
+    .header__dropdown-menu.show {
+      display: block;
+    }
+
+    .header__dropdown {
+      position: relative;
+    }
+
+    .header__dropdown-menu li {
+      padding: 0px;
+    }
+
+    .header__dropdown-menu li a {
+      color: #fff;
+      text-decoration: none;
+      display: block;
+      font-size: 14px !important;
+      padding: 5px 20px;
+    }
+
+    .header__dropdown-menu li a:hover {
+      background: #0f3543;
+    }
+  </style>
+
+  <!-- Custom JavaScript -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const dropdownToggle = document.querySelector(".dropdown-link");
+      const dropdownMenu = document.querySelector(".header__dropdown-menu");
+
+      dropdownToggle.addEventListener("click", function (e) {
+        e.preventDefault();
+        dropdownMenu.classList.toggle("show");
+      });
+
+      // Optional: Close dropdown when clicking outside
+      document.addEventListener("click", function (e) {
+        if (
+          !dropdownToggle.contains(e.target) &&
+          !dropdownMenu.contains(e.target)
+        ) {
+          dropdownMenu.classList.remove("show");
+        }
+      });
+    });
+  </script>
+
+  <!-- end Header -->
+
+  <!-- Banner Top -->
+  <section class="banner-top style-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-6 col-md-12">
+          <div class="banner-top__content">
+            <h2 class="title">
+              Automate Your Trades, <span>Accelerate Your Profits. </span>
+            </h2>
+            <p class="desc">
+              TheAlgoman is India's most trusted algo trading platform —
+              helping you earn consistent profits through fully automated,
+              data-driven strategies connected directly to your trading
+              account.
+            </p>
+            <div style="display: flex; gap: 10px">
+              <div class="button">
+                <a href="sign-in.html" class="btn-action style-2"><span>Start Trading Smarter</span></a>
+              </div>
+
+              <div class="button">
+                <a href="sign-in.html" class="btn-action style-2"><span>See Pricing Plans</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6 col-md-12">
+          <div class="banner-top__sale">
+            <img src="assets/images/algo1.png" alt="ICOLand" />
+            <!-- <div class="sale-content">
+            <h6>Our Brokers</h6>
+            <span class="js-countdown" data-timer="1865550"><div aria-hidden="true" class="countdown__timer"><span class="countdown__item"><span class="countdown__value countdown__value--0 js-countdown__value--0">21</span></span><span class="countdown__item"><span class="countdown__value countdown__value--1 js-countdown__value--1">14</span></span><span class="countdown__item"><span class="countdown__value countdown__value--2 js-countdown__value--2">12</span></span><span class="countdown__item"><span class="countdown__value countdown__value--3 js-countdown__value--3">16</span></span></div></span>
+        </div> -->
+          </div>
+          <!-- Added container for bouncing logos -->
+          <div class="bouncing-logos">
+            <div class="logo-container">
+              <img src="assets/images/logo.svg" alt="Logo 1" class="bouncing-logo" />
+            </div>
+            <div class="logo-container">
+              <img src="assets/images/upstox-new-logo.svg" alt="Logo 2" class="bouncing-logo" />
+            </div>
+            <div class="logo-container">
+              <img src="assets/images/1689270035-3662.avif" alt="Logo 3" class="bouncing-logo" />
+            </div>
+            <div class="logo-container">
+              <img src="assets/images/dhan.png" alt="Logo 4" class="bouncing-logo" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pricing-section style-2">
+    <div class="container">
+      <h2 class="title">Affordable Pricing for <span>EVERYONE</span></h2>
+      <div class="row align-items-center">
+        <div class="col-xl-6 col-md-12" style="display: flex; justify-content: center">
+          <div class="pricing-section__image">
+            <img src="assets/images/mainimage.png" alt="Price Tags" class="price-tags" />
+          </div>
+        </div>
+        <div class="col-xl-6 col-md-12">
+          <div class="pricing-section__card">
+            <div class="price">
+              <span class="original-price">₹2000/week</span>
+              <span class="discounted-price">₹1,499/week</span>
+              <span class="launch-offer">Launch Offer</span>
+            </div>
+            <p class="desc">
+              Get high returns at a cost lower than your weekly coffee bills.
+            </p>
+            <ul class="features">
+              <li>24/7 Trading Support</li>
+              <li>Real-time Monitoring</li>
+              <li>Advanced Analytics</li>
+            </ul>
+            <div class="button">
+              <a class="btn-action style-2" href="#">
+                <span>Subscribe Now</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end Banner Top -->
+
+  <!-- Section Features -->
+
+  <section class="features style-4" id="features">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-3 col-md-6">
+          <div class="features-box-4 center aos-init aos-animate" data-aos="fade-up" data-aos-duration="800">
+            <div class="icon">
+              <span class="icon-security-safe"></span>
+            </div>
+            <div class="features-box-content">
+              <a href="#" class="h5 title">Live Trading</a>
+              <p class="fs-17">
+                Deploy algos in the real-time market at the specified entry
+                time and let the strategy take care of the rest.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+          <div class="features-box-4 center aos-init aos-animate" data-aos="fade-up" data-aos-duration="1200">
+            <div class="icon">
+              <span class="icon-code1"></span>
+            </div>
+            <div class="features-box-content">
+              <a href="#" class="h5 title">Forward Testing <br /> </a>
+              <p class="fs-17">
+                Track the LIVE P&L of every strategy before deploying real
+                money, with all the features of live trading.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+          <div class="features-box-4 center aos-init aos-animate" data-aos="fade-up" data-aos-duration="1600">
+            <div class="icon">
+              <span class="icon-lamp-charge"></span>
+            </div>
+            <div class="features-box-content">
+              <a href="#" class="h5 title">Live Sessions</a>
+              <p class="fs-17">
+                Experience unmatched transparency with our daily live trading
+                sessions, insights, and expert market commentary.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+          <div class="features-box-4 center aos-init aos-animate" data-aos="fade-up" data-aos-duration="2000">
+            <div class="icon">
+              <span class="icon-key"></span>
+            </div>
+            <div class="features-box-content">
+              <a href="#" class="h5 title">Exclusive Community</a>
+              <p class="fs-17">
+                Join a thriving network of smart, like-minded traders who
+                share insights, strategies, and real-time market updates.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- End Section Features -->
+
+  <!-- Section RoadMap -->
+  <section class="road-map style-1" id="roadmap">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="block-text" data-aos="fade-up" data-aos-duration="1000">
+            <h3 class="heading">
+              Connect Your Trading Account & Start Algo Trading
+            </h3>
+            <p>
+              Once you’ve chosen your preferred strategy from TheAlgoman, it’s
+              time to go live with your automated trading.
+            </p>
+            <p>
+              Here's how you can connect your Demat account and start daily
+              algo-based trades:
+            </p>
+          </div>
+
+          <div class="road-map__content">
+            <div class="box-roadmap">
+              <div class="box-roadmap__top">
+                <h6><span>1.</span> Activate API Access from Your Broker</h6>
+                <div class="shape active"></div>
+              </div>
+              <div class="box-roadmap__main">
+                <div class="text">
+                  <p>
+                    To enable automated trading, you must first subscribe to
+                    the API service offered by your broker (e.g., Zerodha,
+                    Upstox, 5Paisa, Sharekhan, etc.). Log in to your broker
+                    account and subscribe to the API plan. API subscription is
+                    chargeable and the fee varies by broker. This cost is to
+                    be borne by the client.
+                  </p>
+                </div>
+                <img src="assets/images/layout/banner01.png" style="width: 300px" alt="ICOLand" data-aos="fade-down"
+                  data-aos-duration="1000" />
+              </div>
+            </div>
+            <div class="box-roadmap s2">
+              <div class="box-roadmap__top">
+                <h6><span>2.</span> Submit API Credentials Securely</h6>
+                <div class="shape"></div>
+              </div>
+              <div class="box-roadmap__main">
+                <div class="text">
+                  <p>
+                    After API access is activated: You will receive a secure
+                    link from TheAlgoman to enter your API Key and Secret.
+                    These credentials help us integrate your account with the
+                    trading algorithm. Your credentials are encrypted and used
+                    only for trade execution — we do not store or misuse your
+                    login information.
+                  </p>
+                </div>
+                <img src="assets/images/algo2.png" style="width: 280px" alt="ICOLand" data-aos="fade-down"
+                  data-aos-duration="1000" />
+              </div>
+            </div>
+            <div class="box-roadmap">
+              <div class="box-roadmap__top">
+                <h6><span>3.</span> We Activate Your Chosen Strategy</h6>
+                <div class="shape"></div>
+              </div>
+              <div class="box-roadmap__main">
+                <div class="text">
+                  <p>
+                    You’ve already selected the strategy that suits your
+                    trading goals. Our system links this pre-selected algo
+                    strategy to your broker account. The algo is configured
+                    according to your capital, risk appetite, and market
+                    segment (Equity, Options, or Futures).
+                  </p>
+                </div>
+                <img src="assets/images/algo3.png" style="width: 250px" alt="ICOLand" data-aos="fade-down"
+                  data-aos-duration="1000" />
+              </div>
+            </div>
+            <div class="box-roadmap s2">
+              <div class="box-roadmap__top">
+                <h6>
+                  <span>4.</span> Go Live & Trade Automatically Every Day
+                </h6>
+                <div class="shape"></div>
+              </div>
+              <div class="box-roadmap__main">
+                <div class="text">
+                  <p>
+                    Once your account is connected: Your algo goes live and
+                    starts placing trades automatically during market hours.
+                    All trade execution happens in real-time via your broker’s
+                    API. You can track every trade on your broker’s app — and
+                    you have the full right to pause, stop, or exit trades
+                    anytime
+                  </p>
+                </div>
+                <img src="assets/images/algo4.png" style="width: 300px" alt="ICOLand" data-aos="fade-down"
+                  data-aos-duration="1000" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end Section RoadMap -->
+
+  <!-- Section Document -->
+  <section class="document style-1" id="document">
+    <div class="container">
+      <div class="row">
+        <div class="document__main">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="block-text center">
+                <h3 class="heading">Pre-built algos for everyone</h3>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="document__content">
+                <div class="box-document">
+                  <div class="content">
+                    <h4 class="title">Option Buying</h4>
+                    <a href="#" class="icon">
+                      <img src="assets/images/icon/download.png" alt="ICOLand" />
+                    </a>
+                  </div>
+                </div>
+                <div class="box-document">
+                  <div class="content">
+                    <h4 class="title">Option Selling</h4>
+                    <a href="#" class="icon">
+                      <img src="assets/images/icon/download.png" alt="ICOLand" />
+                    </a>
+                  </div>
+                </div>
+                <div class="box-document">
+                  <div class="content">
+                    <h4 class="title">Futures</h4>
+                    <a href="#" class="icon">
+                      <img src="assets/images/icon/download.png" alt="ICOLand" />
+                    </a>
+                  </div>
+                </div>
+                <div class="box-document">
+                  <div class="content">
+                    <h4 class="title">Equity</h4>
+                    <a href="#" class="icon">
+                      <img src="assets/images/icon/download.png" alt="ICOLand" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Section Document -->
+
+  <section class="road-map style-4 home-nft" id="roadmap">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="road-map__main">
+            <div class="box-roadmap left active aos-init aos-animate" data-aos="fade-right" data-aos-duration="1000">
+              <h5 class="title text-center">0% Human Errors</h5>
+            </div>
+            <div class="box-roadmap right active aos-init aos-animate" data-aos="fade-left" data-aos-duration="1000">
+              <h5 class="title text-center">99.99% Uptime</h5>
+            </div>
+            <div class="box-roadmap left aos-init" data-aos="fade-right" data-aos-duration="1000">
+              <h5 class="title text-center">Seamless Integration</h5>
+            </div>
+            <div class="box-roadmap right aos-init" data-aos="fade-left" data-aos-duration="1000">
+              <h5 class="title text-center">Real Time Monitoring</h5>
+            </div>
+            <div class="box-roadmap left aos-init" data-aos="fade-right" data-aos-duration="1000">
+              <h5 class="title text-center">Highly Scalable</h5>
+            </div>
+            <div class="box-roadmap right aos-init" data-aos="fade-left" data-aos-duration="1000">
+              <h5 class="title">Millisecond latency</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Faq -->
+  <!-- <section class="section-faq style-1" id="faq">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block-text center">
+                        <h3> Got questions? </h3>
+                        <p class="mt-12">
+
+                            We’ve got answers. Find everything you need to know about our company and services right
+                            here.
+
+
+                        </p>
+                    </div>
+
+                    <div class="section-faq__main aos-init" data-aos="fade-up" data-aos-duration="1000">
+                        <div class="flat-tabs">
+                            <ul class="menu-tab">
+                            </ul>
+                            <div class="content-tab">
+                                <div class="content-inner flat-accordion">
+                                    <div class="flat-toggle">
+                                        <h5 class="toggle-title">What is algo trading?</h5>
+                                        <p class="toggle-content">Algorithmic trading, often called 'algo trading',
+                                            involves using computer programs and algorithms to execute trades in
+                                            financial markets. You define a set of rules within the program, and trades
+                                            are automatically carried out when those conditions are met.</p>
+                                    </div>
+
+                                    <div class="flat-toggle">
+                                        <h5 class="toggle-title">Is algo trading legal in India?</h5>
+                                        <p class="toggle-content">Yes, algo trading is legal in India and is regulated
+                                            by the Securities and Exchange Board of India (SEBI). Retail investors can
+                                            participate through platforms that comply with SEBI guidelines.</p>
+                                    </div>
+
+                                    <div class="flat-toggle">
+                                        <h5 class="toggle-title">Can any broker be connected to TheAlgoman platform?
+                                        </h5>
+                                        <p class="toggle-content">TheAlgoman supports integration with several major
+                                            brokers in India. However, compatibility depends on the quality of the
+                                            broker's API. Supported brokers include: 5Paisa (Open API), IIFL, Sharekhan,
+                                            Zerodha, Kotak, Upstox, AliceBlue, Groww, Motilal Oswal, Nuvama, Tiqs,
+                                            Finvasia, and Angel One.</p>
+                                    </div>
+
+                                    <div class="flat-toggle">
+                                        <h5 class="toggle-title">Do I need to log in daily to deploy the algos?</h5>
+                                        <p class="toggle-content">No, you don’t need to deploy the algos daily. However,
+                                            you must log in to regenerate tokens each day to keep the algos running.</p>
+                                    </div>
+
+                                    <div class="flat-toggle">
+                                        <h5 class="toggle-title active">Can I manually exit the trades if needed?</h5>
+                                        <p class="toggle-content" style="display: block;">Yes, TheAlgoman allows you to
+                                            manually exit trades. While the algos are automated, you retain full control
+                                            and can intervene anytime based on market conditions or your trading goals.
+                                        </p>
+                                    </div>
+
+                                    <div class="flat-toggle">
+                                        <h5 class="toggle-title">Why is the status of my trade 'In Error'?</h5>
+                                        <p class="toggle-content">The 'In Error' status could be due to several reasons
+                                            like margin shortfall, token not generated, or an illiquid strike price.</p>
+                                    </div>
+
+                                    <div class="flat-toggle">
+                                        <h5 class="toggle-title">How to manage errors?</h5>
+                                        <p class="toggle-content">Click on the 'Error' option in TheAlgoman dashboard,
+                                            then select 'Manage'. You will see three options: 'Reattempt', 'Cancel', and
+                                            'Manually Taken'. For detailed guidance, refer to the video tutorials below.
+                                        </p>
+                                    </div>
+
+                                    <div class="flat-toggle">
+                                        <h5 class="toggle-title">Who bears the cost of trading APIs and what are the
+                                            charges across brokers?</h5>
+                                        <p class="toggle-content">Clients bear the cost of trading APIs from their
+                                            respective brokers. These APIs are required for automating trading
+                                            strategies.</p>
+
+                                        <p><strong>Latest API charges from popular brokers:</strong></p>
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>Broker</th>
+                                                    <th>API Charges</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>5Paisa</td>
+                                                    <td>Free</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>IIFL</td>
+                                                    <td>Free</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Sharekhan</td>
+                                                    <td>Free</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Zerodha</td>
+                                                    <td>₹2,000/month per app</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Kotak Securities</td>
+                                                    <td>Free</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Upstox</td>
+                                                    <td>Free</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>AliceBlue</td>
+                                                    <td>Free</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Groww</td>
+                                                    <td>₹499 + taxes/month</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Motilal Oswal</td>
+                                                    <td>Free</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Nuvama</td>
+                                                    <td>Free</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Tiqs</td>
+                                                    <td>₹5/order</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Finvasia</td>
+                                                    <td>Free</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Angel One</td>
+                                                    <td>Free</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <p><strong>Note:</strong> TheAlgoman does not charge for broker APIs. Clients
+                                            pay directly to brokers.</p>
+                                        <p>For help choosing the right broker/API combo, contact our support team.</p>
+                                    </div>
+
+                                    <div class="flat-toggle">
+                                        <h5 class="toggle-title">Do I need any specific setup or capital to use the
+                                            Options Buying Algo?</h5>
+                                        <div class="toggle-content">
+                                            <p><strong>Active Trading Account with API Access</strong></p>
+                                            <p>Must have a trading account with one of our supported brokers (Zerodha,
+                                                Angel One, Upstox, etc.) with API enabled.</p>
+
+                                            <p><strong>Minimum Capital Requirements</strong></p>
+                                            <ul>
+                                                <li>Options Buying Algo: ₹30,000</li>
+                                                <li>Futures Trading Algo: ₹5,00,000</li>
+                                                <li>Options Selling Algo: ₹10,00,000</li>
+                                                <li>Equity Buying Algo: ₹10,00,000</li>
+                                            </ul>
+
+                                            <p><strong>Basic Trading Knowledge</strong></p>
+                                            <p>Understand order types, margin rules, and basic risk management.</p>
+
+                                            <p><strong>Stable Internet Connection</strong></p>
+                                            <p>Essential for uninterrupted trading and order execution.</p>
+
+                                            <p><strong>KYC Compliance</strong></p>
+                                            <p>Ensure your broker account is KYC-verified.</p>
+
+                                            <p><strong>Signed Algo Trading Agreement (if applicable)</strong></p>
+                                            <p>Some brokers may require a signed consent letter for API-based trading.
+                                            </p>
+
+                                            <p><strong>Margin Availability</strong></p>
+                                            <p>Sufficient margin is necessary to execute trades as per your selected
+                                                algo.</p>
+
+                                            <p><strong>Compatible Device or VPS (if needed)</strong></p>
+                                            <p>For client-side algos, you’ll need a PC/laptop or a VPS running during
+                                                market hours. (Cloud-based algos don’t need this.)</p>
+
+                                            <p><strong>Risk Disclosure Acceptance</strong></p>
+                                            <p>You must acknowledge that trading involves market risk and that past
+                                                results don’t guarantee future returns.</p>
+
+                                            <p><strong>Enrollment with Our Algo Service</strong></p>
+                                            <p>Complete the onboarding process to connect your account and get started.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        </div>
+    </section> -->
+  <!-- End Section Faq -->
+
+  <!-- Section Join -->
+
+  <!-- Footer -->
+  <footer class="footer style-1">
+    <style>
+      .footer__nav {
+        display: flex;
+        flex-direction: column;
+      }
+    </style>
+    <div class="footer__top">
+      <div class="container">
+        <div class="row align-items-start">
+          <div class="col-xl-3 col-lg-3 col-md-3 col-12">
+            <div class="content-left">
+              <h5 class="fs-22">Don't miss out, Stay updated</h5>
+              <p>
+                TheAlgoman is India's most trusted algo trading platform —
+                helping you earn consistent profits through fully automated,
+                data-driven strategies connected directly to your trading
+                account.
+              </p>
+              <form action="#" id="subscribe-form">
+                <input type="email" placeholder="Enter your email" required="" id="subscribe-email" />
+                <button class="btn-action style-2" type="submit" id="subscribe-button">
+                  <span class="effect">SUBSCRIBE</span>
+                </button>
+              </form>
+            </div>
+          </div>
+          <div class="col-xl-2 col-lg-2 col-md-2 col-12">
+            <h6 class="footer__title">Company</h6>
+            <div class="footer__nav">
+              <a href="about.html">About us</a>
+              <a href="disclaimer">Legal Disclaimer</a>
+              <a href="contact.html">Contact Us</a>
+            </div>
+          </div>
+          <div class="col-xl-2 col-lg-2 col-md-2 col-12">
+            <h6 class="footer__title">Products</h6>
+            <div class="footer__nav">
+              <a href="invest.html">Option Buying</a>
+              <a href="404.html">Option Selling</a>
+              <a href="404.html">Futures</a>
+              <a href="404.html">Equity</a>
+            </div>
+          </div>
+          <div class="col-xl-2 col-lg-2 col-md-2 col-12 ">
+            <h6 class="footer__title">Support</h6>
+            <div class="footer__nav">
+              <a href="contact.html">Help center</a>
+              <a href="faq.html">How it works</a>
+              <a href="#">Privacy policy</a>
+              <a href="#">Terms & conditions</a>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-3 col-md-3 col-12">
+            <div class="conten">
+              <p>
+                TheAlgoman is India's most trusted algo trading platform —
+                helping you earn consistent profits through fully automated,
+                data-driven strategies connected directly to your trading
+                account.
+              </p>
+              <ul class="list-social">
+                <li><span class="icon-twitter"></span></li>
+                <li><span class="icon-facebook"></span></li>
+                <li><span class="icon-youtobe"></span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <p>© 2025. All rights reserved by <a href="#">TheAlgoman</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- <style>
+.footer__top .row {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+}
+
+.footer__top .col-xl-3,
+.footer__top .col-xl-2 {
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 20%;
+  padding: 0 15px;
+}
+
+@media (max-width: 1199px) {
+  .footer__top .col-lg-3,
+  .footer__top .col-lg-2 {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 20%;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer__top .row {
+    flex-wrap: wrap;
+  }
+  .footer__top .col-md-3,
+  .footer__top .col-md-2 {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 50%;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 575px) {
+  .footer__top .col-12 {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+.footer__nav a,
+.content-right ul.list-social li {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.footer__title {
+  margin-bottom: 15px;
+}
+</style> -->
+  <!-- End Footer -->
+  <a id="scroll-top"></a>
+
+  <script src="app/js/jquery.min.js"></script>
+  <script src="app/js/jquery.easing.js"></script>
+  <script src="app/js/app.js"></script>
+  <script src="app/js/count-down.js"></script>
+  <script src="app/js/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script src="app/js/mouse.js"></script>
+</body>
+
+</html>

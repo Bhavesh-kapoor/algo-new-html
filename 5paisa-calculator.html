@@ -26,8 +26,57 @@
     <link rel="icon" type="image/png" href="img/logo.png" sizes="32x32" />
     <link rel="apple-touch-icon" href="img/logo.png" />
 
-    <title>5paisa Calculator - TheAlgoMan</title>
+    <title>5paisa Calculator - TheAlgoman</title>
     <style>
+      .header {
+      background: transparent;
+      transition: background 0.3s ease;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .header.scrolled {
+      background: #182124;
+      /* Darker background with opacity */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .header__dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #082f3e75;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      padding: 0px;
+      z-index: 1000;
+    }
+
+    .header__dropdown-menu.show {
+      display: block;
+    }
+
+    .header__dropdown {
+      position: relative;
+    }
+
+    .header__dropdown-menu li {
+      padding: 0px;
+    }
+
+    .header__dropdown-menu li a {
+      color: #fff;
+      text-decoration: none;
+      display: block;
+      font-size: 14px !important;
+      padding: 5px 20px;
+    }
+
+    .header__dropdown-menu li a:hover {
+      background: #0f3543;
+    }
       .calculator-section {
         padding: 3rem 0;
         background: linear-gradient(
@@ -456,7 +505,7 @@
                     <span class="result-value" id="stampDuty">₹0</span>
                   </div>
                   <div class="result-item">
-                    <span class="result-label">Total Charges</span>
+                    <span class="result-label" style="font-size: 25px;">Total Charges</span>
                     <span class="result-value" id="totalCharges">₹0</span>
                   </div>
                 </div>
@@ -483,7 +532,7 @@
         <div class="row align-items-start">
           <div class="col-xl-3 col-lg-3 col-md-3 col-12">
             <div class="content-left">
-              <h5 class="fs-22">Don't miss out, Stay updated</h5>
+              <h5 class="fs-22">Don't miss out, Stay updated → Stay Synced with TheAlgoman</h5>
               <p>
                 TheAlgoman is India's most trusted algo trading platform —
                 helping you earn consistent profits through fully automated,
@@ -502,7 +551,7 @@
             <h6 class="footer__title">Company</h6>
             <div class="footer__nav">
               <a href="about.html">About us</a>
-              <a href="disclaimer">Legal Disclaimer</a>
+             
               <a href="contact.html">Contact Us</a>
             </div>
           </div>
@@ -536,6 +585,19 @@
                 <li><span class="icon-twitter"></span></li>
                 <li><span class="icon-facebook"></span></li>
                 <li><span class="icon-youtobe"></span></li>
+<i style="
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    margin-right: 12px;
+    z-index: 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+" class="fab fa-instagram"></i>
               </ul>
             </div>
           </div>

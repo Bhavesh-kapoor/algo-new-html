@@ -18,6 +18,55 @@
     <link rel="shortcut icon" href="assets/images/logo/logo.png">
     <link rel="apple-touch-icon-precomposed" href="assets/images/logo/logo.png">
     <style>
+        .header {
+      background: transparent;
+      transition: background 0.3s ease;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .header.scrolled {
+      background: #182124;
+      /* Darker background with opacity */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .header__dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #082f3e75;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      padding: 0px;
+      z-index: 1000;
+    }
+
+    .header__dropdown-menu.show {
+      display: block;
+    }
+
+    .header__dropdown {
+      position: relative;
+    }
+
+    .header__dropdown-menu li {
+      padding: 0px;
+    }
+
+    .header__dropdown-menu li a {
+      color: #fff;
+      text-decoration: none;
+      display: block;
+      font-size: 14px !important;
+      padding: 5px 20px;
+    }
+
+    .header__dropdown-menu li a:hover {
+      background: #0f3543;
+    }
         tr {
             color: white;
         }
@@ -498,7 +547,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="content">
-                        <h2 class="title">About - <span>TheAlgoMan</span></h2>
+                        <h2 class="title">About - <span>TheAlgoman</span></h2>
                     </div>
                 </div>
             </div>
@@ -510,7 +559,7 @@
 
     <!-- Section Features -->
 
-    <section class="road-map style-1 pricing-section " id="roadmap">
+    <section class="road-map style-1 pricing-section " style="margin-top: 60px;" id="roadmap">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -520,12 +569,12 @@
                         <p>We are India's fastest-growing automated trading platform, making algorithmic profits
                             accessible to every investor.
                         </p>
-                        <p> Welcome to TheAlgoMan — where smart technology meets smarter trading. We are India's
+                        <p> Welcome to TheAlgoman — where smart technology meets smarter trading. We are India's
                             fastest-growing algo trading platform, built by market enthusiasts for everyday investors.
                             Our mission is simple: to empower you with automated trading solutions that generate
                             consistent returns, without the stress of watching charts or chasing market trends.</p>
 
-                        <p>At TheAlgoMan, we don't believe in luck — we believe in logic. Our sophisticated trading
+                        <p>At TheAlgoman, we don't believe in luck — we believe in logic. Our sophisticated trading
                             algorithms are designed to work 24/7, identifying profitable opportunities, managing risks,
                             and executing trades directly through your trading account. </br> The result? Your money
                             works
@@ -553,7 +602,7 @@
                             <p class="fs-17">To deliver safe, smart, and consistent profits through disciplined,
                                 data-driven algorithmic trading for every investor.</p>
                             <p>Our mission is to revolutionize retail trading in India by offering algorithmic solutions
-                                that focus on consistent performance, capital safety, and complete transparency.</p>
+                                that focus on consistent performance, capital safety, and complete transparency.</p></br>
                             <p>We're committed to helping you earn steady returns while minimizing risks, without you
                                 having to spend hours analyzing the market or chasing unreliable tips.</p>
                         </div>
@@ -591,8 +640,9 @@
                                 works.</p>
                             <p>We promise transparency, reliability, and performance. No emotional trades, no hidden
                                 agendas — only proven strategies executed through your Demat account with full control
-                                in your hands.</p>
-                            <p>At TheAlgoMan, your success is our only benchmark, and we're relentless about delivering
+                                in your hands.</p></br>
+                                </br>
+                            <p>At TheAlgoman, your success is our only benchmark, and we're relentless about delivering
                                 it.</p>
                         </div>
                     </div>
@@ -662,8 +712,10 @@
             </div>
 
             <div class="col-xl-5 col-md-12">
-                <div class="about__image">
-                    <img src="assets/images/algo3.png" alt="Algo Man">
+                <div  style="padding-left: 90px;">
+                    <img src="assets/images/algo3.png" alt="Algo Man" style="
+    margin-top: 49px;
+">
                 </div>
             </div>
 
@@ -687,7 +739,7 @@
                             <div class="testimonial-quote mb-3">
                                 <i class="fas fa-quote-left fa-2x text-primary"></i>
                             </div>
-                            <p class="mb-4">"I recovered my entire capital within 10 days and now every day is pure profit. TheAlgoMan is the smartest decision I've made."</p>
+                            <p class="mb-4">"I recovered my entire capital within 10 days and now every day is pure profit. TheAlgoman is the smartest decision I've made."</p>
                             <div class="testimonial-author">
                                 <div class="fw-bold">Ritesh Patel</div>
                                 <div class="text-muted">Surat</div>
@@ -713,7 +765,7 @@
                             <div class="testimonial-quote mb-3">
                                 <i class="fas fa-quote-left fa-2x text-primary"></i>
                             </div>
-                            <p class="mb-4">"TheAlgoMan team is super supportive, the platform is easy to use, and the profits are real. Highly recommended."</p>
+                            <p class="mb-4">"TheAlgoman team is super supportive, the platform is easy to use, and the profits are real. Highly recommended."</p>
                             <div class="testimonial-author">
                                 <div class="fw-bold">Priyanka Desai</div>
                                 <div class="text-muted">Ahmedabad</div>
@@ -961,7 +1013,7 @@
         <div class="row align-items-start">
           <div class="col-xl-3 col-lg-3 col-md-3 col-12">
             <div class="content-left">
-              <h5 class="fs-22">Don't miss out, Stay updated</h5>
+              <h5 class="fs-22">Don't miss out, Stay updated → Stay Synced with TheAlgoman</h5>
               <p>
                 TheAlgoman is India's most trusted algo trading platform —
                 helping you earn consistent profits through fully automated,
@@ -980,7 +1032,7 @@
             <h6 class="footer__title">Company</h6>
             <div class="footer__nav">
               <a href="about.html">About us</a>
-              <a href="disclaimer">Legal Disclaimer</a>
+             
               <a href="contact.html">Contact Us</a>
             </div>
           </div>
@@ -998,8 +1050,10 @@
             <div class="footer__nav">
               <a href="contact.html">Help center</a>
               <a href="faq.html">How it works</a>
-              <a href="#">Privacy policy</a>
-              <a href="#">Terms & conditions</a>
+               <a href="privacy.html">Privacy policy</a>
+                            <a href="terms.html">Terms & conditions</a>
+                            <a href="risk.html">Risk Disclaimer</a>
+                            <a href="legal.html">Legal Disclaimer</a>
             </div>
           </div>
           <div class="col-xl-3 col-lg-3 col-md-3 col-12">
@@ -1014,6 +1068,19 @@
                 <li><span class="icon-twitter"></span></li>
                 <li><span class="icon-facebook"></span></li>
                 <li><span class="icon-youtobe"></span></li>
+<i style="
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    margin-right: 12px;
+    z-index: 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+" class="fab fa-instagram"></i>
               </ul>
             </div>
           </div>

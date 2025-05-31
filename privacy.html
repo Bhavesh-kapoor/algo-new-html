@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Algo Man </title>
+    <title>Legal Disclaimer </title>
 
     <!-- Styles -->
     <link rel="stylesheet" href="app/bootstrap/css/bootstrap.min.css">
@@ -18,6 +18,56 @@
     <link rel="shortcut icon" href="assets/images/logo/logo.png">
     <link rel="apple-touch-icon-precomposed" href="assets/images/logo/logo.png">
     <style>
+        .header {
+            background: transparent;
+            transition: background 0.3s ease;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .header.scrolled {
+            background: #182124;
+            /* Darker background with opacity */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .header__dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #082f3e75;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            padding: 0px;
+            z-index: 1000;
+        }
+
+        .header__dropdown-menu.show {
+            display: block;
+        }
+
+        .header__dropdown {
+            position: relative;
+        }
+
+        .header__dropdown-menu li {
+            padding: 0px;
+        }
+
+        .header__dropdown-menu li a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            font-size: 14px !important;
+            padding: 5px 20px;
+        }
+
+        .header__dropdown-menu li a:hover {
+            background: #0f3543;
+        }
+
         tr {
             color: white;
         }
@@ -72,10 +122,6 @@
                 gap: 15px;
                 /* Space between logos */
             }
-        }
-
-        .section-faq.style-1 {
-            padding: 0px 0px 20px 0px;
         }
     </style>
 
@@ -491,10 +537,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="content">
-                        <h2 class="title">Got questions?<span></span></h2>
-                        <p> We’ve got answers. Find everything you need to know about our company and services right
-                            here.
-                        </p>
+                        <h5 class="title">Privacy <span>Policy</span></h5>
                     </div>
                 </div>
             </div>
@@ -506,207 +549,77 @@
 
     <!-- Section Features -->
 
-
-    <!-- Section Faq -->
-    <section class="section-faq style-1" id="faq">
+    <section class="road-map style-1 pricing-section " style="margin-top: 60px;" id="roadmap">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
+                    <div class="block-text content" data-aos="fade-up" data-aos-duration="1000">
+                        <h5>Privacy Policy</h5>
+                        <p>TheAlgoman Technologies (“we,” “our,” “us”) is committed to protecting your privacy. This
+                            policy describes the types of information we collect, how we use it, your rights, and the
+                            steps we take to safeguard it.</p>
 
+                        <h5>1. Information We Collect</h5>
+                        <p>We collect information directly from you when you register, integrate your broker API, or
+                            interact with our services. This includes:</p>
+                        <p>
+                            ⦁ Personal identification data (name, email, phone number)<br>
+                            ⦁ Account information (user ID, authentication credentials)<br>
+                            ⦁ Broker API details (tokens, keys – encrypted and securely stored)<br>
+                            ⦁ Usage data (log files, IP address, device type, pages accessed)<br>
+                            ⦁ Communication logs (emails, chat messages, feedback)
+                        </p>
 
-                    <div class="section-faq__main aos-init" data-aos="fade-up" data-aos-duration="1000">
-                        <div class="flat-tabs">
-                            <ul class="menu-tab">
-                            </ul>
-                            <div class="content-tab">
-                                <div class="content-inner flat-accordion">
-                                    <div class="flat-toggle">
-                                        <h5 class="toggle-title">What is algo trading?</h5>
-                                        <p class="toggle-content">Algorithmic trading, often called 'algo trading',
-                                            involves using computer programs and algorithms to execute trades in
-                                            financial markets. You define a set of rules within the program, and trades
-                                            are automatically carried out when those conditions are met.</p>
-                                    </div>
+                        <h5>2. How We Use Your Information</h5>
+                        <p>
+                            ⦁ To provide and maintain the functionality of TheAlgoman<br>
+                            ⦁ To verify and secure API connections with brokers<br>
+                            ⦁ To troubleshoot user issues and improve the platform<br>
+                            ⦁ To communicate platform changes, technical alerts, or newsletters<br>
+                            ⦁ For legal, regulatory, and security compliance
+                        </p>
 
-                                    <div class="flat-toggle">
-                                        <h5 class="toggle-title">Is algo trading legal in India?</h5>
-                                        <p class="toggle-content">Yes, algo trading is legal in India and is regulated
-                                            by the Securities and Exchange Board of India (SEBI). Retail investors can
-                                            participate through platforms that comply with SEBI guidelines.</p>
-                                    </div>
+                        <h5>3. Sharing and Disclosure</h5>
+                        <p>We do not sell or rent your data. We only share it:</p>
+                        <p>
+                            ⦁ With third-party vendors strictly for operational needs (e.g., hosting services)<br>
+                            ⦁ When required by law or to comply with legal obligations<br>
+                            ⦁ To prevent fraud, abuse, or technical issues
+                        </p>
 
-                                    <div class="flat-toggle">
-                                        <h5 class="toggle-title">Can any broker be connected to TheAlgoman platform?
-                                        </h5>
-                                        <p class="toggle-content">TheAlgoman supports integration with several major
-                                            brokers in India. However, compatibility depends on the quality of the
-                                            broker's API. Supported brokers include: 5Paisa (Open API), IIFL, Sharekhan,
-                                            Zerodha, Kotak, Upstox, AliceBlue, Groww, Motilal Oswal, Nuvama, Tiqs,
-                                            Finvasia, and Angel One.</p>
-                                    </div>
+                        <h5>4. Data Security</h5>
+                        <p>We implement a range of security measures:</p>
+                        <p>
+                            ⦁ Data encryption during transmission and storage<br>
+                            ⦁ Secure servers and firewalls<br>
+                            ⦁ Limited access control to sensitive data<br>
+                            ⦁ Periodic audits and vulnerability checks
+                        </p>
 
-                                    <div class="flat-toggle">
-                                        <h5 class="toggle-title">Do I need to log in daily to deploy the algos?</h5>
-                                        <p class="toggle-content">No, you don’t need to deploy the algos daily. However,
-                                            you must log in to regenerate tokens each day to keep the algos running.</p>
-                                    </div>
+                        <h5>5. Your Rights</h5>
+                        <p>You have the right to:</p>
+                        <p>
+                            ⦁ Request a copy of the personal data we hold<br>
+                            ⦁ Ask for correction or deletion of your data<br>
+                            ⦁ Withdraw consent for data usage (may impact your access to services)<br>
+                            ⦁ Request deletion of account and associated data
+                        </p>
 
-                                    <div class="flat-toggle">
-                                        <h5 class="toggle-title active">Can I manually exit the trades if needed?</h5>
-                                        <p class="toggle-content" style="display: block;">Yes, TheAlgoman allows you to
-                                            manually exit trades. While the algos are automated, you retain full control
-                                            and can intervene anytime based on market conditions or your trading goals.
-                                        </p>
-                                    </div>
+                        <h5>6. Data Retention</h5>
+                        <p>We retain your data only as long as needed for legitimate business or legal purposes.</p>
 
-                                    <div class="flat-toggle">
-                                        <h5 class="toggle-title">Why is the status of my trade 'In Error'?</h5>
-                                        <p class="toggle-content">The 'In Error' status could be due to several reasons
-                                            like margin shortfall, token not generated, or an illiquid strike price.</p>
-                                    </div>
+                        <p>For support or concerns, contact: <a
+                                href="mailto:support@thealgoman.com">support@thealgoman.com</a></p>
 
-                                    <div class="flat-toggle">
-                                        <h5 class="toggle-title">How to manage errors?</h5>
-                                        <p class="toggle-content">Click on the 'Error' option in TheAlgoman dashboard,
-                                            then select 'Manage'. You will see three options: 'Reattempt', 'Cancel', and
-                                            'Manually Taken'. For detailed guidance, refer to the video tutorials below.
-                                        </p>
-                                    </div>
-
-                                    <div class="flat-toggle">
-                                        <h5 class="toggle-title">Who bears the cost of trading APIs and what are the
-                                            charges across brokers?</h5>
-                                        <p class="toggle-content">Clients bear the cost of trading APIs from their
-                                            respective brokers. These APIs are required for automating trading
-                                            strategies.</p>
-
-                                        <p><strong>Latest API charges from popular brokers:</strong></p>
-                                        <table class="table table-bordered">
-                                            <thead>
-                                                <tr>
-                                                    <th>Broker</th>
-                                                    <th>API Charges</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>5Paisa</td>
-                                                    <td>Free</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>IIFL</td>
-                                                    <td>Free</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Sharekhan</td>
-                                                    <td>Free</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Zerodha</td>
-                                                    <td>₹2,000/month per app</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Kotak Securities</td>
-                                                    <td>Free</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Upstox</td>
-                                                    <td>Free</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>AliceBlue</td>
-                                                    <td>Free</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Groww</td>
-                                                    <td>₹499 + taxes/month</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Motilal Oswal</td>
-                                                    <td>Free</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Nuvama</td>
-                                                    <td>Free</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Tiqs</td>
-                                                    <td>₹5/order</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Finvasia</td>
-                                                    <td>Free</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Angel One</td>
-                                                    <td>Free</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                        <p><strong>Note:</strong> TheAlgoman does not charge for broker APIs. Clients
-                                            pay directly to brokers.</p>
-                                        <p>For help choosing the right broker/API combo, contact our support team.</p>
-                                    </div>
-
-                                    <div class="flat-toggle">
-                                        <h5 class="toggle-title">Do I need any specific setup or capital to use the
-                                            Options Buying Algo?</h5>
-                                        <div class="toggle-content">
-                                            <p><strong>Active Trading Account with API Access</strong></p>
-                                            <p>Must have a trading account with one of our supported brokers (Zerodha,
-                                                Angel One, Upstox, etc.) with API enabled.</p>
-
-                                            <p><strong>Minimum Capital Requirements</strong></p>
-                                            <ul>
-                                                <li>Options Buying Algo: ₹30,000</li>
-                                                <li>Futures Trading Algo: ₹5,00,000</li>
-                                                <li>Options Selling Algo: ₹10,00,000</li>
-                                                <li>Equity Buying Algo: ₹10,00,000</li>
-                                            </ul>
-
-                                            <p><strong>Basic Trading Knowledge</strong></p>
-                                            <p>Understand order types, margin rules, and basic risk management.</p>
-
-                                            <p><strong>Stable Internet Connection</strong></p>
-                                            <p>Essential for uninterrupted trading and order execution.</p>
-
-                                            <p><strong>KYC Compliance</strong></p>
-                                            <p>Ensure your broker account is KYC-verified.</p>
-
-                                            <p><strong>Signed Algo Trading Agreement (if applicable)</strong></p>
-                                            <p>Some brokers may require a signed consent letter for API-based trading.
-                                            </p>
-
-                                            <p><strong>Margin Availability</strong></p>
-                                            <p>Sufficient margin is necessary to execute trades as per your selected
-                                                algo.</p>
-
-                                            <p><strong>Compatible Device or VPS (if needed)</strong></p>
-                                            <p>For client-side algos, you’ll need a PC/laptop or a VPS running during
-                                                market hours. (Cloud-based algos don’t need this.)</p>
-
-                                            <p><strong>Risk Disclosure Acceptance</strong></p>
-                                            <p>You must acknowledge that trading involves market risk and that past
-                                                results don’t guarantee future returns.</p>
-
-                                            <p><strong>Enrollment with Our Algo Service</strong></p>
-                                            <p>Complete the onboarding process to connect your account and get started.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
+
 
                 </div>
             </div>
         </div>
-        </div>
     </section>
-    <!-- End Section Faq -->
+    <!-- end Section RoadMap -->
 
-    <!-- Section Join -->
 
 
 
@@ -977,14 +890,14 @@
                     <div class="col-xl-2 col-lg-2 col-md-2 col-12 ">
                         <h6 class="footer__title">Support</h6>
                         <div class="footer__nav">
-                            <div class="footer__nav">
-                                <a href="contact.html">Help center</a>
-                                <a href="faq.html">How it works</a>
-                                <a href="privacy.html">Privacy policy</a>
-                                <a href="terms.html">Terms & conditions</a>
-                                <a href="risk.html">Risk Disclaimer</a>
-                                <a href="legal.html">Legal Disclaimer</a>
-                            </div>
+                           <div class="footer__nav">
+                            <a href="contact.html">Help center</a>
+                            <a href="faq.html">How it works</a>
+                            <a href="privacy.html">Privacy policy</a>
+                            <a href="terms.html">Terms & conditions</a>
+                            <a href="risk.html">Risk Disclaimer</a>
+                            <a href="legal.html">Legal Disclaimer</a>
+                        </div>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-3 col-12">
@@ -1012,7 +925,6 @@
     justify-content: center;
     color: white;
 " class="fab fa-instagram"></i>
-
                             </ul>
                         </div>
                     </div>

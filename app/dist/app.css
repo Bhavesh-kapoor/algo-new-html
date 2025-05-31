@@ -1565,7 +1565,7 @@ h3, h5 {
   background-position: center center;
 }
 .banner-top.style-2 .banner-top__content .title {
-  font-size: 80px;
+  font-size: 65px;
   line-height: 1.1;
   font-family: "Zen Dots", cursive;
   font-weight: 400;
@@ -2994,7 +2994,7 @@ h3, h5 {
 }
 
 .road-map.style-1 {
-  padding: 60px 0 76px;
+  /* padding: 60px 0 76px; */
 }
 .road-map.style-1 .block-text .heading {
   font-family: "Zen Dots";
@@ -3083,7 +3083,7 @@ h3, h5 {
   top: 9px;
   left: -100px;
   width: 30px;
-  height: 30px;
+  height: 24px;
   background: rgb(34 161 209);
   border-radius: 50%;
   display: flex;
@@ -3441,7 +3441,7 @@ h3, h5 {
   left: 0;
   width: 4px;
   height: 27%;
-  background: #2E72D2;
+  /* background: #2E72D2; */
   margin-left: auto;
   margin-right: auto;
   left: -14px;
@@ -3519,7 +3519,7 @@ h3, h5 {
   right: -142px;
 }
 .road-map.style-4 .road-map__main .box-roadmap.right {
-  margin-top: 202px;
+  margin-top: 154px;
 }
 .road-map.style-4 .road-map__main .box-roadmap.right::before {
   left: -94px;
@@ -12771,7 +12771,7 @@ img.mfp-img {
   }
 }
 .page-title {
-  padding: 162px 0 61px;
+  padding: 94px 0 61px ;
   background: url("../../assets/images/background/bg-bd.png");
   /* background: url("../../assets/images/background/bg-pagetitle.jpg") no-repeat; */
   background-position: center center;
@@ -12811,4 +12811,12 @@ img.mfp-img {
   }
 }
 
+
+
 /*# sourceMappingURL=app.css.map */
+
+
+   select option {
+        background-color: #1a2d3a;
+        color: white;
+      }

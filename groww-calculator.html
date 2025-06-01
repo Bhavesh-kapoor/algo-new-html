@@ -1,486 +1,453 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/splide.min.css" />
-    <link rel="stylesheet" href="css/main.css" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="app/bootstrap/css/bootstrap.min.css" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/splide.min.css" />
+  <link rel="stylesheet" href="css/main.css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-    <link rel="stylesheet" href="app/dist/app.css" />
-    <link href="app/dist/aos.css" rel="stylesheet" />
-    <!-- end Styles -->
 
-    <!-- Icon font -->
-    <link rel="stylesheet" href="webfont/tabler-icons.min.css" />
+  <!-- Styles -->
+  <link rel="stylesheet" href="app/bootstrap/css/bootstrap.min.css" />
 
-    <!-- Favicons -->
-    <link rel="icon" type="image/png" href="img/logo.png" sizes="32x32" />
-    <link rel="apple-touch-icon" href="img/logo.png" />
+  <link rel="stylesheet" href="app/dist/app.css" />
+  <link href="app/dist/aos.css" rel="stylesheet" />
+  <!-- end Styles -->
 
-    <title>Groww Brokerage Calculator - TheAlgoman</title>
-    <style>
-      .calculator-section {
-        padding: 3rem 0;
-        background: linear-gradient(
-          150deg,
+  <!-- Icon font -->
+  <link rel="stylesheet" href="webfont/tabler-icons.min.css" />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="img/logo.png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="img/logo.png" />
+
+  <title>Groww Brokerage Calculator - TheAlgoman</title>
+  <style>
+    .calculator-section {
+      padding: 3rem 0;
+      background: linear-gradient(150deg,
           rgba(255, 255, 255, 0.03) 0%,
-          rgba(255, 255, 255, 0.01) 100%
-        );
+          rgba(255, 255, 255, 0.01) 100%);
+    }
+
+    .calculator-card {
+      background: linear-gradient(150deg,
+          rgba(255, 255, 255, 0.03) 0%,
+          rgba(255, 255, 255, 0.01) 100%);
+      border: 1px solid #2c5d72;
+      border-radius: 24px;
+      padding: 3rem;
+      margin-bottom: 3rem;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .calculator-card h2 {
+      color: #2c5d72;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      font-weight: 700;
+      position: relative;
+      padding-bottom: 1rem;
+      text-align: center;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .calculator-card h3 {
+      color: #2c5d72;
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      font-weight: 600;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .calculator-form {
+      background: linear-gradient(150deg,
+          rgba(255, 255, 255, 0.02) 0%,
+          rgba(255, 255, 255, 0.01) 100%);
+      border: 1px solid #2c5d72;
+      border-radius: 16px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-label {
+      color: #fff;
+      margin-bottom: 0.75rem;
+      display: block;
+      font-size: 1rem;
+      font-weight: 500;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .form-control {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid #2c5d72;
+      color: #fff;
+      padding: 0.75rem 1rem;
+      border-radius: 12px;
+      width: 100%;
+      transition: all 0.3s ease;
+    }
+
+    .form-control:focus {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: #012131;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(44, 93, 114, 0.2);
+    }
+
+    .result-card {
+      background: linear-gradient(150deg,
+          rgba(255, 255, 255, 0.02) 0%,
+          rgba(255, 255, 255, 0.01) 100%);
+      border: 1px solid #2c5d72;
+      border-radius: 16px;
+      padding: 2rem;
+      margin-top: 2rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .result-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(44, 93, 114, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .result-item:hover {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .result-item:last-child {
+      border-bottom: none;
+    }
+
+    .result-label {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.1rem;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .result-value {
+      color: #2c5d72;
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    .calculate-btn {
+      background: linear-gradient(135deg, #2c5d72 0%, #012131 100%);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      border: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      width: 100%;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 1rem;
+    }
+
+    .calculate-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(44, 93, 114, 0.4);
+      background: linear-gradient(135deg, #012131 0%, #2c5d72 100%);
+    }
+
+    .broker-info {
+      background: linear-gradient(150deg,
+          rgba(255, 255, 255, 0.02) 0%,
+          rgba(255, 255, 255, 0.01) 100%);
+      border: 1px solid #2c5d72;
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .broker-info h3 {
+      color: #2c5d72;
+      margin-bottom: 1rem;
+    }
+
+    .broker-info p {
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .calculator-section {
+        padding: 4rem 0;
       }
 
       .calculator-card {
-        background: linear-gradient(
-          150deg,
-          rgba(255, 255, 255, 0.03) 0%,
-          rgba(255, 255, 255, 0.01) 100%
-        );
-        border: 1px solid #2c5d72;
-        border-radius: 24px;
-        padding: 3rem;
-        margin-bottom: 3rem;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        padding: 2rem;
       }
 
       .calculator-card h2 {
-        color: #2c5d72;
-        font-size: 2.5rem;
-        margin-bottom: 2rem;
-        font-weight: 700;
-        position: relative;
-        padding-bottom: 1rem;
-        text-align: center;
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        font-size: 2rem;
       }
+    }
+  </style>
+</head>
 
-      .calculator-card h3 {
-        color: #2c5d72;
-        font-size: 1.8rem;
-        margin-bottom: 2rem;
-        text-align: center;
-        font-weight: 600;
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-      }
+<body class="body body--home home-nft">
+  <!-- Header -->
+  <!-- Header -->
+  <header id="header_main" class="header">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="header__body">
+            <div class="header__logo">
+              <a href="index.html">
+                <img id="site-logo" src="assets/images/logo/logo.png" alt="Monteno" width="65" height="60" />
+              </a>
+            </div>
 
-      .calculator-form {
-        background: linear-gradient(
-          150deg,
-          rgba(255, 255, 255, 0.02) 0%,
-          rgba(255, 255, 255, 0.01) 100%
-        );
-        border: 1px solid #2c5d72;
-        border-radius: 16px;
-        padding: 2.5rem;
-        margin-bottom: 2rem;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      }
+            <div class="header__right">
+              <nav id="main-nav" class="main-nav">
+                <ul id="menu-primary-menu" class="menu">
+                  <li class="menu-item ">
+                    <a href="index.html">Home</a>
+                  </li>
+                  <li class="menu-item ">
+                    <a href="about.html">About </a>
+                  </li>
+                  <li class="menu-item header__dropdown">
+                    <a class="dropdown-link dropdown-toggle" href="#" role="button">
+                      Products
+                    </a>
 
-      .form-group {
-        margin-bottom: 1.5rem;
-      }
-
-      .form-label {
-        color: #fff;
-        margin-bottom: 0.75rem;
-        display: block;
-        font-size: 1rem;
-        font-weight: 500;
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-      }
-
-      .form-control {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid #2c5d72;
-        color: #fff;
-        padding: 0.75rem 1rem;
-        border-radius: 12px;
-        width: 100%;
-        transition: all 0.3s ease;
-      }
-
-      .form-control:focus {
-        background: rgba(255, 255, 255, 0.08);
-        border-color: #012131;
-        outline: none;
-        box-shadow: 0 0 0 3px rgba(44, 93, 114, 0.2);
-      }
-
-      .result-card {
-        background: linear-gradient(
-          150deg,
-          rgba(255, 255, 255, 0.02) 0%,
-          rgba(255, 255, 255, 0.01) 100%
-        );
-        border: 1px solid #2c5d72;
-        border-radius: 16px;
-        padding: 2rem;
-        margin-top: 2rem;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      }
-
-      .result-item {
-        display: flex;
-        justify-content: space-between;
-        padding: 1rem 0;
-        border-bottom: 1px solid rgba(44, 93, 114, 0.2);
-        transition: all 0.3s ease;
-      }
-
-      .result-item:hover {
-        background: rgba(255, 255, 255, 0.02);
-      }
-
-      .result-item:last-child {
-        border-bottom: none;
-      }
-
-      .result-label {
-        color: rgba(255, 255, 255, 0.9);
-        font-size: 1.1rem;
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-      }
-
-      .result-value {
-        color: #2c5d72;
-        font-weight: 600;
-        font-size: 1.1rem;
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-      }
-
-      .calculate-btn {
-        background: linear-gradient(135deg, #2c5d72 0%, #012131 100%);
-        color: white;
-        padding: 1rem 2rem;
-        border-radius: 12px;
-        border: none;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        width: 100%;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-top: 1rem;
-      }
-
-      .calculate-btn:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 20px rgba(44, 93, 114, 0.4);
-        background: linear-gradient(135deg, #012131 0%, #2c5d72 100%);
-      }
-
-      .broker-info {
-        background: linear-gradient(
-          150deg,
-          rgba(255, 255, 255, 0.02) 0%,
-          rgba(255, 255, 255, 0.01) 100%
-        );
-        border: 1px solid #2c5d72;
-        border-radius: 16px;
-        padding: 2rem;
-        margin-bottom: 2rem;
-      }
-
-      .broker-info h3 {
-        color: #2c5d72;
-        margin-bottom: 1rem;
-      }
-
-      .broker-info p {
-        color: rgba(255, 255, 255, 0.8);
-        margin-bottom: 0.5rem;
-      }
-
-      @media (max-width: 768px) {
-        .calculator-section {
-          padding: 4rem 0;
-        }
-
-        .calculator-card {
-          padding: 2rem;
-        }
-
-        .calculator-card h2 {
-          font-size: 2rem;
-        }
-      }
-    </style>
-  </head>
-
-  <body class="body body--home home-nft">
-    <!-- Header -->
-    <!-- Header -->
-    <header id="header_main" class="header">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="header__body">
-              <div class="header__logo">
-                <a href="index.html">
-                  <img
-                    id="site-logo"
-                    src="assets/images/logo/logo.png"
-                    alt="Monteno"
-                    width="65"
-                    height="60"
-                  />
+                    <ul class="dropdown-menu header__dropdown-menu">
+                      <li style="padding-right: 0px !important">
+                        <a href="invest.html">Option Buying</a>
+                      </li>
+                      <li style="padding-right: 0px !important">
+                        <a href="404.html">Option Selling</a>
+                      </li>
+                       <li style="padding-right: 0px !important">
+                                                <a href="404.html">Futures Buying</a>
+                                            </li>
+                                            <li style="padding-right: 0px !important">
+                                                <a href="404.html">Equity Buying</a>
+                                            </li>
+                    </ul>
+                  </li>
+                  <li class="menu-item">
+                    <a href="contact.html">Contact Us</a>
+                  </li>
+                  <li class="menu-item current-menu-item">
+                    <a href="calculator.html">Calculator</a>
+                  </li>
+                </ul>
+              </nav>
+              <div class="group-button">
+                <a href="#" class="btn-action-outline style-1">
+                  <span>Sign Up</span>
+                </a>
+                <a class="btn-action style-2" href="#">
+                  <span>Login</span>
                 </a>
               </div>
-
-              <div class="header__right">
-                <nav id="main-nav" class="main-nav">
-                  <ul id="menu-primary-menu" class="menu">
-                    <li class="menu-item ">
-                      <a href="index.html">Home</a>
-                    </li>
-                    <li class="menu-item ">
-                      <a href="about.html">About </a>
-                    </li>
-                    <li class="menu-item header__dropdown">
-                      <a
-                        class="dropdown-link dropdown-toggle"
-                        href="#"
-                        role="button"
-                      >
-                        Products
-                      </a>
-
-                      <ul class="dropdown-menu header__dropdown-menu">
-                        <li style="padding-right: 0px !important">
-                          <a href="invest.html">Option Buying</a>
-                        </li>
-                        <li style="padding-right: 0px !important">
-                          <a href="404.html">Option Selling</a>
-                        </li>
-                        <li style="padding-right: 0px !important">
-                          <a href="404.html">Futures</a>
-                        </li>
-                        <li style="padding-right: 0px !important">
-                          <a href="404.html">Equity</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="menu-item">
-                      <a href="contact.html">Contact Us</a>
-                    </li>
-                    <li class="menu-item current-menu-item">
-                      <a href="calculator.html">Calculator</a>
-                    </li>
-                  </ul>
-                </nav>
-                <div class="group-button">
-                  <a href="#" class="btn-action-outline style-1">
-                    <span>Sign Up</span>
-                  </a>
-                  <a class="btn-action style-2" href="#">
-                    <span>Login</span>
-                  </a>
-                </div>
-                <div class="mobile-button"><span></span></div>
-              </div>
+              <div class="mobile-button"><span></span></div>
             </div>
           </div>
-        </div>
-      </div>
-    </header>
-    <!-- end Header -->
-
-    <!-- Custom CSS -->
-    <style>
-      .header__dropdown-menu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background: #082f3e75;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-        padding: 0px;
-        z-index: 1000;
-      }
-
-      .header__dropdown-menu.show {
-        display: block;
-      }
-
-      .header__dropdown {
-        position: relative;
-      }
-
-      .header__dropdown-menu li {
-        padding: 0px;
-      }
-
-      .header__dropdown-menu li a {
-        color: #fff;
-        text-decoration: none;
-        display: block;
-        font-size: 14px !important;
-        padding: 5px 20px;
-      }
-
-      .header__dropdown-menu li a:hover {
-        background: #0f3543;
-      }
-    </style>
-
-    <!-- Custom JavaScript -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const dropdownToggle = document.querySelector(".dropdown-link");
-        const dropdownMenu = document.querySelector(".header__dropdown-menu");
-
-        dropdownToggle.addEventListener("click", function (e) {
-          e.preventDefault();
-          dropdownMenu.classList.toggle("show");
-        });
-
-        // Optional: Close dropdown when clicking outside
-        document.addEventListener("click", function (e) {
-          if (
-            !dropdownToggle.contains(e.target) &&
-            !dropdownMenu.contains(e.target)
-          ) {
-            dropdownMenu.classList.remove("show");
-          }
-        });
-      });
-    </script>
-
-    <!-- end Header -->
-
-    <!-- head -->
-    <div class="section section--head">
-      <div class="container">
-        <div class="row">
-          <!-- title -->
-          <div class="col-12">
-            <div class="section__title">
-              <h1 class="text-white">Groww Brokerage Calculator</h1>
-            </div>
-          </div>
-          <!-- end title -->
         </div>
       </div>
     </div>
-    <!-- end head -->
+  </header>
+  <!-- end Header -->
 
-    <!-- calculator section -->
-    <section class="section calculator-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="calculator-card">
+  <!-- Custom CSS -->
+  <style>
+    .header__dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #082f3e75;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      padding: 0px;
+      z-index: 1000;
+    }
 
-              <div class="broker-info">
-                <h3 class="text-white">Groww Brokerage Charges</h3>
-                <p>
-                  Equity Delivery: 0.1% or ₹20 per executed order (whichever is
-                  lower)
-                </p>
-                <p>
-                  Equity Intraday: 0.1% or ₹20 per executed order (whichever is
-                  lower)
-                </p>
-                <p>
-                  Futures: 0.1% or ₹20 per executed order (whichever is lower)
-                </p>
-                <p>
-                  Options: 0.1% or ₹20 per executed order (whichever is lower)
-                </p>
+    .header__dropdown-menu.show {
+      display: block;
+    }
+
+    .header__dropdown {
+      position: relative;
+    }
+
+    .header__dropdown-menu li {
+      padding: 0px;
+    }
+
+    .header__dropdown-menu li a {
+      color: #fff;
+      text-decoration: none;
+      display: block;
+      font-size: 14px !important;
+      padding: 5px 20px;
+    }
+
+    .header__dropdown-menu li a:hover {
+      background: #0f3543;
+    }
+  </style>
+
+  <!-- Custom JavaScript -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const dropdownToggle = document.querySelector(".dropdown-link");
+      const dropdownMenu = document.querySelector(".header__dropdown-menu");
+
+      dropdownToggle.addEventListener("click", function (e) {
+        e.preventDefault();
+        dropdownMenu.classList.toggle("show");
+      });
+
+      // Optional: Close dropdown when clicking outside
+      document.addEventListener("click", function (e) {
+        if (
+          !dropdownToggle.contains(e.target) &&
+          !dropdownMenu.contains(e.target)
+        ) {
+          dropdownMenu.classList.remove("show");
+        }
+      });
+    });
+  </script>
+
+  <!-- end Header -->
+
+  <!-- head -->
+  <div class="section section--head">
+    <div class="container">
+      <div class="row">
+        <!-- title -->
+        <div class="col-12">
+          <div class="section__title">
+            <h1 class="text-white">Groww Brokerage Calculator</h1>
+          </div>
+        </div>
+        <!-- end title -->
+      </div>
+    </div>
+  </div>
+  <!-- end head -->
+
+  <!-- calculator section -->
+  <section class="section calculator-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="calculator-card">
+
+            <div class="broker-info">
+              <h3 class="text-white">Groww Brokerage Charges</h3>
+              <p>
+                Equity Delivery: 0.1% or ₹20 per executed order (whichever is
+                lower)
+              </p>
+              <p>
+                Equity Intraday: 0.1% or ₹20 per executed order (whichever is
+                lower)
+              </p>
+              <p>
+                Futures: 0.1% or ₹20 per executed order (whichever is lower)
+              </p>
+              <p>
+                Options: 0.1% or ₹20 per executed order (whichever is lower)
+              </p>
+            </div>
+
+            <div class="calculator-form">
+              <h3 class="text-white">Calculate Brokerage</h3>
+              <div class="form-group">
+                <label class="form-label">Trade Type</label>
+                <select class="form-control" id="tradeType">
+                  <option value="delivery">Equity Delivery</option>
+                  <option value="intraday">Equity Intraday</option>
+                  <option value="futures">Futures</option>
+                  <option value="options">Options</option>
+                </select>
               </div>
 
-              <div class="calculator-form">
-                <h3 class="text-white">Calculate Brokerage</h3>
-                <div class="form-group">
-                  <label class="form-label">Trade Type</label>
-                  <select class="form-control" id="tradeType">
-                    <option value="delivery">Equity Delivery</option>
-                    <option value="intraday">Equity Intraday</option>
-                    <option value="futures">Futures</option>
-                    <option value="options">Options</option>
-                  </select>
+              <div class="form-group">
+                <label class="form-label">Quantity</label>
+                <input type="number" class="form-control" id="quantity" placeholder="Enter quantity" />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Price per Share (₹)</label>
+                <input type="number" class="form-control" id="price" placeholder="Enter price per share" />
+              </div>
+
+              <button class="calculate-btn" onclick="calculateGrowwBrokerage()">
+                Calculate
+              </button>
+
+              <div class="result-card" id="resultCard" style="display: none">
+                <div class="result-item">
+                  <span class="result-label">Total Trade Value</span>
+                  <span class="result-value" id="totalValue">₹0</span>
                 </div>
-
-                <div class="form-group">
-                  <label class="form-label">Quantity</label>
-                  <input
-                    type="number"
-                    class="form-control"
-                    id="quantity"
-                    placeholder="Enter quantity"
-                  />
+                <div class="result-item">
+                  <span class="result-label">Brokerage</span>
+                  <span class="result-value" id="brokerage">₹0</span>
                 </div>
-
-                <div class="form-group">
-                  <label class="form-label">Price per Share (₹)</label>
-                  <input
-                    type="number"
-                    class="form-control"
-                    id="price"
-                    placeholder="Enter price per share"
-                  />
+                <div class="result-item">
+                  <span class="result-label">STT</span>
+                  <span class="result-value" id="stt">₹0</span>
                 </div>
-
-                <button
-                  class="calculate-btn"
-                  onclick="calculateGrowwBrokerage()"
-                >
-                  Calculate
-                </button>
-
-                <div class="result-card" id="resultCard" style="display: none">
-                  <div class="result-item">
-                    <span class="result-label">Total Trade Value</span>
-                    <span class="result-value" id="totalValue">₹0</span>
-                  </div>
-                  <div class="result-item">
-                    <span class="result-label">Brokerage</span>
-                    <span class="result-value" id="brokerage">₹0</span>
-                  </div>
-                  <div class="result-item">
-                    <span class="result-label">STT</span>
-                    <span class="result-value" id="stt">₹0</span>
-                  </div>
-                  <div class="result-item">
-                    <span class="result-label">Transaction Charges</span>
-                    <span class="result-value" id="transactionCharges">₹0</span>
-                  </div>
-                  <div class="result-item">
-                    <span class="result-label">GST</span>
-                    <span class="result-value" id="gst">₹0</span>
-                  </div>
-                  <div class="result-item">
-                    <span class="result-label">SEBI Charges</span>
-                    <span class="result-value" id="sebiCharges">₹0</span>
-                  </div>
-                  <div class="result-item">
-                    <span class="result-label">Stamp Duty</span>
-                    <span class="result-value" id="stampDuty">₹0</span>
-                  </div>
-                  <div class="result-item">
-                    <span class="result-label" style="font-size: 25px;">Total Charges</span>
-                    <span class="result-value" id="totalCharges">₹0</span>
-                  </div>
+                <div class="result-item">
+                  <span class="result-label">Transaction Charges</span>
+                  <span class="result-value" id="transactionCharges">₹0</span>
+                </div>
+                <div class="result-item">
+                  <span class="result-label">GST</span>
+                  <span class="result-value" id="gst">₹0</span>
+                </div>
+                <div class="result-item">
+                  <span class="result-label">SEBI Charges</span>
+                  <span class="result-value" id="sebiCharges">₹0</span>
+                </div>
+                <div class="result-item">
+                  <span class="result-label">Stamp Duty</span>
+                  <span class="result-value" id="stampDuty">₹0</span>
+                </div>
+                <div class="result-item">
+                  <span class="result-label" style="font-size: 25px;">Total Charges</span>
+                  <span class="result-value" id="totalCharges">₹0</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-    <!-- end calculator section -->
+    </div>
+  </section>
+  <!-- end calculator section -->
 
-    <!-- footer -->
+  <!-- footer -->
 
-    <!-- Footer -->
-<footer class="footer style-1">
+  <!-- Footer -->
+  <footer class="footer style-1">
     <style>
       .footer__nav {
         display: flex;
@@ -490,29 +457,25 @@
     <div class="footer__top">
       <div class="container">
         <div class="row align-items-start">
-          <div class="col-xl-3 col-lg-3 col-md-3 col-12">
+          <div class="col-xl-5 col-lg-5 col-md-5 col-12">
             <div class="content-left">
-              <h5 class="fs-22">Don't miss out, Stay updated → Stay Synced with TheAlgoman</h5>
+              <h5 class="fs-16" style="line-height: 30px;">Don't miss out, Stay updated    </br>Stay Synced with TheAlgoman</h5>
               <p>
-                TheAlgoman is India's most trusted algo trading platform —
-                helping you earn consistent profits through fully automated,
+                TheAlgoman is India's most trusted algo trading platform —</br> 
+                helping you earn consistent profits through fully automated, </br>
                 data-driven strategies connected directly to your trading
                 account.
               </p>
-              <form action="#" id="subscribe-form">
-                <input type="email" placeholder="Enter your email" required="" id="subscribe-email" />
-                <button class="btn-action style-2" type="submit" id="subscribe-button">
-                  <span class="effect">SUBSCRIBE</span>
-                </button>
-              </form>
+            
             </div>
           </div>
           <div class="col-xl-2 col-lg-2 col-md-2 col-12">
             <h6 class="footer__title">Company</h6>
             <div class="footer__nav">
               <a href="about.html">About us</a>
-             
+
               <a href="contact.html">Contact Us</a>
+               <a href="faq.html">How it works</a>
             </div>
           </div>
           <div class="col-xl-2 col-lg-2 col-md-2 col-12">
@@ -520,34 +483,37 @@
             <div class="footer__nav">
               <a href="invest.html">Option Buying</a>
               <a href="404.html">Option Selling</a>
-              <a href="404.html">Futures</a>
-              <a href="404.html">Equity</a>
+              <a href="404.html">Futures Buying</a>
+              <a href="404.html">Equity Buying</a>
             </div>
           </div>
           <div class="col-xl-2 col-lg-2 col-md-2 col-12 ">
             <h6 class="footer__title">Support</h6>
             <div class="footer__nav">
-                <a href="contact.html">Help center</a>
-                                <a href="faq.html">How it works</a>
-                                <a href="privacy.html">Privacy policy</a>
-                                <a href="terms.html">Terms & conditions</a>
-                                <a href="risk.html">Risk Disclaimer</a>
-                                <a href="legal.html">Legal Disclaimer</a>
+
+             
+              <a href="privacy.html">Privacy policy</a>
+              <a href="terms.html">Terms & conditions</a>
+              <a href="risk.html">Risk Disclaimer</a>
+              <a href="legal.html">Legal Disclaimer</a>
             </div>
           </div>
-          <div class="col-xl-3 col-lg-3 col-md-3 col-12">
-            <div class="conten">
-              <p>
-                TheAlgoman is India's most trusted algo trading platform —
-                helping you earn consistent profits through fully automated,
-                data-driven strategies connected directly to your trading
-                account.
-              </p>
-              <ul class="list-social">
+          
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12" style="display: flex;justify-content: space-between;">
+            <p>© 2025. All rights reserved by <a href="#">TheAlgoman</a></p>
+
+             <ul class="list-social">
                 <li><span class="icon-twitter"></span></li>
                 <li><span class="icon-facebook"></span></li>
                 <li><span class="icon-youtobe"></span></li>
-<i style="
+                <i style="
     width: 40px;
     height: 40px;
     min-width: 40px;
@@ -561,108 +527,99 @@
     color: white;
 " class="fab fa-instagram"></i>
               </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="footer__bottom">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <p>© 2025. All rights reserved by <a href="#">TheAlgoman</a></p>
           </div>
         </div>
       </div>
     </div>
   </footer>
-    <!-- End Footer -->
-    <!-- JS -->
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/smooth-scrollbar.js"></script>
-    <script src="js/splide.min.js"></script>
-    <script src="js/three.min.js"></script>
-    <script src="js/vanta.fog.min.js"></script>
-    <script src="js/main.js"></script>
+  <!-- End Footer -->
+  <!-- JS -->
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/smooth-scrollbar.js"></script>
+  <script src="js/splide.min.js"></script>
+  <script src="js/three.min.js"></script>
+  <script src="js/vanta.fog.min.js"></script>
+  <script src="js/main.js"></script>
 
-    <script>
-      function calculateGrowwBrokerage() {
-        const quantity = parseFloat(document.getElementById("quantity").value);
-        const price = parseFloat(document.getElementById("price").value);
-        const tradeType = document.getElementById("tradeType").value;
+  <script>
+    function calculateGrowwBrokerage() {
+      const quantity = parseFloat(document.getElementById("quantity").value);
+      const price = parseFloat(document.getElementById("price").value);
+      const tradeType = document.getElementById("tradeType").value;
 
-        if (!quantity || !price) {
-          alert("Please enter valid quantity and price");
-          return;
-        }
-
-        const totalValue = quantity * price;
-        let brokerage = 0;
-        let stt = 0;
-        let transactionCharges = 0;
-        let gst = 0;
-        let sebiCharges = 0;
-        let stampDuty = 0;
-
-        // Groww specific calculations
-        switch (tradeType) {
-          case "delivery":
-            brokerage = Math.min(20, totalValue * 0.001); // 0.1% or ₹20 whichever is lower
-            stt = totalValue * 0.001; // 0.1%
-            break;
-          case "intraday":
-            brokerage = Math.min(20, totalValue * 0.001); // 0.1% or ₹20 whichever is lower
-            stt = totalValue * 0.00025; // 0.025%
-            break;
-          case "futures":
-            brokerage = Math.min(20, totalValue * 0.001); // 0.1% or ₹20 whichever is lower
-            stt = totalValue * 0.0001; // 0.01%
-            break;
-          case "options":
-            brokerage = Math.min(20, totalValue * 0.001); // 0.1% or ₹20 whichever is lower
-            stt = totalValue * 0.0005; // 0.05%
-            break;
-        }
-
-        // Common charges
-        transactionCharges = totalValue * 0.0000345; // 0.00345%
-        gst = brokerage * 0.18; // 18% of brokerage
-        sebiCharges = totalValue * 0.000001; // 0.0001%
-        stampDuty = totalValue * 0.00003; // 0.003%
-
-        const totalCharges =
-          brokerage + stt + transactionCharges + gst + sebiCharges + stampDuty;
-
-        // Update the result card
-        document.getElementById("totalValue").textContent =
-          "₹" + totalValue.toFixed(2);
-        document.getElementById("brokerage").textContent =
-          "₹" + brokerage.toFixed(2);
-        document.getElementById("stt").textContent = "₹" + stt.toFixed(2);
-        document.getElementById("transactionCharges").textContent =
-          "₹" + transactionCharges.toFixed(2);
-        document.getElementById("gst").textContent = "₹" + gst.toFixed(2);
-        document.getElementById("sebiCharges").textContent =
-          "₹" + sebiCharges.toFixed(2);
-        document.getElementById("stampDuty").textContent =
-          "₹" + stampDuty.toFixed(2);
-        document.getElementById("totalCharges").textContent =
-          "₹" + totalCharges.toFixed(2);
-
-        document.getElementById("resultCard").style.display = "block";
+      if (!quantity || !price) {
+        alert("Please enter valid quantity and price");
+        return;
       }
-    </script>
 
-    <script src="app/js/jquery.min.js"></script>
-    <script src="app/js/jquery.easing.js"></script>
-    <script src="app/js/app.js"></script>
-    <script src="app/js/count-down.js"></script>
-    <script src="app/js/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
-    <script src="app/js/mouse.js"></script>
+      const totalValue = quantity * price;
+      let brokerage = 0;
+      let stt = 0;
+      let transactionCharges = 0;
+      let gst = 0;
+      let sebiCharges = 0;
+      let stampDuty = 0;
 
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-  </body>
+      // Groww specific calculations
+      switch (tradeType) {
+        case "delivery":
+          brokerage = Math.min(20, totalValue * 0.001); // 0.1% or ₹20 whichever is lower
+          stt = totalValue * 0.001; // 0.1%
+          break;
+        case "intraday":
+          brokerage = Math.min(20, totalValue * 0.001); // 0.1% or ₹20 whichever is lower
+          stt = totalValue * 0.00025; // 0.025%
+          break;
+        case "futures":
+          brokerage = Math.min(20, totalValue * 0.001); // 0.1% or ₹20 whichever is lower
+          stt = totalValue * 0.0001; // 0.01%
+          break;
+        case "options":
+          brokerage = Math.min(20, totalValue * 0.001); // 0.1% or ₹20 whichever is lower
+          stt = totalValue * 0.0005; // 0.05%
+          break;
+      }
+
+      // Common charges
+      transactionCharges = totalValue * 0.0000345; // 0.00345%
+      gst = brokerage * 0.18; // 18% of brokerage
+      sebiCharges = totalValue * 0.000001; // 0.0001%
+      stampDuty = totalValue * 0.00003; // 0.003%
+
+      const totalCharges =
+        brokerage + stt + transactionCharges + gst + sebiCharges + stampDuty;
+
+      // Update the result card
+      document.getElementById("totalValue").textContent =
+        "₹" + totalValue.toFixed(2);
+      document.getElementById("brokerage").textContent =
+        "₹" + brokerage.toFixed(2);
+      document.getElementById("stt").textContent = "₹" + stt.toFixed(2);
+      document.getElementById("transactionCharges").textContent =
+        "₹" + transactionCharges.toFixed(2);
+      document.getElementById("gst").textContent = "₹" + gst.toFixed(2);
+      document.getElementById("sebiCharges").textContent =
+        "₹" + sebiCharges.toFixed(2);
+      document.getElementById("stampDuty").textContent =
+        "₹" + stampDuty.toFixed(2);
+      document.getElementById("totalCharges").textContent =
+        "₹" + totalCharges.toFixed(2);
+
+      document.getElementById("resultCard").style.display = "block";
+    }
+  </script>
+
+  <script src="app/js/jquery.min.js"></script>
+  <script src="app/js/jquery.easing.js"></script>
+  <script src="app/js/app.js"></script>
+  <script src="app/js/count-down.js"></script>
+  <script src="app/js/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script src="app/js/mouse.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+</body>
+
 </html>

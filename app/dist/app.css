@@ -953,8 +953,7 @@ h3, h5 {
 .btn-action.style-2 {
   padding: 14px 41px;
   border-radius: 12px;
-  position: relative;
-  overflow: hidden;
+  justify-content:center;
   font-family: "Zen Dots";
   font-weight: 400;
   background: linear-gradient(90deg, #F54097 0%, #EF369B 7.69%, #E92C9F 15.38%, #E122A4 23.08%, #D918A9 30.77%, #D00DAE 38.46%, #C603B3 46.15%, #BA00B9 53.85%, #AD01BE 61.54%, #9F07C4 69.23%, #8E10C9 76.92%, #7A18CF 84.62%, #6220D4 92.31%, #3F26D9 100%), linear-gradient(87.21deg, #F54097 0%, #3F26D9 100%);
@@ -5712,7 +5711,7 @@ h3, h5 {
   cursor: pointer;
 }
 .section-faq.style-1 .section-faq__main .flat-tabs .content-tab .flat-toggle .toggle-title {
-  text-transform: capitalize;
+  text-transform: math-auto;
   margin-bottom: 0;
   position: relative;
 }
@@ -9196,7 +9195,7 @@ img.mfp-img {
 .footer .list-social {
   display: flex;
   justify-content: center;
-  margin-top: 30px;
+  /* margin-top: 30px; */
 }
 .footer .list-social li {
   width: 40px;
@@ -9249,7 +9248,7 @@ img.mfp-img {
   border-bottom: 1px solid rgba(99, 103, 112, 0.3);
 }
 .footer.style-1 .footer__top .content-left {
-  padding-top: 13px;
+  /* padding-top: 13px; */
 }
 .footer.style-1 .footer__top .content-left h5 {
   font-family: "Zen Dots";
@@ -10773,7 +10772,7 @@ img.mfp-img {
 }
 
 .contact {
-  padding: 80px 0 53px;
+  padding: 52px 0 53px;
 }
 .contact .container {
   max-width: 960px;
@@ -12771,7 +12770,7 @@ img.mfp-img {
   }
 }
 .page-title {
-  padding: 94px 0 61px ;
+  padding: 98px 0 22px ;
   background: url("../../assets/images/background/bg-bd.png");
   /* background: url("../../assets/images/background/bg-pagetitle.jpg") no-repeat; */
   background-position: center center;
@@ -12820,3 +12819,27 @@ img.mfp-img {
         background-color: #1a2d3a;
         color: white;
       }
+
+
+      .header__dropdown-menu.show{
+        background: #172d35;
+      }
+
+      .float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#1e94be;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+  font-size:30px;
+	box-shadow: 2px 2px 3px #999;
+  z-index:100;
+}
+
+.my-float{
+	margin-top:16px;
+}

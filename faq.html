@@ -11,6 +11,30 @@
     <link rel="stylesheet" href="app/bootstrap/css/bootstrap.min.css">
 
     <link rel="stylesheet" href="app/dist/app.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<a href="https://api.whatsapp.com/send?phone=51955081075&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202." class="float" target="_blank">
+<i class="fa fa-whatsapp my-float"></i>
+</a>
+<style>
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#25d366;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+  font-size:30px;
+	box-shadow: 2px 2px 3px #999;
+  z-index:100;
+}
+
+.my-float{
+	margin-top:16px;
+}
+</style>
     <link href="app/dist/aos.css" rel="stylesheet">
     <!-- end Styles -->
 
@@ -21,6 +45,7 @@
         tr {
             color: white;
         }
+
 
         td {
             color: white;
@@ -381,10 +406,10 @@
                                                 <a href="404.html">Option Selling</a>
                                             </li>
                                             <li style="padding-right: 0px !important">
-                                                <a href="404.html">Futures</a>
+                                                <a href="404.html">Futures Buying</a>
                                             </li>
                                             <li style="padding-right: 0px !important">
-                                                <a href="404.html">Equity</a>
+                                                <a href="404.html">Equity Buying</a>
                                             </li>
                                         </ul>
                                     </li>
@@ -491,10 +516,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="content">
-                        <h2 class="title">Got questions?<span></span></h2>
-                        <p> We’ve got answers. Find everything you need to know about our company and services right
-                            here.
-                        </p>
+                        <h2 class="title">How it works<span></span></h2>
+
                     </div>
                 </div>
             </div>
@@ -511,7 +534,17 @@
     <section class="section-faq style-1" id="faq">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12" style="
+    margin-bottom: 39px;
+">
+
+                    <div class="content text-center" style="
+    margin-top: 39px;
+">
+                        <p> We’ve got answers. Find everything you need to know about our company and services right
+                            here.
+                        </p>
+                    </div>
 
 
                     <div class="section-faq__main aos-init" data-aos="fade-up" data-aos-duration="1000">
@@ -552,8 +585,8 @@
                                     </div>
 
                                     <div class="flat-toggle">
-                                        <h5 class="toggle-title active">Can I manually exit the trades if needed?</h5>
-                                        <p class="toggle-content" style="display: block;">Yes, TheAlgoman allows you to
+                                        <h5 class="toggle-title ">Can I manually exit the trades if needed?</h5>
+                                        <p class="toggle-content">Yes, TheAlgoman allows you to
                                             manually exit trades. While the algos are automated, you retain full control
                                             and can intervene anytime based on market conditions or your trading goals.
                                         </p>
@@ -573,84 +606,95 @@
                                         </p>
                                     </div>
 
-                                    <div class="flat-toggle">
+                                    <div class="flat-toggle" onclick="shownew()">
                                         <h5 class="toggle-title">Who bears the cost of trading APIs and what are the
                                             charges across brokers?</h5>
                                         <p class="toggle-content">Clients bear the cost of trading APIs from their
                                             respective brokers. These APIs are required for automating trading
                                             strategies.</p>
+                                        <div class="hideshow" style="display: none;">
 
-                                        <p><strong>Latest API charges from popular brokers:</strong></p>
-                                        <table class="table table-bordered">
-                                            <thead>
-                                                <tr>
-                                                    <th>Broker</th>
-                                                    <th>API Charges</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>5Paisa</td>
-                                                    <td>Free</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>IIFL</td>
-                                                    <td>Free</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Sharekhan</td>
-                                                    <td>Free</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Zerodha</td>
-                                                    <td>₹2,000/month per app</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Kotak Securities</td>
-                                                    <td>Free</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Upstox</td>
-                                                    <td>Free</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>AliceBlue</td>
-                                                    <td>Free</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Groww</td>
-                                                    <td>₹499 + taxes/month</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Motilal Oswal</td>
-                                                    <td>Free</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Nuvama</td>
-                                                    <td>Free</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Tiqs</td>
-                                                    <td>₹5/order</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Finvasia</td>
-                                                    <td>Free</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Angel One</td>
-                                                    <td>Free</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                        <p><strong>Note:</strong> TheAlgoman does not charge for broker APIs. Clients
-                                            pay directly to brokers.</p>
-                                        <p>For help choosing the right broker/API combo, contact our support team.</p>
+                                            <p><strong>Latest API charges from popular brokers:</strong></p>
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Broker</th>
+                                                        <th>API Charges</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>5Paisa</td>
+                                                        <td>Free</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>IIFL</td>
+                                                        <td>Free</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Sharekhan</td>
+                                                        <td>Free</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Zerodha</td>
+                                                        <td>₹2,000/month per app</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Kotak Securities</td>
+                                                        <td>Free</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Upstox</td>
+                                                        <td>Free</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>AliceBlue</td>
+                                                        <td>Free</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Groww</td>
+                                                        <td>₹499 + taxes/month</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Motilal Oswal</td>
+                                                        <td>Free</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Nuvama</td>
+                                                        <td>Free</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Tiqs</td>
+                                                        <td>₹5/order</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Finvasia</td>
+                                                        <td>Free</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Angel One</td>
+                                                        <td>Free</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <p><strong>Note:</strong> TheAlgoman does not charge for broker APIs.
+                                                Clients
+                                                pay directly to brokers.</p>
+                                            <p>For help choosing the right broker/API combo, contact our support team.
+                                            </p>
+                                        </div>
                                     </div>
+                                    <script>
+                                        function shownew() {
+                                            $('.hideshow').toggle();
+
+                                        }
+
+                                    </script>
 
                                     <div class="flat-toggle">
                                         <h5 class="toggle-title">Do I need any specific setup or capital to use the
-                                            Options Buying Algo?</h5>
+                                            options buying algo?</h5>
                                         <div class="toggle-content">
                                             <p><strong>Active Trading Account with API Access</strong></p>
                                             <p>Must have a trading account with one of our supported brokers (Zerodha,
@@ -940,29 +984,26 @@
         <div class="footer__top">
             <div class="container">
                 <div class="row align-items-start">
-                    <div class="col-xl-3 col-lg-3 col-md-3 col-12">
+                    <div class="col-xl-5 col-lg-5 col-md-5 col-12">
                         <div class="content-left">
-                            <h5 class="fs-22">Don't miss out, Stay updated → Stay Synced with TheAlgoman</h5>
+                            <h5 class="fs-16" style="line-height: 30px;">Don't miss out, Stay updated </br>Stay Synced
+                                with TheAlgoman</h5>
                             <p>
-                                TheAlgoman is India's most trusted algo trading platform —
-                                helping you earn consistent profits through fully automated,
+                                TheAlgoman is India's most trusted algo trading platform —</br>
+                                helping you earn consistent profits through fully automated, </br>
                                 data-driven strategies connected directly to your trading
                                 account.
                             </p>
-                            <form action="#" id="subscribe-form">
-                                <input type="email" placeholder="Enter your email" required="" id="subscribe-email" />
-                                <button class="btn-action style-2" type="submit" id="subscribe-button">
-                                    <span class="effect">SUBSCRIBE</span>
-                                </button>
-                            </form>
+
                         </div>
                     </div>
                     <div class="col-xl-2 col-lg-2 col-md-2 col-12">
                         <h6 class="footer__title">Company</h6>
                         <div class="footer__nav">
                             <a href="about.html">About us</a>
-                            <a href="disclaimer">Legal Disclaimer</a>
+
                             <a href="contact.html">Contact Us</a>
+                            <a href="faq.html">How it works</a>
                         </div>
                     </div>
                     <div class="col-xl-2 col-lg-2 col-md-2 col-12">
@@ -970,36 +1011,37 @@
                         <div class="footer__nav">
                             <a href="invest.html">Option Buying</a>
                             <a href="404.html">Option Selling</a>
-                            <a href="404.html">Futures</a>
-                            <a href="404.html">Equity</a>
+                            <a href="404.html">Futures Buying</a>
+                            <a href="404.html">Equity Buying</a>
                         </div>
                     </div>
                     <div class="col-xl-2 col-lg-2 col-md-2 col-12 ">
                         <h6 class="footer__title">Support</h6>
                         <div class="footer__nav">
-                            <div class="footer__nav">
-                                <a href="contact.html">Help center</a>
-                                <a href="faq.html">How it works</a>
-                                <a href="privacy.html">Privacy policy</a>
-                                <a href="terms.html">Terms & conditions</a>
-                                <a href="risk.html">Risk Disclaimer</a>
-                                <a href="legal.html">Legal Disclaimer</a>
-                            </div>
+
+
+                            <a href="privacy.html">Privacy policy</a>
+                            <a href="terms.html">Terms & conditions</a>
+                            <a href="risk.html">Risk Disclaimer</a>
+                            <a href="legal.html">Legal Disclaimer</a>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-3 col-md-3 col-12">
-                        <div class="conten">
-                            <p>
-                                TheAlgoman is India's most trusted algo trading platform —
-                                helping you earn consistent profits through fully automated,
-                                data-driven strategies connected directly to your trading
-                                account.
-                            </p>
-                            <ul class="list-social">
-                                <li><span class="icon-twitter"></span></li>
-                                <li><span class="icon-facebook"></span></li>
-                                <li><span class="icon-youtobe"></span></li>
-                                <i style="
+
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12" style="display: flex;justify-content: space-between;">
+                        <p>© 2025. All rights reserved by <a href="#">TheAlgoman</a></p>
+
+                        <ul class="list-social">
+                            <li><span class="icon-twitter"></span></li>
+                            <li><span class="icon-facebook"></span></li>
+                            <li><span class="icon-youtobe"></span></li>
+                            <i style="
     width: 40px;
     height: 40px;
     min-width: 40px;
@@ -1012,18 +1054,7 @@
     justify-content: center;
     color: white;
 " class="fab fa-instagram"></i>
-
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer__bottom">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <p>© 2025. All rights reserved by <a href="#">TheAlgoman</a></p>
+                        </ul>
                     </div>
                 </div>
             </div>

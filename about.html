@@ -11,6 +11,30 @@
     <link rel="stylesheet" href="app/bootstrap/css/bootstrap.min.css">
 
     <link rel="stylesheet" href="app/dist/app.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<a href="https://api.whatsapp.com/send?phone=51955081075&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202." class="float" target="_blank">
+<i class="fa fa-whatsapp my-float"></i>
+</a>
+<style>
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#25d366;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+  font-size:30px;
+	box-shadow: 2px 2px 3px #999;
+  z-index:100;
+}
+
+.my-float{
+	margin-top:16px;
+}
+</style>
     <link href="app/dist/aos.css" rel="stylesheet">
     <!-- end Styles -->
 
@@ -19,54 +43,55 @@
     <link rel="apple-touch-icon-precomposed" href="assets/images/logo/logo.png">
     <style>
         .header {
-      background: transparent;
-      transition: background 0.3s ease;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-    }
+            background: transparent;
+            transition: background 0.3s ease;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
 
-    .header.scrolled {
-      background: #182124;
-      /* Darker background with opacity */
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    }
+        .header.scrolled {
+            background: #182124;
+            /* Darker background with opacity */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
 
-    .header__dropdown-menu {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background: #082f3e75;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-      padding: 0px;
-      z-index: 1000;
-    }
+        .header__dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #082f3e75;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            padding: 0px;
+            z-index: 1000;
+        }
 
-    .header__dropdown-menu.show {
-      display: block;
-    }
+        .header__dropdown-menu.show {
+            display: block;
+        }
 
-    .header__dropdown {
-      position: relative;
-    }
+        .header__dropdown {
+            position: relative;
+        }
 
-    .header__dropdown-menu li {
-      padding: 0px;
-    }
+        .header__dropdown-menu li {
+            padding: 0px;
+        }
 
-    .header__dropdown-menu li a {
-      color: #fff;
-      text-decoration: none;
-      display: block;
-      font-size: 14px !important;
-      padding: 5px 20px;
-    }
+        .header__dropdown-menu li a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            font-size: 14px !important;
+            padding: 5px 20px;
+        }
 
-    .header__dropdown-menu li a:hover {
-      background: #0f3543;
-    }
+        .header__dropdown-menu li a:hover {
+            background: #0f3543;
+        }
+
         tr {
             color: white;
         }
@@ -354,17 +379,15 @@
             }
         }
     </style>
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
 
-<!-- Splide CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" />
+    <!-- Splide CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" />
 
-<!-- Font Awesome CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
 
@@ -394,149 +417,140 @@
     <div class="mouse-cursor cursor-inner"></div>
     <!-- /MAGIC CURSOR -->
     <!-- Header -->
-   <header id="header_main" class="header">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="header__body">
-              <div class="header__logo">
-                <a href="index.html">
-                  <img
-                    id="site-logo"
-                    src="assets/images/logo/logo.png"
-                    alt="Monteno"
-                    width="65"
-                    height="60"
-                  />
-                </a>
-              </div>
+    <header id="header_main" class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="header__body">
+                        <div class="header__logo">
+                            <a href="index.html">
+                                <img id="site-logo" src="assets/images/logo/logo.png" alt="Monteno" width="65"
+                                    height="60" />
+                            </a>
+                        </div>
 
-              <div class="header__right">
-                <nav id="main-nav" class="main-nav">
-                  <ul id="menu-primary-menu" class="menu">
-                    <li class="menu-item ">
-                      <a href="index.html">Home</a>
-                    </li>
-                    <li class="menu-item current-menu-item">
-                      <a href="about.html">About </a>
-                    </li>
-                    <li class="menu-item header__dropdown">
-                      <a
-                        class="dropdown-link dropdown-toggle"
-                        href="#"
-                        role="button"
-                      >
-                        Products
-                      </a>
+                        <div class="header__right">
+                            <nav id="main-nav" class="main-nav">
+                                <ul id="menu-primary-menu" class="menu">
+                                    <li class="menu-item ">
+                                        <a href="index.html">Home</a>
+                                    </li>
+                                    <li class="menu-item current-menu-item">
+                                        <a href="about.html">About </a>
+                                    </li>
+                                    <li class="menu-item header__dropdown">
+                                        <a class="dropdown-link dropdown-toggle" href="#" role="button">
+                                            Products
+                                        </a>
 
-                      <ul class="dropdown-menu header__dropdown-menu">
-                        <li style="padding-right: 0px !important">
-                          <a href="invest.html">Option Buying</a>
-                        </li>
-                        <li style="padding-right: 0px !important">
-                          <a href="404.html">Option Selling</a>
-                        </li>
-                        <li style="padding-right: 0px !important">
-                          <a href="404.html">Futures</a>
-                        </li>
-                        <li style="padding-right: 0px !important">
-                          <a href="404.html">Equity</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="menu-item">
-                      <a href="contact.html">Contact Us</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="calculator.html">Calculator</a>
-                    </li>
-                  </ul>
-                </nav>
-                <div class="group-button">
-                  <a href="#" class="btn-action-outline style-1">
-                    <span>Sign Up</span>
-                  </a>
-                  <a class="btn-action style-2" href="#">
-                    <span>Login</span>
-                  </a>
+                                        <ul class="dropdown-menu header__dropdown-menu">
+                                            <li style="padding-right: 0px !important">
+                                                <a href="invest.html">Option Buying</a>
+                                            </li>
+                                            <li style="padding-right: 0px !important">
+                                                <a href="404.html">Option Selling</a>
+                                            </li>
+                                            <li style="padding-right: 0px !important">
+                                                <a href="404.html">Futures Buying</a>
+                                            </li>
+                                            <li style="padding-right: 0px !important">
+                                                <a href="404.html">Equity Buying</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="contact.html">Contact Us</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="calculator.html">Calculator</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <div class="group-button">
+                                <a href="#" class="btn-action-outline style-1">
+                                    <span>Sign Up</span>
+                                </a>
+                                <a class="btn-action style-2" href="#">
+                                    <span>Login</span>
+                                </a>
+                            </div>
+                            <div class="mobile-button"><span></span></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="mobile-button"><span></span></div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
     </header>
     <!-- end Header -->
 
     <!-- Custom CSS -->
     <style>
-      .header__dropdown-menu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background: #082f3e75;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-        padding: 0px;
-        z-index: 1000;
-        border-radius: 10px;
-        overflow: hidden;
-      }
+        .header__dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #082f3e75;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            padding: 0px;
+            z-index: 1000;
+            border-radius: 10px;
+            overflow: hidden;
+        }
 
-      .header__dropdown-menu.show {
-        display: block;
-      }
+        .header__dropdown-menu.show {
+            display: block;
+        }
 
-      .header__dropdown {
-        position: relative;
-      }
+        .header__dropdown {
+            position: relative;
+        }
 
-      .header__dropdown-menu li {
-        width: 100%;
-        padding: 0px;
-      }
+        .header__dropdown-menu li {
+            width: 100%;
+            padding: 0px;
+        }
 
-      .header__dropdown-menu li a {
-        color: #fff;
-        text-decoration: none;
-        display: block;
-        font-size: 14px !important;
-        padding: 5px 20px;
-      }
+        .header__dropdown-menu li a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            font-size: 14px !important;
+            padding: 5px 20px;
+        }
 
-      /* .header__dropdown-menu li a {
+        /* .header__dropdown-menu li a {
         color: #ffffff;
         text-decoration: none;
         display: block;
       } */
 
-      .header__dropdown-menu li a:hover {
-        background: #0f3543;
-      }
+        .header__dropdown-menu li a:hover {
+            background: #0f3543;
+        }
     </style>
 
     <!-- Custom JavaScript -->
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const dropdownToggle = document.querySelector(".dropdown-link");
-        const dropdownMenu = document.querySelector(".header__dropdown-menu");
+        document.addEventListener("DOMContentLoaded", function () {
+            const dropdownToggle = document.querySelector(".dropdown-link");
+            const dropdownMenu = document.querySelector(".header__dropdown-menu");
 
-        dropdownToggle.addEventListener("click", function (e) {
-          e.preventDefault();
-          dropdownMenu.classList.toggle("show");
-        });
+            dropdownToggle.addEventListener("click", function (e) {
+                e.preventDefault();
+                dropdownMenu.classList.toggle("show");
+            });
 
-        // Optional: Close dropdown when clicking outside
-        document.addEventListener("click", function (e) {
-          if (
-            !dropdownToggle.contains(e.target) &&
-            !dropdownMenu.contains(e.target)
-          ) {
-            dropdownMenu.classList.remove("show");
-          }
+            // Optional: Close dropdown when clicking outside
+            document.addEventListener("click", function (e) {
+                if (
+                    !dropdownToggle.contains(e.target) &&
+                    !dropdownMenu.contains(e.target)
+                ) {
+                    dropdownMenu.classList.remove("show");
+                }
+            });
         });
-      });
     </script>
 
     <!-- end header -->
@@ -547,7 +561,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="content">
-                        <h2 class="title">About - <span>TheAlgoman</span></h2>
+                        <h2 class="title">About Us</h2>
                     </div>
                 </div>
             </div>
@@ -559,13 +573,13 @@
 
     <!-- Section Features -->
 
-    <section class="road-map style-1 pricing-section " style="margin-top: 60px;" id="roadmap">
+    <section class="road-map style-1 pricing-section " style="margin-top: 30px;" id="roadmap">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="block-text content" data-aos="fade-up" data-aos-duration="1000">
-                        <h3 class="heading text-center" style="color: #00b4d8;"> <span>Who We Are ?</span>
-                        </h3>
+                        <!-- <h3 class="heading text-center" style="color: #00b4d8;"> <span>Who We Are ?</span>
+                        </h3> -->
                         <p>We are India's fastest-growing automated trading platform, making algorithmic profits
                             accessible to every investor.
                         </p>
@@ -602,7 +616,8 @@
                             <p class="fs-17">To deliver safe, smart, and consistent profits through disciplined,
                                 data-driven algorithmic trading for every investor.</p>
                             <p>Our mission is to revolutionize retail trading in India by offering algorithmic solutions
-                                that focus on consistent performance, capital safety, and complete transparency.</p></br>
+                                that focus on consistent performance, capital safety, and complete transparency.</p>
+                            </br>
                             <p>We're committed to helping you earn steady returns while minimizing risks, without you
                                 having to spend hours analyzing the market or chasing unreliable tips.</p>
                         </div>
@@ -641,7 +656,7 @@
                             <p>We promise transparency, reliability, and performance. No emotional trades, no hidden
                                 agendas — only proven strategies executed through your Demat account with full control
                                 in your hands.</p></br>
-                                </br>
+                            </br>
                             <p>At TheAlgoman, your success is our only benchmark, and we're relentless about delivering
                                 it.</p>
                         </div>
@@ -653,131 +668,137 @@
     </section>
 
     <section class="about style-1" style="padding: 10px 50px;">
-    <div class="container">
-        <div class="row">
+        <div class="container">
+            <div class="row">
 
-            <div class="col-xl-6 col-md-12">
-                <div class="about__content">
-                    <div class="block-text">
-                        <h3 class="title">Why Choose <span style="color: #00b4d8;"> TheAlgoman?</span></h3>
-                    </div>
-
-                    <div class="list-icon-box">
-                        <div class="icon-box">
-                            <div class="icon"><i class="fas fa-plug"></i></div>
-                            <div class="content">
-                                <h5>Plug-and-Play Simplicity</h5>
-                                <p class="fs-14">No coding, no complicated setups. Just link your Demat, choose a
-                                    plan, and let our algos work for you.</p>
-                            </div>
+                <div class="col-xl-6 col-md-12">
+                    <div class="about__content">
+                        <div class="block-text">
+                            <h3 class="title">Why Choose <span style="color: #00b4d8;"> TheAlgoman?</span></h3>
                         </div>
 
-                        <div class="icon-box">
-                            <div class="icon"><i class="fas fa-chart-line"></i></div>
-                            <div class="content">
-                                <h5>Consistent Daily Profits</h5>
-                                <p class="fs-14">Proprietary, risk-managed strategies designed for reliable,
-                                    consistent returns.</p>
+                        <div class="list-icon-box">
+                            <div class="icon-box">
+                                <div class="icon"><i class="fas fa-plug"></i></div>
+                                <div class="content">
+                                    <h5>Plug-and-Play Simplicity</h5>
+                                    <p class="fs-14">No coding, no complicated setups. Just link your Demat, choose a
+                                        plan, and let our algos work for you.</p>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="icon-box">
-                            <div class="icon"><i class="fas fa-robot"></i></div>
-                            <div class="content">
-                                <h5>100% Automated, Zero Emotions</h5>
-                                <p class="fs-14">AI-driven algos make smart, logical trades — leaving human emotions
-                                    out of the equation.</p>
+                            <div class="icon-box">
+                                <div class="icon"><i class="fas fa-chart-line"></i></div>
+                                <div class="content">
+                                    <h5>Consistent Daily Profits</h5>
+                                    <p class="fs-14">Proprietary, risk-managed strategies designed for reliable,
+                                        consistent returns.</p>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="icon-box">
-                            <div class="icon"><i class="fas fa-user-lock"></i></div>
-                            <div class="content">
-                                <h5>Your Demat, Your Control</h5>
-                                <p class="fs-14">Full ownership, real-time access, and total transparency on every
-                                    trade.</p>
+                            <div class="icon-box">
+                                <div class="icon"><i class="fas fa-robot"></i></div>
+                                <div class="content">
+                                    <h5>100% Automated, Zero Emotions</h5>
+                                    <p class="fs-14">AI-driven algos make smart, logical trades — leaving human emotions
+                                        out of the equation.</p>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="icon-box">
-                            <div class="icon"><i class="fas fa-wallet"></i></div>
-                            <div class="content">
-                                <h5>Affordable, Flexible Plans</h5>
-                                <p class="fs-14">From 1 Week to 12 Months — with Free Days bonuses as you commit for
-                                    longer.</p>
+                            <div class="icon-box">
+                                <div class="icon"><i class="fas fa-user-lock"></i></div>
+                                <div class="content">
+                                    <h5>Your Demat, Your Control</h5>
+                                    <p class="fs-14">Full ownership, real-time access, and total transparency on every
+                                        trade.</p>
+                                </div>
+                            </div>
+
+                            <div class="icon-box">
+                                <div class="icon"><i class="fas fa-wallet"></i></div>
+                                <div class="content">
+                                    <h5>Affordable, Flexible Plans</h5>
+                                    <p class="fs-14">From 1 Week to 12 Months — with Free Days bonuses as you commit for
+                                        longer.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-xl-5 col-md-12">
-                <div  style="padding-left: 90px;">
-                    <img src="assets/images/algo3.png" alt="Algo Man" style="
+                <div class="col-xl-5 col-md-12">
+                    <div style="padding-left: 90px;">
+                        <img src="assets/images/algo3.png" alt="Algo Man" style="
     margin-top: 49px;
 ">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials py-5 " id="testimonials">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">What Our Clients Say</h2>
+                <p class="text-muted">Real experiences from real users who trusted TheAlgoman.</p>
+            </div>
+
+            <div id="testimonial-carousel" class="splide" aria-label="Testimonials">
+                <div class="splide__track">
+                    <ul class="splide__list">
+
+                        <li class="splide__slide">
+                            <div class="testimonial-item p-4  shadow rounded text-center"
+                                style="background-color: #1a2d3a;">
+                                <div class="testimonial-quote mb-3">
+                                    <i class="fas fa-quote-left fa-2x text-primary"></i>
+                                </div>
+                                <p class="mb-4">"I recovered my entire capital within 10 days and now every day is pure
+                                    profit. TheAlgoman is the smartest decision I've made."</p>
+                                <div class="testimonial-author">
+                                    <div class="fw-bold">Ritesh Patel</div>
+                                    <div class="text-muted">Surat</div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="splide__slide">
+                            <div class="testimonial-item p-4  shadow rounded text-center"
+                                style="background-color: #1a2d3a;">
+                                <div class="testimonial-quote mb-3">
+                                    <i class="fas fa-quote-left fa-2x text-primary"></i>
+                                </div>
+                                <p class="mb-4">"No stress, no screen time. I just check my ledger at the end of the day
+                                    and smile. The returns are unbelievable."</p>
+                                <div class="testimonial-author">
+                                    <div class="fw-bold">Mehul Shah</div>
+                                    <div class="text-muted">Mumbai</div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="splide__slide">
+                            <div class="testimonial-item p-4  shadow rounded text-center"
+                                style="background-color: #1a2d3a;">
+                                <div class="testimonial-quote mb-3">
+                                    <i class="fas fa-quote-left fa-2x text-primary"></i>
+                                </div>
+                                <p class="mb-4">"TheAlgoman team is super supportive, the platform is easy to use, and
+                                    the profits are real. Highly recommended."</p>
+                                <div class="testimonial-author">
+                                    <div class="fw-bold">Priyanka Desai</div>
+                                    <div class="text-muted">Ahmedabad</div>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
                 </div>
             </div>
-
         </div>
-    </div>
-</section>
-
-<section class="testimonials py-5 " id="testimonials">
-    <div class="container">
-        <div class="text-center mb-5">
-            <h2 class="fw-bold">What Our Clients Say</h2>
-            <p class="text-muted">Real experiences from real users who trusted TheAlgoman.</p>
-        </div>
-
-        <div id="testimonial-carousel" class="splide" aria-label="Testimonials">
-            <div class="splide__track">
-                <ul class="splide__list">
-
-                    <li class="splide__slide">
-                        <div class="testimonial-item p-4  shadow rounded text-center" style="background-color: #1a2d3a;">
-                            <div class="testimonial-quote mb-3">
-                                <i class="fas fa-quote-left fa-2x text-primary"></i>
-                            </div>
-                            <p class="mb-4">"I recovered my entire capital within 10 days and now every day is pure profit. TheAlgoman is the smartest decision I've made."</p>
-                            <div class="testimonial-author">
-                                <div class="fw-bold">Ritesh Patel</div>
-                                <div class="text-muted">Surat</div>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class="splide__slide">
-                        <div class="testimonial-item p-4  shadow rounded text-center" style="background-color: #1a2d3a;">
-                            <div class="testimonial-quote mb-3">
-                                <i class="fas fa-quote-left fa-2x text-primary"></i>
-                            </div>
-                            <p class="mb-4">"No stress, no screen time. I just check my ledger at the end of the day and smile. The returns are unbelievable."</p>
-                            <div class="testimonial-author">
-                                <div class="fw-bold">Mehul Shah</div>
-                                <div class="text-muted">Mumbai</div>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class="splide__slide">
-                        <div class="testimonial-item p-4  shadow rounded text-center" style="background-color: #1a2d3a;">
-                            <div class="testimonial-quote mb-3">
-                                <i class="fas fa-quote-left fa-2x text-primary"></i>
-                            </div>
-                            <p class="mb-4">"TheAlgoman team is super supportive, the platform is easy to use, and the profits are real. Highly recommended."</p>
-                            <div class="testimonial-author">
-                                <div class="fw-bold">Priyanka Desai</div>
-                                <div class="text-muted">Ahmedabad</div>
-                            </div>
-                        </div>
-                    </li>
-
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
 
 
@@ -1001,7 +1022,7 @@
     <!-- Section Join -->
 
     <!-- Footer -->
-<footer class="footer style-1">
+ <footer class="footer style-1">
     <style>
       .footer__nav {
         display: flex;
@@ -1011,29 +1032,25 @@
     <div class="footer__top">
       <div class="container">
         <div class="row align-items-start">
-          <div class="col-xl-3 col-lg-3 col-md-3 col-12">
+          <div class="col-xl-5 col-lg-5 col-md-5 col-12">
             <div class="content-left">
-              <h5 class="fs-22">Don't miss out, Stay updated → Stay Synced with TheAlgoman</h5>
+              <h5 class="fs-16" style="line-height: 30px;">Don't miss out, Stay updated    </br>Stay Synced with TheAlgoman</h5>
               <p>
-                TheAlgoman is India's most trusted algo trading platform —
-                helping you earn consistent profits through fully automated,
+                TheAlgoman is India's most trusted algo trading platform —</br> 
+                helping you earn consistent profits through fully automated, </br>
                 data-driven strategies connected directly to your trading
                 account.
               </p>
-              <form action="#" id="subscribe-form">
-                <input type="email" placeholder="Enter your email" required="" id="subscribe-email" />
-                <button class="btn-action style-2" type="submit" id="subscribe-button">
-                  <span class="effect">SUBSCRIBE</span>
-                </button>
-              </form>
+            
             </div>
           </div>
           <div class="col-xl-2 col-lg-2 col-md-2 col-12">
             <h6 class="footer__title">Company</h6>
             <div class="footer__nav">
               <a href="about.html">About us</a>
-             
+
               <a href="contact.html">Contact Us</a>
+               <a href="faq.html">How it works</a>
             </div>
           </div>
           <div class="col-xl-2 col-lg-2 col-md-2 col-12">
@@ -1041,34 +1058,37 @@
             <div class="footer__nav">
               <a href="invest.html">Option Buying</a>
               <a href="404.html">Option Selling</a>
-              <a href="404.html">Futures</a>
-              <a href="404.html">Equity</a>
+              <a href="404.html">Futures Buying</a>
+              <a href="404.html">Equity Buying</a>
             </div>
           </div>
           <div class="col-xl-2 col-lg-2 col-md-2 col-12 ">
             <h6 class="footer__title">Support</h6>
             <div class="footer__nav">
-              <a href="contact.html">Help center</a>
-              <a href="faq.html">How it works</a>
-               <a href="privacy.html">Privacy policy</a>
-                            <a href="terms.html">Terms & conditions</a>
-                            <a href="risk.html">Risk Disclaimer</a>
-                            <a href="legal.html">Legal Disclaimer</a>
+
+             
+              <a href="privacy.html">Privacy policy</a>
+              <a href="terms.html">Terms & conditions</a>
+              <a href="risk.html">Risk Disclaimer</a>
+              <a href="legal.html">Legal Disclaimer</a>
             </div>
           </div>
-          <div class="col-xl-3 col-lg-3 col-md-3 col-12">
-            <div class="conten">
-              <p>
-                TheAlgoman is India's most trusted algo trading platform —
-                helping you earn consistent profits through fully automated,
-                data-driven strategies connected directly to your trading
-                account.
-              </p>
-              <ul class="list-social">
+          
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12" style="display: flex;justify-content: space-between;">
+            <p>© 2025. All rights reserved by <a href="#">TheAlgoman</a></p>
+
+             <ul class="list-social">
                 <li><span class="icon-twitter"></span></li>
                 <li><span class="icon-facebook"></span></li>
                 <li><span class="icon-youtobe"></span></li>
-<i style="
+                <i style="
     width: 40px;
     height: 40px;
     min-width: 40px;
@@ -1082,16 +1102,6 @@
     color: white;
 " class="fab fa-instagram"></i>
               </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="footer__bottom">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <p>© 2025. All rights reserved by <a href="#">TheAlgoman</a></p>
           </div>
         </div>
       </div>
@@ -1112,19 +1122,19 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        new Splide('#testimonial-carousel', {
-            type: 'loop',
-            perPage: 1,
-            autoplay: true,
-            interval: 5000,
-            pauseOnHover: true,
-            pagination: true,
-            arrows: false,
-        }).mount();
-    });
-</script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            new Splide('#testimonial-carousel', {
+                type: 'loop',
+                perPage: 1,
+                autoplay: true,
+                interval: 5000,
+                pauseOnHover: true,
+                pagination: true,
+                arrows: false,
+            }).mount();
+        });
+    </script>
 
 </body>
 

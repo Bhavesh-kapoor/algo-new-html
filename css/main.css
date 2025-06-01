@@ -2914,7 +2914,7 @@ body::-webkit-scrollbar-thumb {
   border-radius: 10px;
   border: 2px solid rgba(255, 255, 255, 0.3);
   background: linear-gradient(135deg, #2c5d72 0%, #2c5d72 50%, #60b7ff 100%);
-  font-size: 21px;
+  font-size: 15px;
   color: #fff;
   text-transform: uppercase;
   font-weight: 500;
@@ -4159,7 +4159,7 @@ body::-webkit-scrollbar-thumb {
   height: 50px;
   padding: 0 20px;
   border: 2px solid rgba(255, 255, 255, 0.05);
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.04);
   border-radius: 10px;
   font-size: 14px;
   color: #fff;

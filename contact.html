@@ -29,7 +29,7 @@
     }
 
     select option {
-      background-color: #1a2d3a;
+      background-color: rgb(32 46 49);
     }
 
     .fas {
@@ -409,7 +409,7 @@
   <div class="mouse-cursor cursor-inner"></div>
   <!-- /MAGIC CURSOR -->
 
-  <!-- Header -->
+    <!-- Header -->
   <header id="header_main" class="header">
     <div class="container">
       <div class="row">
@@ -424,10 +424,10 @@
             <div class="header__right">
               <nav id="main-nav" class="main-nav">
                 <ul id="menu-primary-menu" class="menu">
-                  <li class="menu-item ">
+                  <li class="menu-item current-menu-item">
                     <a href="index.html">Home</a>
                   </li>
-                  <li class="menu-item ">
+                  <li class="menu-item">
                     <a href="about.html">About </a>
                   </li>
                   <li class="menu-item header__dropdown">
@@ -442,15 +442,15 @@
                       <li style="padding-right: 0px !important">
                         <a href="404.html">Option Selling</a>
                       </li>
-                      <li style="padding-right: 0px !important">
-                        <a href="404.html">Futures Buying</a>
-                      </li>
-                      <li style="padding-right: 0px !important">
-                        <a href="404.html">Equity Buying</a>
-                      </li>
+                       <li style="padding-right: 0px !important">
+                                                <a href="404.html">Futures Buying</a>
+                                            </li>
+                                            <li style="padding-right: 0px !important">
+                                                <a href="404.html">Equity Buying</a>
+                                            </li>
                     </ul>
                   </li>
-                  <li class="menu-item current-menu-item">
+                  <li class="menu-item">
                     <a href="contact.html">Contact Us</a>
                   </li>
                   <li class="menu-item">
@@ -459,10 +459,10 @@
                 </ul>
               </nav>
               <div class="group-button">
-                <a href="#" class="btn-action-outline style-1">
+                <a href="#" class="btn-action-outline style-1" style="width: 150px;">
                   <span>Sign Up</span>
                 </a>
-                <a class="btn-action style-2" href="#">
+                <a class="btn-action style-2" href="#" style="width: 150px;">
                   <span>Login</span>
                 </a>
               </div>
@@ -486,8 +486,6 @@
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
       padding: 0px;
       z-index: 1000;
-      border-radius: 10px;
-      overflow: hidden;
     }
 
     .header__dropdown-menu.show {
@@ -499,7 +497,6 @@
     }
 
     .header__dropdown-menu li {
-      width: 100%;
       padding: 0px;
     }
 
@@ -510,12 +507,6 @@
       font-size: 14px !important;
       padding: 5px 20px;
     }
-
-    /* .header__dropdown-menu li a {
-        color: #ffffff;
-        text-decoration: none;
-        display: block;
-      } */
 
     .header__dropdown-menu li a:hover {
       background: #0f3543;
@@ -545,7 +536,7 @@
     });
   </script>
 
-  <!-- end header -->
+  <!-- end Header -->
 
   <section class="page-title pricing-section">
     <div class="container">
@@ -607,7 +598,7 @@
                     <form action="#">
                       <input type="text" placeholder="Full Name" />
                       <input type="email" placeholder="Email" />
-                      <select id="product" class="form__input custom-select" required>
+                      <select id="product" class="form__input custom-select" style="color:#a1a1a1" required>
                         <option value="" disabled selected>Select Product</option>
                         <option value="Option Buying">Option Buying</option>
                         <option value="Option Selling">Option Selling</option>

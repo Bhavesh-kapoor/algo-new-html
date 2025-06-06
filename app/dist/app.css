@@ -3455,13 +3455,13 @@ h3, h5 {
 }
 .road-map.style-4 .road-map__main .box-roadmap {
   width: 330px;
-  background: rgba(46, 114, 210, 0.1);
+  background: rgb(26 68 84)!important;
   backdrop-filter: blur(10px);
   border-radius: 20px;
   padding: 26px 19px;
   position: relative;
   background-clip: padding-box;
-  border: 2px solid #2E72D2;
+  border: 2px solid #3e9abe;
   transition: 0.3s all ease-in-out;
 }
 @media only screen and (max-width: 767px) {
@@ -3491,7 +3491,7 @@ h3, h5 {
   height: 24px;
   width: 24px;
   border-radius: 50%;
-  background-color: #2E72D2;
+  background-color: rgba(46, 114, 210, 0.3);
   animation: 2s pulse-anim infinite;
   position: absolute;
   content: "";
@@ -3518,7 +3518,7 @@ h3, h5 {
   right: -142px;
 }
 .road-map.style-4 .road-map__main .box-roadmap.right {
-  margin-top: 154px;
+  margin-top: 54px;
 }
 .road-map.style-4 .road-map__main .box-roadmap.right::before {
   left: -94px;
@@ -4108,7 +4108,7 @@ h3, h5 {
   height: 24px;
   width: 24px;
   border-radius: 50%;
-  background-color: #48D6D2;
+  background-color: rgba(46, 114, 210, 0.3);
   animation: 2s pulse-anim3 infinite;
   position: absolute;
   content: "";
@@ -4230,7 +4230,7 @@ h3, h5 {
   background: #1b95c3;
 }
 .road-map.style-8.style-9 .road-map__main .box-roadmap::after {
-  background-color: #1b95c3;
+  background-color: rgba(46, 114, 210, 0.3);
   animation: 2s pulse-anim4 infinite;
 }
 @keyframes pulse-anim4 {
@@ -10427,7 +10427,7 @@ img.mfp-img {
   background: #1b95c3;
 }
 .dashboard .dashboard__content .dashboard__main .road-map.style-8 .road-map__main .box-roadmap::after {
-  background-color: #1b95c3;
+  background-color: rgba(46, 114, 210, 0.3);
   animation: 2s pulse-anim4 infinite;
 }
 @keyframes pulse-anim4 {
@@ -12816,7 +12816,7 @@ img.mfp-img {
 
 
    select option {
-        background-color: #1a2d3a;
+        background-color: rgb(46 63 69);
         color: white;
       }
 

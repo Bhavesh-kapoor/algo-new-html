@@ -2737,6 +2737,7 @@ body::-webkit-scrollbar-thumb {
   align-items: center;
   width: 100%;
   height: auto;
+  min-height: 95%;
   margin-top: 24px;
   border-radius: 25px 10px 10px 10px;
   border: 2px solid rgba(255, 255, 255, 0.05);

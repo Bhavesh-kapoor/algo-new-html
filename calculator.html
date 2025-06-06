@@ -263,96 +263,72 @@
   <!-- Header -->
   <!-- Header -->
   <header id="header_main" class="header">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="header__body">
-              <div class="header__logo">
-                <a href="index.html">
-                  <img
-                    id="site-logo"
-                    src="assets/images/logo/logo.png"
-                    alt="Monteno"
-                    width="65"
-                    height="60"
-                  />
-                </a>
-              </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="header__body">
+            <div class="header__logo">
+              <a href="index.html">
+                <img id="site-logo" src="assets/images/logo/logo.png" alt="Monteno" width="65" height="60" />
+              </a>
+            </div>
 
-              <div class="header__right">
-                <nav id="main-nav" class="main-nav">
-                  <ul id="menu-primary-menu" class="menu">
-                    <li class="menu-item ">
-                      <a href="index.html">Home</a>
-                    </li>
-                    <li class="menu-item ">
-                      <a href="about.html">About </a>
-                    </li>
-                    <li class="menu-item header__dropdown">
-                      <a
-                        class="dropdown-link dropdown-toggle"
-                        href="#"
-                        role="button"
-                      >
-                        Products
-                      </a>
+            <div class="header__right">
+              <nav id="main-nav" class="main-nav">
+                <ul id="menu-primary-menu" class="menu">
+                  <li class="menu-item current-menu-item">
+                    <a href="index.html">Home</a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="about.html">About </a>
+                  </li>
+                  <li class="menu-item header__dropdown">
+                    <a class="dropdown-link dropdown-toggle" href="#" role="button">
+                      Products
+                    </a>
 
-                      <ul class="dropdown-menu header__dropdown-menu">
-                        <li style="padding-right: 0px !important">
-                          <a href="invest.html">Option Buying</a>
-                        </li>
-                        <li style="padding-right: 0px !important">
-                          <a href="404.html">Option Selling</a>
-                        </li>
-                         <li style="padding-right: 0px !important">
+                    <ul class="dropdown-menu header__dropdown-menu">
+                      <li style="padding-right: 0px !important">
+                        <a href="invest.html">Option Buying</a>
+                      </li>
+                      <li style="padding-right: 0px !important">
+                        <a href="404.html">Option Selling</a>
+                      </li>
+                       <li style="padding-right: 0px !important">
                                                 <a href="404.html">Futures Buying</a>
                                             </li>
                                             <li style="padding-right: 0px !important">
                                                 <a href="404.html">Equity Buying</a>
                                             </li>
-                      </ul>
-                    </li>
-                    <li class="menu-item">
-                      <a href="contact.html">Contact Us</a>
-                    </li>
-                    <li class="menu-item current-menu-item">
-                      <a href="calculator.html">Calculator</a>
-                    </li>
-                  </ul>
-                </nav>
-                <div class="group-button">
-                  <a href="#" class="btn-action-outline style-1">
-                    <span>Sign Up</span>
-                  </a>
-                  <a class="btn-action style-2" href="#">
-                    <span>Login</span>
-                  </a>
-                </div>
-                <div class="mobile-button"><span></span></div>
+                    </ul>
+                  </li>
+                  <li class="menu-item">
+                    <a href="contact.html">Contact Us</a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="calculator.html">Calculator</a>
+                  </li>
+                </ul>
+              </nav>
+              <div class="group-button">
+                <a href="#" class="btn-action-outline style-1" style="width: 150px;">
+                  <span>Sign Up</span>
+                </a>
+                <a class="btn-action style-2" href="#" style="width: 150px;">
+                  <span>Login</span>
+                </a>
               </div>
+              <div class="mobile-button"><span></span></div>
             </div>
           </div>
         </div>
       </div>
-    </header>
+    </div>
+  </header>
+  <!-- end Header -->
 
   <!-- Custom CSS -->
   <style>
-    .header {
-      background: transparent;
-      transition: background 0.3s ease;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-    }
-
-    .header.scrolled {
-      background: #182124;
-      /* Darker background with opacity */
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    }
-
     .header__dropdown-menu {
       display: none;
       position: absolute;
@@ -392,26 +368,15 @@
   <!-- Custom JavaScript -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      const header = document.querySelector("#header_main");
       const dropdownToggle = document.querySelector(".dropdown-link");
       const dropdownMenu = document.querySelector(".header__dropdown-menu");
 
-      // Scroll event listener for header background
-      window.addEventListener("scroll", function () {
-        if (window.scrollY > 50) { // Trigger after scrolling 50px
-          header.classList.add("scrolled");
-        } else {
-          header.classList.remove("scrolled");
-        }
-      });
-
-      // Dropdown toggle functionality
       dropdownToggle.addEventListener("click", function (e) {
         e.preventDefault();
         dropdownMenu.classList.toggle("show");
       });
 
-      // Close dropdown when clicking outside
+      // Optional: Close dropdown when clicking outside
       document.addEventListener("click", function (e) {
         if (
           !dropdownToggle.contains(e.target) &&

@@ -3139,7 +3139,7 @@ h3, h5 {
     right: 0;
   }
 }
-.road-map.style-1 .box-roadmap .box-roadmap__main::before {
+/* .road-map.style-1 .box-roadmap .box-roadmap__main::before {
   content: "";
   position: absolute;
   right: 0;
@@ -3149,7 +3149,7 @@ h3, h5 {
   height: 50px;
   transform: rotate(45deg);
   background-color: #130F40;
-}
+} */
 .road-map.style-1 .box-roadmap .box-roadmap__main::after {
   content: "";
   position: absolute;

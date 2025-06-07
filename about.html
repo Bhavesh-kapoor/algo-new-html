@@ -727,11 +727,34 @@
                 </div>
 
                 <div class="col-xl-5 col-md-12">
-                    <div style="padding-left: 90px;">
-                        <img src="assets/images/algo3.png" alt="Algo Man" style="
-    margin-top: 49px;
-">
-                    </div>
+          <style>
+  .responsive-container {
+    padding-left: 5%; /* Relative padding instead of fixed px */
+  }
+
+  .responsive-container img {
+    width: 100%;
+    height: auto;
+    margin-top: 2.5rem; /* Responsive margin (you can tweak this) */
+    max-width: 100%;
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    .responsive-container {
+      padding-left: 2%; /* Less padding on small screens */
+    }
+
+    .responsive-container img {
+      margin-top: 1rem;
+    }
+  }
+</style>
+
+<div class="responsive-container">
+  <img src="assets/images/algo3.png" alt="Algo Man" />
+</div>
+
                 </div>
 
             </div>

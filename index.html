@@ -515,8 +515,8 @@
               <img src="assets/images/dhan.png" alt="Logo 4" class="bouncing-logo" />
             </div>
           </div>
-          <div class="banner-top__sale bouncing-logo">
-            <img src="assets/images/algo1.png" alt="ICOLand" />
+          <div class="banner-top__sale bouncing-logo" style="width: 100%!important;" >
+            <img src="assets/images/algo1.png" alt="ICOLand"  />
             <!-- <div class="sale-content">
             <h6>Our Brokers</h6>
             <span class="js-countdown" data-timer="1865550"><div aria-hidden="true" class="countdown__timer"><span class="countdown__item"><span class="countdown__value countdown__value--0 js-countdown__value--0">21</span></span><span class="countdown__item"><span class="countdown__value countdown__value--1 js-countdown__value--1">14</span></span><span class="countdown__item"><span class="countdown__value countdown__value--2 js-countdown__value--2">12</span></span><span class="countdown__item"><span class="countdown__value countdown__value--3 js-countdown__value--3">16</span></span></div></span>
@@ -535,8 +535,30 @@
       <div class="row align-items-center">
         <div class="col-xl-6 col-md-12" style="display: flex; justify-content: center">
           <div class="pricing-section__image" style="height: 80vh;">
-            <img src="assets/images/mainimage.png" alt="Price Tags" class="price-tag"  style="height: 100%;"/>
-          </div>
+      <style>
+  .resImg {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100%;
+    display: block; /* Removes bottom whitespace */
+  }
+
+  @media (max-width: 768px) {
+    .resImg {
+      /* You can add mobile-specific adjustments here */
+      width: 70%;
+    }
+  }
+
+  @media (min-width: 769px) {
+    .resImg {
+      /* Add styles for larger screens if needed */
+    }
+  }
+</style>
+
+<img src="assets/images/mainimage.png" alt="Price Tags" class="resImg" />
+ </div>
         </div>
         <div class="col-xl-6 col-md-12">
           <div class="pricing-section__card" style="height: 60vh;">
@@ -801,7 +823,7 @@
   <section class="road-map style-4 home-nft" id="roadmap" style="padding: 0px !important;">
     <div class="container">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12" style="overflow: hidden;" >
           <div class="road-map__main">
             <div class="box-roadmap left active aos-init aos-animate" data-aos="fade-right" data-aos-duration="1000">
               <h5 class="title text-center">0% Human Errors</h5>

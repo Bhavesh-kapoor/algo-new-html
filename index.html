@@ -199,7 +199,7 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 10px 40px !important;
+      padding: 0px 10px !important;
       background-color: #00b4d8;
       /* Cyan button */
       color: white;
@@ -489,6 +489,49 @@
               data-driven strategies connected directly to your trading
               account.
             </p>
+
+            <style>
+              /* Base button styles */
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  padding: 20px;
+}
+
+.button a.btn-action {
+  text-decoration: none;
+  padding: 12px 24px!important;
+  font-size: 16px;
+  border-radius: 6px;
+  background-color: #007BFF;
+  color: white;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.button a.btn-action:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive layout for wider screens */
+@media (max-width: 600px) {
+  .button-container {
+    flex-direction: row;
+    justify-content: center;
+  }
+.button a.btn-action {
+width: 100%!important;
+padding: 10px!important;
+}
+.button a.btn-action span{
+  display: inline-block!important;
+  width: 100%!important;
+}
+}
+
+            </style>
             <div style="display: flex; gap: 10px">
               <div class="button">
                 <a href="sign-in.html" class="btn-action style-2"><span>Start Trading Smarter</span></a>
@@ -546,7 +589,7 @@
   @media (max-width: 768px) {
     .resImg {
       /* You can add mobile-specific adjustments here */
-      width: 70%;
+      width: 100%;
     }
   }
 
@@ -565,8 +608,9 @@
             <div class="price">
               <span class="original-price">₹2000/week</span>
               <span class="discounted-price">₹1,499/week</span>
-              <span class="launch-offer"><b>Launch Offer</b></span>
+
             </div>
+            <span class="launch-offer "><b>Launch Offer</b></span>
             <p class="desc">
               Get high returns at a cost lower than your weekly coffee bills.
             </p>
@@ -691,7 +735,7 @@
                     be borne by the client.
                   </p>
                 </div>
-                <img src="assets/images/layout/banner01.png" style="width: 300px" alt="ICOLand" data-aos="fade-down"
+                <img src="assets/images/layout/banner01.png" style="width: 250px" alt="ICOLand" data-aos="fade-down"
                   data-aos-duration="1000" />
               </div>
             </div>
@@ -711,7 +755,7 @@
                     login information.
                   </p>
                 </div>
-                <img src="assets/images/algo2.png" style="width: 280px" alt="ICOLand" data-aos="fade-down"
+                <img src="assets/images/algo2.png" style="width: 220px" alt="ICOLand" data-aos="fade-down"
                   data-aos-duration="1000" />
               </div>
             </div>
@@ -730,7 +774,7 @@
                     segment (Equity, Options, or Futures).
                   </p>
                 </div>
-                <img src="assets/images/algo3.png" style="width: 250px" alt="ICOLand" data-aos="fade-down"
+                <img src="assets/images/algo3.png" style="width: 220px" alt="ICOLand" data-aos="fade-down"
                   data-aos-duration="1000" />
               </div>
             </div>
@@ -752,7 +796,7 @@
                     anytime
                   </p>
                 </div>
-                <img src="assets/images/algo4.png" style="width: 300px" alt="ICOLand" data-aos="fade-down"
+                <img src="assets/images/algo4.png" style="width: 250px" alt="ICOLand" data-aos="fade-down"
                   data-aos-duration="1000" />
               </div>
             </div>

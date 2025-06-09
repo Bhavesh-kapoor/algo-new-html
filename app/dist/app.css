@@ -99,7 +99,7 @@ h6,
 
 h2,
 .h2 {
-  font-size: 44px;
+  font-size: 30px;
 }
 
 h3,
@@ -4370,6 +4370,7 @@ h3, h5 {
 }
 .document.style-1 .document__content {
   display: flex;
+  justify-content: center;
   margin: 0 -15px;
   margin-top: 24px;
 }
@@ -4394,7 +4395,7 @@ h3, h5 {
 }
 @media only screen and (max-width: 767px) {
   .document.style-1 .box-document {
-    width: calc(100% - 30px);
+    width: calc(100% - 100px);
   }
 }
 .document.style-1 .box-document .content {

@@ -798,7 +798,7 @@ body::-webkit-scrollbar-thumb {
   text-align: center;
   position: relative;
   width: auto;
-  padding: 0 50px;
+  /* padding: 0 50px; */
 }
 .section__title h1:before,
 .section__title h2:before,
@@ -2736,7 +2736,7 @@ body::-webkit-scrollbar-thumb {
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  height: auto;
+  height: 350px;
   min-height: 95%;
   margin-top: 24px;
   border-radius: 25px 10px 10px 10px;

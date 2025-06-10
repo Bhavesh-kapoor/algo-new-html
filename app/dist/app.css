@@ -1756,7 +1756,7 @@ h5 {
   }
   .banner-top__content .mobilebutton {
     display: block !important;
-    text-align: center;
+    /* text-align: center; */
   }
   .mobile-button .button a {
     font-size: 10px !important;

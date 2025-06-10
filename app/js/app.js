@@ -102,7 +102,7 @@
                     // height: headerHeight
                 }).insertAfter(nav);
                 $(window).on('load scroll', function () {
-                    if ($(window).scrollTop() > 200) {
+                    if ($(window).scrollTop() > 10) {
                         nav.addClass('is-fixed');
                         injectSpace.show();
                     } else {
@@ -110,7 +110,7 @@
                         injectSpace.hide();
                     }
 
-                    if ($(window).scrollTop() > 400) {
+                    if ($(window).scrollTop() > 50) {
                         nav.addClass('is-small');
                     } else {
                         nav.removeClass('is-small');

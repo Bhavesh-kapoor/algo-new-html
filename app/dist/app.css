@@ -14686,3 +14686,13 @@ select option {
 .my-float {
   margin-top: 16px;
 }
+
+.footer-logo{
+  width:90px !important;
+}
+@media (max-width: 600px) {
+  .footer-logo {
+      width: 66px !important;
+  }
+}
+

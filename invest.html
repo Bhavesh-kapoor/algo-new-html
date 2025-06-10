@@ -27,567 +27,238 @@
 
   <title>Pricing | Algo Man</title>
   <style>
-    .customsize {
-      font-size: 20px;
+    /* --- Improved Mobile Responsive, Spacing, and Subtle Theme Gradient --- */
+    body {
+      background: #f7fafd;
+      color: #222;
+      font-family: 'Poppins', sans-serif;
     }
-
-    .card-custom {
-      background-color: #1a1a1a;
-      border: 1px solid #333;
-      color: #ccc;
-      padding: 1rem 1.5rem;
-      text-align: center;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(168, 85, 247, 0.2);
+    .section__title.title h1 {
+      color: #1a2d3a;
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
     }
-
-    .tab-content{
-      margin-top: 20px;
+    .section__title.title p {
+      color: #4a5a6a;
+      font-size: 1.1rem;
     }
-    .custombg {
-      background: linear-gradient(to bottom right, #142e3b, #1f4d60);
-
+    .apool {
+      background: linear-gradient(120deg, #1a2d3a 80%, #223a4d 100%);
+      border: 1px solid #26bdf4;
+      color: #fff;
+      border-radius: 18px;
+      box-shadow: 0 2px 16px rgba(44,93,114,0.10);
+      padding: 2rem 1.5rem 1.7rem 1.5rem;
+      margin-bottom: 2.2rem;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .apool:hover {
+      box-shadow: 0 8px 32px rgba(44,93,114,0.18);
+      transform: translateY(-4px) scale(1.01);
+    }
+    .apool__title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #26bdf4;
+      margin-bottom: 1rem;
+      letter-spacing: 0.5px;
+    }
+    .apool__tabs .nav-item button {
+      background: none;
+      border: none;
+      color: #b0e0ff;
+      font-weight: 500;
+      font-size: 1rem;
+      padding: 0.5rem 1.2rem;
+      border-radius: 20px 20px 0 0;
+      transition: background 0.2s, color 0.2s;
+    }
+    .apool__tabs .nav-item button.active {
+      background: #26bdf4;
+      color: #fff;
+      font-weight: 600;
+    }
+    .apool__content {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      color: white;
+      align-items: flex-start;
+      gap: 0.3rem;
+      margin: 1rem 0 1.5rem 0;
+      color: #fff;
+      padding: 0px 20px;
+      font-size: 1.1rem;
     }
-
-    .partner img {
-      width: 70px !important;
+    .apool__value {
+      font-size: 1.1rem;
+      color: #fff;
+      font-weight: 500;
     }
-
-    .center-box {
-      background-color: #121212;
-      border: 2px solid #012131;
-      border-radius: 16px;
-      text-align: center;
-      font-size: 2rem;
-      color: #012131;
-      position: relative;
-      z-index: 2;
-    }
-
-    .connector {
-      width: 2px;
-      background: #012131;
-      position: absolute;
-      z-index: 1;
-    }
-
-    .top-line,
-    .bottom-line {
-      height: 80px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .top-card,
-    .bottom-card {
-      position: absolute;
-      width: 200px;
-    }
-
-    .top-card {
-      top: 0;
-    }
-
-    .bottom-card {
-      bottom: 0;
-    }
-
-    .top-line-1,
-    .bottom-line-1 {
-      left: 20%;
-    }
-
-    .top-line-2,
-    .bottom-line-2 {
-      left: 50%;
-    }
-
-    .top-line-3,
-    .bottom-line-3 {
-      left: 80%;
-    }
-
-    .top-card-1,
-    .bottom-card-1 {
-      left: 20%;
-    }
-
-    .top-card-2,
-    .bottom-card-2 {
-      left: 50%;
-    }
-
-    .top-card-3,
-    .bottom-card-3 {
-      left: 80%;
-    }
-
-    .container-relative {
-      position: relative;
-      height: 600px;
-    }
-
-    .circle-wrapper {
-      position: relative;
-      width: 500px;
-      height: 500px;
-      margin: 100px auto;
-    }
-
-    .img-section {
-      padding: 10px;
-    }
-
-    .img-section img {
-      width: 90px;
-    }
-
-    .circle-center {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 100px;
-      height: 100px;
-      transform: translate(-50%, -50%);
-      background: #120c41;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 10;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    }
-
-    .circle-center img {
-      width: 110%;
-    }
-
-    .rotating-circle {
-      position: absolute;
+    .apool__btn {
+      display: block;
       width: 100%;
-      height: 100%;
-      animation: rotate 20s linear infinite;
-      transform-origin: center;
-    }
-
-    .circle-item {
-      --total: 12;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: rotate(calc(360deg / var(--total) * var(--i))) translate(200px);
-    }
-
-    .circle-item .logo {
-      width: 60px;
-      height: 60px;
-      background: #012131;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transform: rotate(calc(-360deg / var(--total) * var(--i)));
-      /* Counter rotation to keep upright */
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .circle-item .logo img {
-      width: 80%;
-      height: 80%;
-      object-fit: contain;
-    }
-
-    @keyframes rotate {
-      from {
-        transform: rotate(0deg);
-      }
-
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    .circle-layout {
-      position: relative;
-      width: 100%;
-      max-width: 600px;
-      aspect-ratio: 1 / 1;
-      margin: auto;
-    }
-
-    .center-node {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: linear-gradient(145deg, #1e1e1e, #2b2b2b);
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      background: linear-gradient(90deg, #26bdf4 0%, #1a2d3a 100%);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 0.8rem 0;
+      font-size: 1.1rem;
+      font-weight: 600;
       text-align: center;
-      font-weight: bold;
-      font-size: 15px;
-      border: 2px solid #2c5d72;
-      box-shadow: 0 0 20px #2c5d72;
-      z-index: 10;
+      text-decoration: none;
+      margin-top: 1rem;
+      transition: background 0.2s, box-shadow 0.2s;
+      box-shadow: 0 2px 8px rgba(38,189,244,0.10);
     }
-
-    .node {
-      position: absolute;
-      width: 140px;
-      min-height: 60px;
-      background: linear-gradient(to bottom, #1a1a1a, #222);
+    .apool__btn:hover {
+      background: linear-gradient(90deg, #1a2d3a 0%, #26bdf4 100%);
+    }
+    .block-icon, .screw {
+      display: none;
+    }
+    .pricing-callout {
+      background: #1a2d3a;
+      border: 1px solid #26bdf4;
       color: #fff;
       border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      padding: 1.2rem 1rem;
+      margin-top: 1.5rem;
+      font-size: 1.1rem;
       text-align: center;
-      padding: 10px;
-      font-size: 14px;
-      border: 1px solid #2c5d72;
-      box-shadow: 0 0 10px #2c5d72;
-      transition: all 0.3s ease-in-out;
     }
-
-    /* .node:hover {
-			box-shadow: 0 0 10px #2c5d72;
-			transform: scale(0.95);
-		} */
-
-    /* Position Nodes */
-    .node-1 {
-      top: 5%;
-      left: 73%;
-      transform: translate(-50%, 0%);
+    .customsize {
+      color: #26bdf4;
+      font-size: 1.15rem;
+      font-weight: 600;
     }
-
-    .node-2 {
-      top: 46%;
-      left: 90%;
-      transform: translate(-50%, -50%);
-    }
-
-    .node-3 {
-      top: 80%;
-      left: 68%;
-      transform: translate(-50%, -50%);
-    }
-
-    .node-4 {
-      bottom: 8%;
-      left: 30%;
-      transform: translate(-50%, 0%);
-    }
-
-    .node-5 {
-      top: 46%;
-      left: 10%;
-      transform: translate(-50%, -50%);
-    }
-
-    .node-6 {
-      top: 10%;
-      left: 31%;
-      transform: translate(-50%, -50%);
-    }
-
-    /* Connecting lines */
-    .line {
-      position: absolute;
-      width: 2px;
-      background: #2c5d72;
-      transform-origin: top;
-      z-index: 1;
-      opacity: 0.8;
-    }
-
-    .line-1 {
-      top: 50%;
-      left: 50%;
-      height: 220px;
-      transform: translate(-50%, 0) rotate(-90deg);
-    }
-
-    .line-2 {
-      top: 50%;
-      left: 50%;
-      height: 220px;
-      transform: translate(-50%, 0) rotate(-30deg);
-    }
-
-    .line-3 {
-      top: 50%;
-      left: 50%;
-      height: 220px;
-      transform: translate(-50%, 0) rotate(30deg);
-    }
-
-    .line-4 {
-      top: 50%;
-      left: 50%;
-      height: 168px;
-      transform: translate(-50%, 0) rotate(90deg);
-    }
-
-    .line-5 {
-      top: 50%;
-      left: 50%;
-      height: 220px;
-      transform: translate(-50%, 0) rotate(150deg);
-    }
-
-    .line-6 {
-      top: 50%;
-      left: 50%;
-      height: 220px;
-      transform: translate(-50%, 0) rotate(-150deg);
-    }
-
-    @media (max-width: 768px) {
-      .circle-layout {
-        transform: scale(0.8);
-      }
-    }
-
-    @media (max-width: 480px) {
-      .circle-layout {
-        transform: scale(0.65);
-      }
-    }
-
-    .launch_offer {
-      color: goldenrod;
-      font-size: 25px;
-    }
-
-    .circle-container {
-      position: relative;
-      width: 500px;
-      height: 500px;
-    }
-
-    .rotating-circle {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      animation: rotateCircle 20s linear infinite;
-      transform-origin: center;
-    }
-
-    @keyframes rotateCircle {
-      from {
-        transform: rotate(0deg);
-      }
-
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    .center-logo {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 150px;
-      height: 150px;
-      background: #2c5d72;
-      border-radius: 50%;
-      z-index: 10;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .center-logo img {
-      width: 135px !important;
-      height: 135px !important;
-    }
-
-    .logo {
-      position: absolute;
-      width: 60px;
-      height: 60px;
-      background: #fff;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .logo img {
-      width: 40px;
-    }
-
-    .arrow-line {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 2px;
-      height: 170px;
-      /* Adjust to reach outer logos */
-      background-color: #33596b;
-      transform-origin: top center;
-      z-index: 1;
-    }
-
-    .pricing-highlights {
+    /* Highlights Section */
+    .pricing-highlights, .row.g-4 {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 2rem;
-      margin-bottom: 3rem;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
     }
-
     .highlight-item {
+      background: linear-gradient(120deg, #1a2d3a 80%, #223a4d 100%);
+      border: 1px solid #26bdf4;
+      border-radius: 14px;
+      box-shadow: 0 2px 12px rgba(44,93,114,0.10);
+      padding: 1.2rem 0.9rem;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 1rem;
-      color: #fff;
-      font-size: 1.1rem;
-    }
-
-    .highlight-item i {
-      color: #2c5d72;
-      font-size: 1.5rem;
-    }
-
-    .pricing-card {
-      background: linear-gradient(145deg, #1a1a1a, #222);
-      border: 1px solid #2c5d72;
-      border-radius: 16px;
-      padding: 2rem;
-      height: 100%;
-      position: relative;
-      transition: all 0.3s ease;
-    }
-
-    .pricing-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(44, 93, 114, 0.2);
-    }
-
-    .pricing-card--popular {
-      border: 2px solid #2c5d72;
-      transform: scale(1.05);
-    }
-
-    .pricing-card--popular:hover {
-      transform: scale(1.05) translateY(-5px);
-    }
-
-    .popular-badge {
-      position: absolute;
-      top: -12px;
-      right: 20px;
-      background: #2c5d72;
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      font-size: 0.9rem;
-    }
-
-    .pricing-card__header {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    .pricing-card__header h3 {
-      color: #fff;
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .price {
-      color: #fff;
-      font-size: 2.5rem;
-      font-weight: bold;
-    }
-
-    .currency {
-      font-size: 1.5rem;
-      vertical-align: super;
-    }
-
-    .period {
+      min-width: 120px;
+      min-height: 110px;
       font-size: 1rem;
-      color: #ccc;
+      color: #fff;
+      font-weight: 500;
+      transition: box-shadow 0.2s;
     }
-
-    .savings {
-      color: #2c5d72;
-      font-weight: bold;
-      margin-top: 0.5rem;
+    .highlight-item i {
+      font-size: 2rem;
+      color: #fff;
+      margin-bottom: 0.5rem;
     }
-
-    .pricing-card__features {
-      margin-bottom: 2rem;
-    }
-
-    .pricing-card__features ul {
-      list-style: none;
-      padding: 0;
+    .highlight-item p {
       margin: 0;
+      font-size: 1rem;
+      color: #fff;
+      font-weight: 500;
     }
-
-    .pricing-card__features li {
-      color: #ccc;
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .pricing-card__features i {
-      color: #2c5d72;
-    }
-
-    .pricing-card__footer {
-      text-align: center;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, #2c5d72 0%, #012131 100%);
-      color: white;
-      padding: 0.75rem 2rem;
-      border-radius: 8px;
-      text-decoration: none;
-      display: inline-block;
-      transition: all 0.3s ease;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(44, 93, 114, 0.3);
-    }
-
-    .pricing-callout {
-      background: rgba(44, 93, 114, 0.1);
-      padding: 2rem;
-      border-radius: 12px;
-      border: 1px solid #2c5d72;
-    }
-
-    @media (max-width: 768px) {
-      .pricing-card--popular {
-        transform: scale(1);
+    /* Responsive */
+    @media (max-width: 991px) {
+      .section__title.title h1 {
+        font-size: 2rem !important;
       }
-
-      .pricing-card--popular:hover {
-        transform: translateY(-5px);
+      .pricing-highlights, .row.g-4 {
+        gap: 1.2rem !important;
       }
-
-      .pricing-highlights {
-        justify-content: start;
+      .apool {
+        margin-bottom: 2rem;
+        padding: 1.5rem 1rem 1.5rem 1rem;
+      }
+    }
+    @media (max-width: 767px) {
+      .section__title.title h1 {
+        font-size: 24px !important;
+      }
+      .section__title.title p{
+        font-size: 14px !important;
+      }
+      .page-title .pricing-section{
+        font-size: 14px !important;
+      }
+      .pricing-highlights, .row.g-4 {
+        flex-direction: column !important;
+        gap: 1.2rem !important;
+        padding-left: 0;
+        padding-right: 0;
+      }
+      .apool {
+        margin-bottom: 1.5rem;
+        padding: 1.2rem 0.7rem;
+        margin-left: 0;
+        margin-right: 0;
+      }
+      .apool__title {
+        font-size: 1.1rem;
+      }
+      .apool__btn {
+        width: 90%;
+      font-size: 1rem;
+        padding: 0.7rem 0;
+      }
+      .customsize {
+        font-size: 1.05rem;
+      }
+      .pricing-callout {
+        padding: 1rem;
+        font-size: 1rem;
+      }
+      .highlight-item {
+        font-size: 0.98rem;
+        min-width: 100%;
+        min-height: 80px;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 0.7rem;
+        padding: 0.8rem 0.5rem;
+      }
+      .highlight-item i {
+        margin-bottom: 0;
+      }
+      .custombg {
+        padding: 1rem 0.5rem !important;
+        font-size: 0.98rem;
+      }
+      .footer__top, .footer__bottom {
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+      }
+    }
+    @media (max-width: 575px) {
+      .apool {
+        padding: 0.7rem 0.2rem;
+      }
+      .apool__title {
+        font-size: 1rem;
+      }
+      .apool__btn {
+        font-size: 0.95rem;
+      }
+      .customsize {
+        font-size: 1rem;
+      }
+      .pricing-callout {
+        font-size: 0.95rem;
+      }
+      .footer-logo {
+        width: 70px;
       }
     }
   </style>
@@ -660,57 +331,7 @@
   </header>
 
   <!-- Custom CSS -->
-  <style>
-    .header {
-      background: transparent;
-      transition: background 0.3s ease;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-    }
-
-    .header.scrolled {
-      background: #182124;
-      /* Darker background with opacity */
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    }
-
-    .header__dropdown-menu {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background: #082f3e75;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-      padding: 0px;
-      z-index: 1000;
-    }
-
-    .header__dropdown-menu.show {
-      display: block;
-    }
-
-    .header__dropdown {
-      position: relative;
-    }
-
-    .header__dropdown-menu li {
-      padding: 0px;
-    }
-
-    .header__dropdown-menu li a {
-      color: #fff;
-      text-decoration: none;
-      display: block;
-      font-size: 14px !important;
-      padding: 5px 20px;
-    }
-
-    .header__dropdown-menu li a:hover {
-      background: #0f3543;
-    }
-  </style>
+  
 
   <!-- Custom JavaScript -->
   <script>
@@ -749,6 +370,9 @@
     .section--head{
       padding: 0px 0 30px !important;
     }
+    .header__logo{
+      margin-left: 0px !important;
+    }
     </style>
   <!-- end header -->
 
@@ -771,7 +395,7 @@
         <!-- title -->
         <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3 col-xl-8 offset-xl-2">
           <div class="section__title title">
-            <h1 style="font-size: 45px !important;font-weight: 700;">Choose A Plan That Works For You</h1>
+            <h1 style="font-size: 45px;font-weight: 700;color: white;">Choose A Plan That Works For You</h1>
             <p class="text-white mt-3">
               Flexible, affordable pricing with exclusive Free Days bonuses as
               you commit longer. <br />
@@ -1152,7 +776,7 @@
       <!-- Pricing Highlights -->
       <div class="row g-4 justify-content-center text-center">
         <!-- Highlight Item -->
-        <div class="col-6 col-md-4 col-lg-2">
+        <div class="col-12 col-md-4 col-lg-2">
           <div class="custombg highlight-item p-3 rounded-4 shadow-sm h-100 hover-shadow transition">
             <i class="ti ti-plug fs-2 text-primary mb-2"></i>
             <p class="mb-0 fw-semibold">Plug-and-Play Setup</p>
@@ -1160,7 +784,7 @@
         </div>
 
         <!-- Highlight Item -->
-        <div class="col-6 col-md-4 col-lg-2">
+        <div class="col-12 col-md-4 col-lg-2">
           <div class="custombg highlight-item p-3 rounded-4 shadow-sm h-100 hover-shadow transition">
             <i class="ti ti-chart-line fs-2 text-success mb-2"></i>
             <p class="mb-0 fw-semibold">Consistent Daily Profits</p>
@@ -1168,7 +792,7 @@
         </div>
 
         <!-- Highlight Item -->
-        <div class="col-6 col-md-4 col-lg-2">
+        <div class="col-12 col-md-4 col-lg-2">
           <div class="custombg highlight-item p-3 rounded-4 shadow-sm h-100 hover-shadow transition">
             <i class="ti ti-robot fs-2 text-info mb-2"></i>
             <p class="mb-0 fw-semibold">Automated, Emotion-Free</p>
@@ -1176,7 +800,7 @@
         </div>
 
         <!-- Highlight Item -->
-        <div class="col-6 col-md-4 col-lg-2">
+        <div class="col-12 col-md-4 col-lg-2">
           <div class="custombg highlight-item p-3 rounded-4 shadow-sm h-100 hover-shadow transition">
             <i class="ti ti-shield-lock fs-2 text-warning mb-2"></i>
             <p class="mb-0 fw-semibold">Your Demat, Your Control</p>
@@ -1184,7 +808,7 @@
         </div>
 
         <!-- Highlight Item -->
-        <div class="col-6 col-md-4 col-lg-2">
+        <div class="col-12 col-md-4 col-lg-2">
           <div class="custombg highlight-item p-3 rounded-4 shadow-sm h-100 hover-shadow transition">
             <i class="ti ti-receipt fs-2 text-danger mb-2"></i>
             <p class="mb-0 fw-semibold">No Hidden Fees</p>
@@ -1202,37 +826,22 @@
   <!-- footer -->
   <!-- Footer -->
  <footer class="footer style-1">
-    <style>
-      .footer__nav {
-        display: flex;
-        flex-direction: column;
-      }
-    </style>
     <div class="footer__top">
       <div class="container">
-        <div class="row align-items-start">
-          <div class="col-xl-5 col-lg-5 col-md-5 col-12">
-            <div class="content-left">
-              <h5 class="fs-16" style="line-height: 30px;">Don't miss out, Stay updated    </br>Stay Synced with TheAlgoman</h5>
-              <p>
-                TheAlgoman is India's most trusted algo trading platform —</br> 
-                helping you earn consistent profits through fully automated, </br>
-                data-driven strategies connected directly to your trading
-                account.
-              </p>
-            
+        <div class="footer-row">
+          <div class="footer-col brand-col">
+            <img src="assets/images/logo/logo.png" alt="TheAlgoman Logo" class="footer-logo" />
+            <p class="footer-tagline">India's most trusted algo trading platform — helping you earn consistent profits through fully automated, data-driven strategies.</p>
             </div>
-          </div>
-          <div class="col-xl-2 col-lg-2 col-md-2 col-12">
+          <div class="footer-col">
             <h6 class="footer__title">Company</h6>
             <div class="footer__nav">
               <a href="about.html">About us</a>
-
               <a href="contact.html">Contact Us</a>
                <a href="faq.html">How it works</a>
             </div>
           </div>
-          <div class="col-xl-2 col-lg-2 col-md-2 col-12">
+          <div class="footer-col">
             <h6 class="footer__title">Products</h6>
             <div class="footer__nav">
               <a href="invest.html">Option Buying</a>
@@ -1241,106 +850,169 @@
               <a href="404.html">Equity Buying</a>
             </div>
           </div>
-          <div class="col-xl-2 col-lg-2 col-md-2 col-12 ">
+          <div class="footer-col">
             <h6 class="footer__title">Support</h6>
             <div class="footer__nav">
-
-             
               <a href="privacy.html">Privacy policy</a>
               <a href="terms.html">Terms & conditions</a>
               <a href="risk.html">Risk Disclaimer</a>
               <a href="legal.html">Legal Disclaimer</a>
             </div>
           </div>
-          
-          </div>
         </div>
       </div>
     </div>
     <div class="footer__bottom">
       <div class="container">
-        <div class="row">
-          <div class="col-md-12" style="display: flex;justify-content: space-between;">
-            <p>© 2025. All rights reserved by <a href="#">TheAlgoman</a></p>
-
-             <ul class="list-social">
-                <li><span class="icon-twitter"></span></li>
-                <li><span class="icon-facebook"></span></li>
-                <li><span class="icon-youtobe"></span></li>
-                <i style="
-    width: 40px;
-    height: 40px;
-    min-width: 40px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
-    margin-right: 12px;
-    z-index: 9;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-" class="fab fa-instagram"></i>
-              </ul>
+        <div class="footer-bottom-row">
+          <p class="footer-copyright">© 2025. All rights reserved by <a href="#">TheAlgoman</a></p>
+          <div class="footer-social">
+            <a href="#" aria-label="Twitter"><span class="icon-twitter"></span></a>
+            <a href="#" aria-label="Facebook"><span class="icon-facebook"></span></a>
+            <a href="#" aria-label="YouTube"><span class="icon-youtobe"></span></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
           </div>
         </div>
       </div>
     </div>
   </footer>
+
+  <style>
+    .footer {
+      background: linear-gradient(135deg, #1a2d3a 60%, #0a1929 100%);
+      color: #fff;
+      padding-top: 40px;
+      font-family: 'Poppins', sans-serif;
+    }
+    .footer__top {
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding-bottom: 30px;
+    }
+    .footer-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: space-between;
+    }
+    .footer-col {
+      min-width: 160px;
+      flex: 1 1 160px;
+      margin-bottom: 20px;
+    }
+    .brand-col {
+      flex: 2 1 260px;
+      min-width: 220px;
+    }
+    .footer-logo {
+      width: 120px;
+      margin-bottom: 12px;
+    }
+    .footer-tagline {
+      font-size: 1rem;
+      color: #b0c4d4;
+      margin-bottom: 0;
+    }
+    .footer__title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #26bdf4;
+    }
+    .footer__nav a {
+      color: #e0e0e0;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.98rem;
+      transition: color 0.2s;
+    }
+    .footer__nav a:hover {
+      color: #00b4d8;
+    }
+    .footer__bottom {
+      padding: 18px 0 0 0;
+    }
+    .footer-bottom-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .footer-social {
+      display: flex;
+      gap: 18px;
+    }
+    .footer-social a {
+      color: #fff;
+      font-size: 1.5rem;
+      background: rgba(255,255,255,0.08);
+      border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+    }
+    .footer-social a:hover {
+      background: #00b4d8;
+      color: #fff;
+      transform: translateY(-4px) scale(1.08);
+    }
+    .footer-social .fab.fa-instagram {
+      font-size: 1.4rem;
+    }
+    @media (max-width: 900px) {
+      .footer-row {
+        flex-direction: column;
+        gap: 0;
+      }
+      .footer-col, .brand-col {
+        min-width: 100%;
+        flex: 1 1 100%;
+        margin-bottom: 24px;
+      }
+      .footer-bottom-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      .footer-social {
+        margin-top: 10px;
+      }
+    }
+    @media (max-width: 600px) {
+      .footer {
+        padding-top: 24px;
+      }
+      .footer__top {
+        padding-bottom: 18px;
+      }
+      .footer-logo {
+        width: 90px;
+      }
+      .footer__title {
+        font-size: 1rem;
+      }
+      .footer-tagline {
+        font-size: 0.95rem;
+      }
+      .footer-social a {
+        width: 36px;
+        height: 36px;
+        font-size: 1.2rem;
+      }
+      .section--head{
+        margin-top: 20px;
+      }
+      
+    }
+  </style>
   <!-- End Footer -->
   <!-- end footer -->
 
-  <!-- arbitrage pool modal -->
-  <div class="modal modal--auto fade" id="modal-apool" tabindex="-1" aria-labelledby="modal-apool" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal__content">
-          <button class="modal__close" data-bs-dismiss="modal" aria-label="Close">
-            <i class="ti ti-x"></i>
-          </button>
-
-          <h4 class="modal__title">Invest</h4>
-
-          <p class="modal__text">
-            You can spend money from your account to renew connected packages
-            or pay in other available ways.
-          </p>
-
-          <form action="#" class="modal__form">
-            <div class="form__group">
-              <label class="form__label">Сheck to:</label>
-              <input name="mail" type="text" class="form__input" placeholder="Email" />
-            </div>
-
-            <div class="form__group">
-              <label class="form__label">Payment method:</label>
-
-              <ul class="form__radio">
-                <li>
-                  <input id="type1" type="radio" name="type" checked="" />
-                  <label for="type1">My balance</label>
-                </li>
-                <li>
-                  <input id="type2" type="radio" name="type" />
-                  <label for="type2">Visa / Mastercard</label>
-                </li>
-                <li>
-                  <input id="type3" type="radio" name="type" />
-                  <label for="type3">Paypal</label>
-                </li>
-              </ul>
-            </div>
-
-            <button class="form__btn">Proceed</button>
-          </form>
-
-          <!-- design elements -->
-          <span class="screw screw--big-tl"></span>
-          <span class="screw screw--big-bl"></span>
-          <span class="screw screw--big-br"></span>
-        </div>
-      </div>
-    </div>
-  </div>
+  
   <!-- end arbitrage pool modal -->
 
   <!-- JS -->
@@ -1388,6 +1060,9 @@
     });
   });
 </script>
+
+<!-- WhatsApp Floating Icon -->
+
 
 </body>
 

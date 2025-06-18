@@ -1762,7 +1762,7 @@ h5 {
     font-size: 10px !important;
   }
   .home-nft .banner-top.style-2 {
-    padding: 98px 0 0px !important;
+    /* padding: 98px 0 0px !important; */
   }
   .header__logo #site-logo {
     width: 55px !important;
@@ -9326,7 +9326,7 @@ img.mfp-img {
   min-width: 64px;
   width: 64px;
   height: 64px;
-  background: linear-gradient(153.06deg, #13b8ba -0.31%, #1a283b 99.69%);
+  /* background: linear-gradient(153.06deg, #13b8ba -0.31%, #1a283b 99.69%); */
   border-radius: 12px;
   transform: rotate(45deg);
   display: flex;
@@ -10314,7 +10314,7 @@ img.mfp-img {
 }
 
 .footer.style-1 {
-  background: rgb(67 136 221 / 10%);
+  /* background: rgb(67 136 221 / 10%); */
 }
 .footer.style-1 .footer__top {
   padding: 50px 0 18px;
@@ -12199,8 +12199,10 @@ img.mfp-img {
 }
 
 .home-nft {
-  background: url("../../assets/images/background/bg-bd.png");
-  background-color: #181818;
+  /* background: url("../../assets/images/background/bg-bd.png"); */
+  /* background-color: #181818; */
+  background: linear-gradient(180deg, #0a1420, #102030);
+
 }
 .home-nft p {
   color: rgba(246, 246, 246, 0.8);

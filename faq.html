@@ -11,30 +11,35 @@
     <link rel="stylesheet" href="app/bootstrap/css/bootstrap.min.css">
 
     <link rel="stylesheet" href="app/dist/app.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-<a href="https://api.whatsapp.com/send?phone=51955081075&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202." class="float" target="_blank">
-<i class="fa fa-whatsapp my-float"></i>
-</a>
-<style>
-.float{
-	position:fixed;
-	width:60px;
-	height:60px;
-	bottom:40px;
-	right:40px;
-	background-color:#25d366;
-	color:#FFF;
-	border-radius:50px;
-	text-align:center;
-  font-size:30px;
-	box-shadow: 2px 2px 3px #999;
-  z-index:100;
-}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="app/js/particles.js"></script>
+    <link href="css/custom.css" rel="stylesheet" />
 
-.my-float{
-	margin-top:16px;
-}
-</style>
+    <a href="https://api.whatsapp.com/send?phone=51955081075&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202."
+        class="float" target="_blank">
+        <i class="fa fa-whatsapp my-float"></i>
+    </a>
+    <style>
+        .float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+        }
+
+        .my-float {
+            margin-top: 16px;
+        }
+    </style>
     <link href="app/dist/aos.css" rel="stylesheet">
     <!-- end Styles -->
 
@@ -349,6 +354,8 @@
 </head>
 
 <body class="home-nft header-fixed " data-magic-cursor="show">
+    <!-- Add particles container -->
+    <div id="particles-container"></div>
     <!-- Preloading -->
     <!-- <div class="preloader">
         <div class=" loader">
@@ -511,7 +518,7 @@
     <!-- end header -->
 
 
-    <section class="page-title pricing-section ">
+    <section class="page-title  ">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -980,7 +987,8 @@
                 <div class="footer-row">
                     <div class="footer-col brand-col">
                         <img src="assets/images/logo/logo.png" alt="TheAlgoman Logo" class="footer-logo" />
-                        <p class="footer-tagline">India's most trusted algo trading platform — helping you earn consistent profits through fully automated, data-driven strategies.</p>
+                        <p class="footer-tagline">India's most trusted algo trading platform — helping you earn
+                            consistent profits through fully automated, data-driven strategies.</p>
                     </div>
                     <div class="footer-col">
                         <h6 class="footer__title">Company</h6>
@@ -1025,134 +1033,7 @@
             </div>
         </div>
     </footer>
-    <style>
-    .footer {
-        background: linear-gradient(135deg, #1a2d3a 60%, #0a1929 100%);
-        color: #fff;
-        padding-top: 40px;
-        font-family: 'Poppins', sans-serif;
-    }
-    .footer__top {
-        border-bottom: 1px solid rgba(255,255,255,0.08);
-        padding-bottom: 30px;
-    }
-    .footer-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 40px;
-        justify-content: space-between;
-    }
-    .footer-col {
-        min-width: 160px;
-        flex: 1 1 160px;
-        margin-bottom: 20px;
-    }
-    .brand-col {
-        flex: 2 1 260px;
-        min-width: 220px;
-    }
-    .footer-logo {
-        width: 120px;
-        margin-bottom: 12px;
-    }
-    .footer-tagline {
-        font-size: 1rem;
-        color: #b0c4d4;
-        margin-bottom: 0;
-    }
-    .footer__title {
-        font-size: 1.1rem;
-        font-weight: 600;
-        margin-bottom: 12px;
-        color: #26bdf4;
-    }
-    .footer__nav a {
-        color: #e0e0e0;
-        text-decoration: none;
-        display: block;
-        margin-bottom: 8px;
-        font-size: 0.98rem;
-        transition: color 0.2s;
-    }
-    .footer__nav a:hover {
-        color: #00b4d8;
-    }
-    .footer__bottom {
-        padding: 18px 0 0 0;
-    }
-    .footer-bottom-row {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-    .footer-social {
-        display: flex;
-        gap: 18px;
-    }
-    .footer-social a {
-        color: #fff;
-        font-size: 1.5rem;
-        background: rgba(255,255,255,0.08);
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: background 0.2s, color 0.2s, transform 0.2s;
-    }
-    .footer-social a:hover {
-        background: #00b4d8;
-        color: #fff;
-        transform: translateY(-4px) scale(1.08);
-    }
-    .footer-social .fab.fa-instagram {
-        font-size: 1.4rem;
-    }
-    @media (max-width: 900px) {
-        .footer-row {
-            flex-direction: column;
-            gap: 0;
-        }
-        .footer-col, .brand-col {
-            min-width: 100%;
-            flex: 1 1 100%;
-            margin-bottom: 24px;
-        }
-        .footer-bottom-row {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 10px;
-        }
-        .footer-social {
-            margin-top: 10px;
-        }
-    }
-    @media (max-width: 600px) {
-        .footer {
-            padding-top: 24px;
-        }
-        .footer__top {
-            padding-bottom: 18px;
-        }
-        .footer-logo {
-            width: 90px;
-        }
-        .footer__title {
-            font-size: 1rem;
-        }
-        .footer-tagline {
-            font-size: 0.95rem;
-        }
-        .footer-social a {
-            width: 36px;
-            height: 36px;
-            font-size: 1.2rem;
-        }
-    }
-    </style>
+   
     <!-- End Footer -->
     <a id="scroll-top"></a>
 

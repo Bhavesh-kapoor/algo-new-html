@@ -18,6 +18,9 @@
   <link rel="shortcut icon" href="assets/images/logo/logo.png" />
   <link rel="apple-touch-icon-precomposed" href="assets/images/logo/logo.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="app/js/particles.js"></script>
+  <link href="css/custom.css" rel="stylesheet" />
 
   <style>
     tr {
@@ -386,6 +389,9 @@
 </head>
 
 <body class="home-nft header-fixed" data-magic-cursor="show">
+  <!-- Add particles container -->
+  <div id="particles-container"></div>
+
   <!-- Preloading -->
   <!-- <div class="preloader">
         <div class=" loader">
@@ -409,7 +415,7 @@
   <div class="mouse-cursor cursor-inner"></div>
   <!-- /MAGIC CURSOR -->
 
-    <!-- Header -->
+  <!-- Header -->
   <header id="header_main" class="header">
     <div class="container">
       <div class="row">
@@ -424,7 +430,7 @@
             <div class="header__right">
               <nav id="main-nav" class="main-nav">
                 <ul id="menu-primary-menu" class="menu">
-                  <li class="menu-item current-menu-item">
+                  <li class="menu-item ">
                     <a href="index.html">Home</a>
                   </li>
                   <li class="menu-item">
@@ -442,15 +448,15 @@
                       <li style="padding-right: 0px !important">
                         <a href="404.html">Option Selling</a>
                       </li>
-                       <li style="padding-right: 0px !important">
-                                                <a href="404.html">Futures Buying</a>
-                                            </li>
-                                            <li style="padding-right: 0px !important">
-                                                <a href="404.html">Equity Buying</a>
-                                            </li>
+                      <li style="padding-right: 0px !important">
+                        <a href="404.html">Futures Buying</a>
+                      </li>
+                      <li style="padding-right: 0px !important">
+                        <a href="404.html">Equity Buying</a>
+                      </li>
                     </ul>
                   </li>
-                  <li class="menu-item">
+                  <li class="menu-item current-menu-item">
                     <a href="contact.html">Contact Us</a>
                   </li>
                   <li class="menu-item">
@@ -538,7 +544,7 @@
 
   <!-- end Header -->
 
-  <section class="page-title pricing-section">
+  <section class="page-title ">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -598,7 +604,8 @@
                     <form action="#">
                       <input type="text" placeholder="Full Name" />
                       <input type="email" placeholder="Email" />
-                      <select id="product" class="form__input custom-select" style="color:#a1a1a1;padding: 18px;" required>
+                      <select id="product" class="form__input custom-select" style="color:#a1a1a1;padding: 18px;"
+                        required>
                         <option value="" disabled selected>Select Product</option>
                         <option value="Option Buying">Option Buying</option>
                         <option value="Option Selling">Option Selling</option>
@@ -851,7 +858,8 @@
         <div class="footer-row">
           <div class="footer-col brand-col">
             <img src="assets/images/logo/logo.png" alt="TheAlgoman Logo" class="footer-logo" />
-            <p class="footer-tagline">India's most trusted algo trading platform — helping you earn consistent profits through fully automated, data-driven strategies.</p>
+            <p class="footer-tagline">India's most trusted algo trading platform — helping you earn consistent profits
+              through fully automated, data-driven strategies.</p>
           </div>
           <div class="footer-col">
             <h6 class="footer__title">Company</h6>
@@ -897,134 +905,7 @@
     </div>
   </footer>
 
-  <style>
-    .footer {
-      background: linear-gradient(135deg, #1a2d3a 60%, #0a1929 100%);
-      color: #fff;
-      padding-top: 40px;
-      font-family: 'Poppins', sans-serif;
-    }
-    .footer__top {
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      padding-bottom: 30px;
-    }
-    .footer-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
-      justify-content: space-between;
-    }
-    .footer-col {
-      min-width: 160px;
-      flex: 1 1 160px;
-      margin-bottom: 20px;
-    }
-    .brand-col {
-      flex: 2 1 260px;
-      min-width: 220px;
-    }
-    .footer-logo {
-      width: 120px;
-      margin-bottom: 12px;
-    }
-    .footer-tagline {
-      font-size: 1rem;
-      color: #b0c4d4;
-      margin-bottom: 0;
-    }
-    .footer__title {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 12px;
-      color: #26bdf4;
-    }
-    .footer__nav a {
-      color: #e0e0e0;
-      text-decoration: none;
-      display: block;
-      margin-bottom: 8px;
-      font-size: 0.98rem;
-      transition: color 0.2s;
-    }
-    .footer__nav a:hover {
-      color: #00b4d8;
-    }
-    .footer__bottom {
-      padding: 18px 0 0 0;
-    }
-    .footer-bottom-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    .footer-social {
-      display: flex;
-      gap: 18px;
-    }
-    .footer-social a {
-      color: #fff;
-      font-size: 1.5rem;
-      background: rgba(255,255,255,0.08);
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.2s, color 0.2s, transform 0.2s;
-    }
-    .footer-social a:hover {
-      background: #00b4d8;
-      color: #fff;
-      transform: translateY(-4px) scale(1.08);
-    }
-    .footer-social .fab.fa-instagram {
-      font-size: 1.4rem;
-    }
-    @media (max-width: 900px) {
-      .footer-row {
-        flex-direction: column;
-        gap: 0;
-      }
-      .footer-col, .brand-col {
-        min-width: 100%;
-        flex: 1 1 100%;
-        margin-bottom: 24px;
-      }
-      .footer-bottom-row {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-      }
-      .footer-social {
-        margin-top: 10px;
-      }
-    }
-    @media (max-width: 600px) {
-      .footer {
-        padding-top: 24px;
-      }
-      .footer__top {
-        padding-bottom: 18px;
-      }
-      .footer-logo {
-        width: 90px;
-      }
-      .footer__title {
-        font-size: 1rem;
-      }
-      .footer-tagline {
-        font-size: 0.95rem;
-      }
-      .footer-social a {
-        width: 36px;
-        height: 36px;
-        font-size: 1.2rem;
-      }
-    }
-  </style>
+
   <!-- End Footer -->
   <a id="scroll-top"></a>
 
@@ -1065,9 +946,6 @@
   <script src="app/js/mouse.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-  <a href="https://api.whatsapp.com/send?phone=51955081075&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202." class="float" target="_blank">
-    <i class="fa fa-whatsapp my-float"></i>
-  </a>
 </body>
 
 </html>

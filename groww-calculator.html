@@ -23,8 +23,12 @@
   <link rel="stylesheet" href="webfont/tabler-icons.min.css" />
 
   <!-- Favicons -->
-  <link rel="icon" type="image/png" href="img/logo.png" sizes="32x32" />
-  <link rel="apple-touch-icon" href="img/logo.png" />
+  <link rel="icon" type="image/png" href="assets/images/logo/logo.png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="assets/images/logo/logo.png" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="app/js/particles.js"></script>
+  <link href="css/custom.css" rel="stylesheet" />
+
 
   <title>Groww Brokerage Calculator - TheAlgoman</title>
   <style>
@@ -205,6 +209,9 @@
 </head>
 
 <body class="body body--home home-nft">
+  <!-- Add particles container -->
+  <div id="particles-container"></div>
+
   <!-- Header -->
   <!-- Header -->
   <header id="header_main" class="header">
@@ -499,142 +506,15 @@
     </div>
   </footer>
 
-  <style>
-    .footer {
-      background: linear-gradient(135deg, #1a2d3a 60%, #0a1929 100%);
-      color: #fff;
-      padding-top: 40px;
-      font-family: 'Poppins', sans-serif;
-    }
-    .footer__top {
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      padding-bottom: 30px;
-    }
-    .footer-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
-      justify-content: space-between;
-    }
-    .footer-col {
-      min-width: 160px;
-      flex: 1 1 160px;
-      margin-bottom: 20px;
-    }
-    .brand-col {
-      flex: 2 1 260px;
-      min-width: 220px;
-    }
-    .footer-logo {
-      width: 120px;
-      margin-bottom: 12px;
-    }
-    .footer-tagline {
-      font-size: 1rem;
-      color: #b0c4d4;
-      margin-bottom: 0;
-    }
-    .footer__title {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 12px;
-      color: #26bdf4;
-    }
-    .footer__nav a {
-      color: #e0e0e0;
-      text-decoration: none;
-      display: block;
-      margin-bottom: 8px;
-      font-size: 0.98rem;
-      transition: color 0.2s;
-    }
-    .footer__nav a:hover {
-      color: #00b4d8;
-    }
-    .footer__bottom {
-      padding: 18px 0 0 0;
-    }
-    .footer-bottom-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    .footer-social {
-      display: flex;
-      gap: 18px;
-    }
-    .footer-social a {
-      color: #fff;
-      font-size: 1.5rem;
-      background: rgba(255,255,255,0.08);
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.2s, color 0.2s, transform 0.2s;
-    }
-    .footer-social a:hover {
-      background: #00b4d8;
-      color: #fff;
-      transform: translateY(-4px) scale(1.08);
-    }
-    .footer-social .fab.fa-instagram {
-      font-size: 1.4rem;
-    }
-    @media (max-width: 900px) {
-      .footer-row {
-        flex-direction: column;
-        gap: 0;
-      }
-      .footer-col, .brand-col {
-        min-width: 100%;
-        flex: 1 1 100%;
-        margin-bottom: 24px;
-      }
-      .footer-bottom-row {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-      }
-      .footer-social {
-        margin-top: 10px;
-      }
-    }
-    @media (max-width: 600px) {
-      .footer {
-        padding-top: 24px;
-      }
-      .footer__top {
-        padding-bottom: 18px;
-      }
-      .footer-logo {
-        width: 90px;
-      }
-      .footer__title {
-        font-size: 1rem;
-      }
-      .footer-tagline {
-        font-size: 0.95rem;
-      }
-      .footer-social a {
-        width: 36px;
-        height: 36px;
-        font-size: 1.2rem;
-      }
-    }
-  </style>
+  
   <!-- End Footer -->
   <!-- JS -->
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/smooth-scrollbar.js"></script>
-  <script src="js/splide.min.js"></script>
-  <script src="js/three.min.js"></script>
-  <script src="js/vanta.fog.min.js"></script>
-  <script src="js/main.js"></script>
+  <script src="app/js/bootstrap.bundle.min.js"></script>
+  <script src="app/js/smooth-scrollbar.js"></script>
+  <script src="app/js/splide.min.js"></script>
+  <script src="app/js/three.min.js"></script>
+  <script src="app/js/vanta.fog.min.js"></script>
+  <script src="app/js/main.js"></script>
 
   <script>
     function calculateGrowwBrokerage() {
@@ -715,6 +595,16 @@
   <script src="app/js/mouse.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+  <script>
+    window.addEventListener('scroll', function () {
+      var header = document.getElementById('header_main');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  </script>
 </body>
 
 </html>

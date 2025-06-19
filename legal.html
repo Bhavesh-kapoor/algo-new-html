@@ -11,28 +11,32 @@
     <link rel="stylesheet" href="app/bootstrap/css/bootstrap.min.css">
 
     <link rel="stylesheet" href="app/dist/app.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="app/js/particles.js"></script>
+    <link href="css/custom.css" rel="stylesheet" />
 
-<style>
-.float{
-	position:fixed;
-	width:60px;
-	height:60px;
-	bottom:40px;
-	right:40px;
-	background-color:#25d366;
-	color:#FFF;
-	border-radius:50px;
-	text-align:center;
-  font-size:30px;
-	box-shadow: 2px 2px 3px #999;
-  z-index:100;
-}
 
-.my-float{
-	margin-top:16px;
-}
-</style>
+    <style>
+        .float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+        }
+
+        .my-float {
+            margin-top: 16px;
+        }
+    </style>
     <link href="app/dist/aos.css" rel="stylesheet">
     <!-- end Styles -->
 
@@ -392,6 +396,8 @@
 </head>
 
 <body class="home-nft header-fixed " data-magic-cursor="show">
+    <!-- Add particles container -->
+    <div id="particles-container"></div>
     <!-- Preloading -->
     <!-- <div class="preloader">
         <div class=" loader">
@@ -433,7 +439,7 @@
                                     <li class="menu-item ">
                                         <a href="index.html">Home</a>
                                     </li>
-                                    <li class="menu-item current-menu-item">
+                                    <li class="menu-item ">
                                         <a href="about.html">About </a>
                                     </li>
                                     <li class="menu-item header__dropdown">
@@ -554,7 +560,7 @@
     <!-- end header -->
 
 
-    <section class="page-title pricing-section ">
+    <section class="page-title  ">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -571,7 +577,7 @@
 
     <!-- Section Features -->
 
-        <section class="road-map style-1 pricing-section " style="margin: 60px 0px;" id="roadmap">
+    <section class="road-map style-1  " style="padding: 60px 0px;" id="roadmap">
 
         <div class="container">
             <div class="row">
@@ -689,7 +695,7 @@
                         <h3> Got questions? </h3>
                         <p class="mt-12">
 
-                            We’ve got answers. Find everything you need to know about our company and services right
+                            We've got answers. Find everything you need to know about our company and services right
                             here.
 
 
@@ -729,7 +735,7 @@
 
                                     <div class="flat-toggle">
                                         <h5 class="toggle-title">Do I need to log in daily to deploy the algos?</h5>
-                                        <p class="toggle-content">No, you don’t need to deploy the algos daily. However,
+                                        <p class="toggle-content">No, you don't need to deploy the algos daily. However,
                                             you must log in to regenerate tokens each day to keep the algos running.</p>
                                     </div>
 
@@ -864,12 +870,12 @@
                                                 algo.</p>
 
                                             <p><strong>Compatible Device or VPS (if needed)</strong></p>
-                                            <p>For client-side algos, you’ll need a PC/laptop or a VPS running during
-                                                market hours. (Cloud-based algos don’t need this.)</p>
+                                            <p>For client-side algos, you'll need a PC/laptop or a VPS running during
+                                                market hours. (Cloud-based algos don't need this.)</p>
 
                                             <p><strong>Risk Disclosure Acceptance</strong></p>
                                             <p>You must acknowledge that trading involves market risk and that past
-                                                results don’t guarantee future returns.</p>
+                                                results don't guarantee future returns.</p>
 
                                             <p><strong>Enrollment with Our Algo Service</strong></p>
                                             <p>Complete the onboarding process to connect your account and get started.
@@ -893,184 +899,58 @@
     <!-- Footer -->
     <footer class="footer style-1">
         <div class="footer__top">
-          <div class="container">
-            <div class="footer-row">
-              <div class="footer-col brand-col">
-                <img src="assets/images/logo/logo.png" alt="TheAlgoman Logo" class="footer-logo" />
-                <p class="footer-tagline">India's most trusted algo trading platform — helping you earn consistent profits through fully automated, data-driven strategies.</p>
-              </div>
-              <div class="footer-col">
-                <h6 class="footer__title">Company</h6>
-                <div class="footer__nav">
-                  <a href="about.html">About us</a>
-                  <a href="contact.html">Contact Us</a>
-                  <a href="faq.html">How it works</a>
+            <div class="container">
+                <div class="footer-row">
+                    <div class="footer-col brand-col">
+                        <img src="assets/images/logo/logo.png" alt="TheAlgoman Logo" class="footer-logo" />
+                        <p class="footer-tagline">India's most trusted algo trading platform — helping you earn
+                            consistent profits through fully automated, data-driven strategies.</p>
+                    </div>
+                    <div class="footer-col">
+                        <h6 class="footer__title">Company</h6>
+                        <div class="footer__nav">
+                            <a href="about.html">About us</a>
+                            <a href="contact.html">Contact Us</a>
+                            <a href="faq.html">How it works</a>
+                        </div>
+                    </div>
+                    <div class="footer-col">
+                        <h6 class="footer__title">Products</h6>
+                        <div class="footer__nav">
+                            <a href="invest.html">Option Buying</a>
+                            <a href="404.html">Option Selling</a>
+                            <a href="404.html">Futures Buying</a>
+                            <a href="404.html">Equity Buying</a>
+                        </div>
+                    </div>
+                    <div class="footer-col">
+                        <h6 class="footer__title">Support</h6>
+                        <div class="footer__nav">
+                            <a href="privacy.html">Privacy policy</a>
+                            <a href="terms.html">Terms & conditions</a>
+                            <a href="risk.html">Risk Disclaimer</a>
+                            <a href="legal.html">Legal Disclaimer</a>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="footer-col">
-                <h6 class="footer__title">Products</h6>
-                <div class="footer__nav">
-                  <a href="invest.html">Option Buying</a>
-                  <a href="404.html">Option Selling</a>
-                  <a href="404.html">Futures Buying</a>
-                  <a href="404.html">Equity Buying</a>
-                </div>
-              </div>
-              <div class="footer-col">
-                <h6 class="footer__title">Support</h6>
-                <div class="footer__nav">
-                  <a href="privacy.html">Privacy policy</a>
-                  <a href="terms.html">Terms & conditions</a>
-                  <a href="risk.html">Risk Disclaimer</a>
-                  <a href="legal.html">Legal Disclaimer</a>
-                </div>
-              </div>
             </div>
-          </div>
         </div>
         <div class="footer__bottom">
-          <div class="container">
-            <div class="footer-bottom-row">
-              <p class="footer-copyright">© 2025. All rights reserved by <a href="#">TheAlgoman</a></p>
-              <div class="footer-social">
-                <a href="#" aria-label="Twitter"><span class="icon-twitter"></span></a>
-                <a href="#" aria-label="Facebook"><span class="icon-facebook"></span></a>
-                <a href="#" aria-label="YouTube"><span class="icon-youtobe"></span></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-              </div>
+            <div class="container">
+                <div class="footer-bottom-row">
+                    <p class="footer-copyright">© 2025. All rights reserved by <a href="#">TheAlgoman</a></p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Twitter"><span class="icon-twitter"></span></a>
+                        <a href="#" aria-label="Facebook"><span class="icon-facebook"></span></a>
+                        <a href="#" aria-label="YouTube"><span class="icon-youtobe"></span></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </footer>
-    
-      <style>
-        .footer {
-          background: linear-gradient(135deg, #1a2d3a 60%, #0a1929 100%);
-          color: #fff;
-          padding-top: 40px;
-          font-family: 'Poppins', sans-serif;
-        }
-        .footer__top {
-          border-bottom: 1px solid rgba(255,255,255,0.08);
-          padding-bottom: 30px;
-        }
-        .footer-row {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 40px;
-          justify-content: space-between;
-        }
-        .footer-col {
-          min-width: 160px;
-          flex: 1 1 160px;
-          margin-bottom: 20px;
-        }
-        .brand-col {
-          flex: 2 1 260px;
-          min-width: 220px;
-        }
-        .footer-logo {
-          width: 120px;
-          margin-bottom: 12px;
-        }
-        .footer-tagline {
-          font-size: 1rem;
-          color: #b0c4d4;
-          margin-bottom: 0;
-        }
-        .footer__title {
-          font-size: 1.1rem;
-          font-weight: 600;
-          margin-bottom: 12px;
-          color: #26bdf4;
-        }
-        .footer__nav a {
-          color: #e0e0e0;
-          text-decoration: none;
-          display: block;
-          margin-bottom: 8px;
-          font-size: 0.98rem;
-          transition: color 0.2s;
-        }
-        .footer__nav a:hover {
-          color: #00b4d8;
-        }
-        .footer__bottom {
-          padding: 18px 0 0 0;
-        }
-        .footer-bottom-row {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          flex-wrap: wrap;
-          gap: 20px;
-        }
-        .footer-social {
-          display: flex;
-          gap: 18px;
-        }
-        .footer-social a {
-          color: #fff;
-          font-size: 1.5rem;
-          background: rgba(255,255,255,0.08);
-          border-radius: 50%;
-          width: 40px;
-          height: 40px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          transition: background 0.2s, color 0.2s, transform 0.2s;
-        }
-        .footer-social a:hover {
-          background: #00b4d8;
-          color: #fff;
-          transform: translateY(-4px) scale(1.08);
-        }
-        .footer-social .fab.fa-instagram {
-          font-size: 1.4rem;
-        }
-        @media (max-width: 900px) {
-          .footer-row {
-            flex-direction: column;
-            gap: 0;
-          }
-          .footer-col, .brand-col {
-            min-width: 100%;
-            flex: 1 1 100%;
-            margin-bottom: 24px;
-          }
-          .footer-bottom-row {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 10px;
-          }
-          .footer-social {
-            margin-top: 10px;
-          }
-        }
-        @media (max-width: 600px) {
-          .footer {
-            padding-top: 24px;
-          }
-          .footer__top {
-            padding-bottom: 18px;
-          }
-          .footer-logo {
-            width: 90px;
-          }
-          .footer__title {
-            font-size: 1rem;
-          }
-          .footer-tagline {
-            font-size: 0.95rem;
-          }
-          .footer-social a {
-            width: 36px;
-            height: 36px;
-            font-size: 1.2rem;
-          }
-        }
-      </style>
+    </footer>
+
+
     <!-- End Footer -->
     <a id="scroll-top"></a>
 

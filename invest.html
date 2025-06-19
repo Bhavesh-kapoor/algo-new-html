@@ -24,6 +24,10 @@
   <!-- Favicons -->
   <link rel="icon" type="image/png" href="img/logo.png" sizes="32x32" />
   <link rel="apple-touch-icon" href="img/logo.png" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="app/js/particles.js"></script>
+  <link href="css/custom.css" rel="stylesheet" />
+
 
   <title>Pricing | Algo Man</title>
   <style>
@@ -44,57 +48,80 @@
       font-size: 1.1rem;
     }
     .apool {
-      background: linear-gradient(120deg, #1a2d3a 80%, #223a4d 100%);
-      border: 1px solid #26bdf4;
+      background: rgba(13, 27, 42, 0.9);
+      border: 2px solid;
+      border-image: linear-gradient(120deg, #26bdf4 10%, #1a2d3a 90%) 1;
       color: #fff;
-      border-radius: 18px;
-      box-shadow: 0 2px 16px rgba(44,93,114,0.10);
-      padding: 2rem 1.5rem 1.7rem 1.5rem;
-      margin-bottom: 2.2rem;
+      border-radius: 28px;
+      box-shadow: 0 12px 40px 0 rgba(44,93,114,0.22), 0 2px 12px 0 rgba(38,189,244,0.13);
+      padding: 2.5rem 1.7rem 2.2rem 1.7rem;
+      margin-bottom: 2.7rem;
       margin-left: 0.5rem;
       margin-right: 0.5rem;
-      transition: box-shadow 0.2s, transform 0.2s;
+      transition: box-shadow 0.25s, transform 0.22s, background 0.3s;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
     }
-    .apool:hover {
-      box-shadow: 0 8px 32px rgba(44,93,114,0.18);
-      transform: translateY(-4px) scale(1.01);
+    .apool:before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(120deg, rgba(38,189,244,0.10) 0%, rgba(26,45,58,0.18) 100%);
+      z-index: 0;
+      border-radius: 28px;
+      pointer-events: none;
+    }
+    .apool:after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle at 80% 10%, rgba(38,189,244,0.13) 0%, transparent 60%);
+      z-index: 0;
+      border-radius: 28px;
+      pointer-events: none;
+    }
+    .apool > * { position: relative; z-index: 1; }
+    .apool__icon {
+     display: none;
+    }
+    .apool__badge {
+      display: inline-block;
+      background: linear-gradient(90deg, #ffb347 0%, #ffcc80 100%);
+      color: #1a2d3a;
+      font-weight: 700;
+      font-size: 0.98rem;
+      border-radius: 12px;
+      padding: 4px 14px;
+      margin-bottom: 0.7rem;
+      margin-left: 0.2rem;
+      box-shadow: 0 2px 8px rgba(255,179,71,0.10);
+      letter-spacing: 0.2px;
     }
     .apool__title {
-      font-size: 1.3rem;
-      font-weight: 600;
+      font-size: 1.45rem;
+      font-weight: 800;
       color: #26bdf4;
-      margin-bottom: 1rem;
-      letter-spacing: 0.5px;
-    }
-    .apool__tabs .nav-item button {
-      background: none;
-      border: none;
-      color: #b0e0ff;
-      font-weight: 500;
-      font-size: 1rem;
-      padding: 0.5rem 1.2rem;
-      border-radius: 20px 20px 0 0;
-      transition: background 0.2s, color 0.2s;
-    }
-    .apool__tabs .nav-item button.active {
-      background: #26bdf4;
-      color: #fff;
-      font-weight: 600;
+      margin-bottom: 1.1rem;
+      letter-spacing: 0.8px;
+      text-shadow: 0 1px 8px rgba(38,189,244,0.08);
+      text-align: left;
     }
     .apool__content {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.3rem;
-      margin: 1rem 0 1.5rem 0;
-      color: #fff;
-      padding: 0px 20px;
-      font-size: 1.1rem;
+      padding: 0.7rem 0.7rem 0.7rem 0.7rem;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.04);
+      margin-bottom: 1.3rem;
+      box-shadow: 0 1px 8px rgba(38,189,244,0.04);
     }
     .apool__value {
-      font-size: 1.1rem;
+      font-size: 1.18rem;
       color: #fff;
-      font-weight: 500;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      text-shadow: 0 1px 6px rgba(38,189,244,0.08);
     }
     .apool__btn {
       display: block;
@@ -102,24 +129,28 @@
       background: linear-gradient(90deg, #26bdf4 0%, #1a2d3a 100%);
       color: #fff;
       border: none;
-      border-radius: 8px;
-      padding: 0.8rem 0;
-      font-size: 1.1rem;
-      font-weight: 600;
+      border-radius: 14px;
+      padding: 1.1rem 0;
+      font-size: 1.18rem;
+      font-weight: 800;
       text-align: center;
       text-decoration: none;
-      margin-top: 1rem;
-      transition: background 0.2s, box-shadow 0.2s;
-      box-shadow: 0 2px 8px rgba(38,189,244,0.10);
+      margin-top: 1.2rem;
+      transition: background 0.2s, box-shadow 0.2s, transform 0.18s;
+      box-shadow: 0 2px 16px rgba(38,189,244,0.13);
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
     }
     .apool__btn:hover {
       background: linear-gradient(90deg, #1a2d3a 0%, #26bdf4 100%);
+      transform: scale(1.04);
+      box-shadow: 0 6px 22px rgba(38,189,244,0.22);
     }
     .block-icon, .screw {
       display: none;
     }
     .pricing-callout {
-      background: #1a2d3a;
+      background: #092131;
       border: 1px solid #26bdf4;
       color: #fff;
       border-radius: 12px;
@@ -144,7 +175,7 @@
       padding-right: 0.5rem;
     }
     .highlight-item {
-      background: linear-gradient(120deg, #1a2d3a 80%, #223a4d 100%);
+      background: #092131;
       border: 1px solid #26bdf4;
       border-radius: 14px;
       box-shadow: 0 2px 12px rgba(44,93,114,0.10);
@@ -200,18 +231,25 @@
         padding-right: 0;
       }
       .apool {
-        margin-bottom: 1.5rem;
-        padding: 1.2rem 0.7rem;
+        margin-bottom: 1.7rem;
+        padding: 1.3rem 0.5rem 1.3rem 0.5rem;
         margin-left: 0;
         margin-right: 0;
       }
+      .apool__icon {
+        width: 44px;
+        height: 44px;
+        font-size: 1.3rem;
+        top: -18px;
+        right: 12px;
+      }
       .apool__title {
-        font-size: 1.1rem;
+        font-size: 1.13rem;
       }
       .apool__btn {
-        width: 90%;
-      font-size: 1rem;
-        padding: 0.7rem 0;
+        width: 98%;
+        font-size: 1.01rem;
+        padding: 0.8rem 0;
       }
       .customsize {
         font-size: 1.05rem;
@@ -236,10 +274,7 @@
         padding: 1rem 0.5rem !important;
         font-size: 0.98rem;
       }
-      .footer__top, .footer__bottom {
-        padding-left: 8px !important;
-        padding-right: 8px !important;
-      }
+     
     }
     @media (max-width: 575px) {
       .apool {
@@ -265,6 +300,8 @@
 </head>
 
 <body class="body home-nft body--home">
+  <!-- Add particles container -->
+  <div id="particles-container"></div>
   <!-- header -->
   <header id="header_main" class="header">
     <div class="container">
@@ -377,7 +414,7 @@
   <!-- end header -->
 
 
-   <section class="page-title pricing-section ">
+   <section class="page-title  ">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -438,7 +475,8 @@
         <div class="col-12 col-md-6 col-lg-4">
           <!-- arbitrage pool -->
           <div class="apool">
-            <h3 class="apool__title">1 Week</h3>
+            <span class="apool__icon"><i class="ti ti-database-dollar"></i></span>
+            <span class="apool__badge">1 Week</span>
 
             <!-- tabs nav -->
             <ul class="nav nav-tabs apool__tabs apool__tabs--orange" id="apool__tabs1" role="tablist">
@@ -491,7 +529,8 @@
         <div class="col-12 col-md-6 col-lg-4">
           <!-- arbitrage pool -->
           <div class="apool">
-            <h3 class="apool__title">1 Month</h3>
+            <span class="apool__icon"><i class="ti ti-database-dollar"></i></span>
+            <span class="apool__badge">1 Month</span>
 
             <!-- tabs nav -->
             <ul class="nav nav-tabs apool__tabs apool__tabs--green" id="apool__tabs2" role="tablist">
@@ -544,7 +583,8 @@
         <div class="col-12 col-lg-4">
           <!-- arbitrage pool -->
           <div class="apool">
-            <h3 class="apool__title">3 Months</h3>
+            <span class="apool__icon"><i class="ti ti-database-dollar"></i></span>
+            <span class="apool__badge">3 Months</span>
 
             <!-- tabs nav -->
             <ul class="nav nav-tabs apool__tabs apool__tabs--blue" id="apool__tabs3" role="tablist">
@@ -597,7 +637,8 @@
         <div class="col-12 col-md-6 col-lg-4">
           <!-- arbitrage pool -->
           <div class="apool">
-            <h3 class="apool__title">6 Months</h3>
+            <span class="apool__icon"><i class="ti ti-database-dollar"></i></span>
+            <span class="apool__badge">6 Months</span>
 
             <!-- tabs nav -->
             <ul class="nav nav-tabs apool__tabs apool__tabs--orange" id="apool__tabs1" role="tablist">
@@ -650,7 +691,8 @@
         <div class="col-12 col-md-6 col-lg-4">
           <!-- arbitrage pool -->
           <div class="apool">
-            <h3 class="apool__title">9 Months</h3>
+            <span class="apool__icon"><i class="ti ti-database-dollar"></i></span>
+            <span class="apool__badge">9 Months</span>
 
             <!-- tabs nav -->
             <ul class="nav nav-tabs apool__tabs apool__tabs--green" id="apool__tabs2" role="tablist">
@@ -703,7 +745,8 @@
         <div class="col-12 col-lg-4">
           <!-- arbitrage pool -->
           <div class="apool">
-            <h3 class="apool__title">12 Months</h3>
+            <span class="apool__icon"><i class="ti ti-database-dollar"></i></span>
+            <span class="apool__badge">12 Months</span>
 
             <!-- tabs nav -->
             <ul class="nav nav-tabs apool__tabs apool__tabs--blue" id="apool__tabs3" role="tablist">
@@ -877,138 +920,7 @@
     </div>
   </footer>
 
-  <style>
-    .footer {
-      background: linear-gradient(135deg, #1a2d3a 60%, #0a1929 100%);
-      color: #fff;
-      padding-top: 40px;
-      font-family: 'Poppins', sans-serif;
-    }
-    .footer__top {
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      padding-bottom: 30px;
-    }
-    .footer-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
-      justify-content: space-between;
-    }
-    .footer-col {
-      min-width: 160px;
-      flex: 1 1 160px;
-      margin-bottom: 20px;
-    }
-    .brand-col {
-      flex: 2 1 260px;
-      min-width: 220px;
-    }
-    .footer-logo {
-      width: 120px;
-      margin-bottom: 12px;
-    }
-    .footer-tagline {
-      font-size: 1rem;
-      color: #b0c4d4;
-      margin-bottom: 0;
-    }
-    .footer__title {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 12px;
-      color: #26bdf4;
-    }
-    .footer__nav a {
-      color: #e0e0e0;
-      text-decoration: none;
-      display: block;
-      margin-bottom: 8px;
-      font-size: 0.98rem;
-      transition: color 0.2s;
-    }
-    .footer__nav a:hover {
-      color: #00b4d8;
-    }
-    .footer__bottom {
-      padding: 18px 0 0 0;
-    }
-    .footer-bottom-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    .footer-social {
-      display: flex;
-      gap: 18px;
-    }
-    .footer-social a {
-      color: #fff;
-      font-size: 1.5rem;
-      background: rgba(255,255,255,0.08);
-      border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-      transition: background 0.2s, color 0.2s, transform 0.2s;
-    }
-    .footer-social a:hover {
-      background: #00b4d8;
-      color: #fff;
-      transform: translateY(-4px) scale(1.08);
-    }
-    .footer-social .fab.fa-instagram {
-      font-size: 1.4rem;
-    }
-    @media (max-width: 900px) {
-      .footer-row {
-        flex-direction: column;
-        gap: 0;
-      }
-      .footer-col, .brand-col {
-        min-width: 100%;
-        flex: 1 1 100%;
-        margin-bottom: 24px;
-      }
-      .footer-bottom-row {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-      }
-      .footer-social {
-        margin-top: 10px;
-      }
-    }
-    @media (max-width: 600px) {
-      .footer {
-        padding-top: 24px;
-      }
-      .footer__top {
-        padding-bottom: 18px;
-      }
-      .footer-logo {
-        width: 90px;
-      }
-      .footer__title {
-        font-size: 1rem;
-      }
-      .footer-tagline {
-        font-size: 0.95rem;
-      }
-      .footer-social a {
-        width: 36px;
-        height: 36px;
-        font-size: 1.2rem;
-      }
-      .section--head{
-        margin-top: 20px;
-      }
-      
-    }
-  </style>
+
   <!-- End Footer -->
   <!-- end footer -->
 

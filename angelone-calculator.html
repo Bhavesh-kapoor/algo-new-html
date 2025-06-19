@@ -15,8 +15,8 @@
 	<link rel="stylesheet" href="webfont/tabler-icons.min.css">
 
 	<!-- Favicons -->
-	<link rel="icon" type="image/png" href="icon/favicon-32x32.png" sizes="32x32">
-	<link rel="apple-touch-icon" href="icon/favicon-32x32.png">
+	<link rel="icon" type="image/png" href="assets/images/logo/logo.png" sizes="32x32" />
+	<link rel="apple-touch-icon" href="assets/images/logo/logo.png" />
 
 	<meta name="description" content="Arbitrage trading HTML Template">
 	<meta name="keywords" content="">
@@ -25,6 +25,9 @@
 </head>
 
 <body class="body">
+	<!-- Add particles container -->
+	<div id="particles-container"></div>
+
 	<!-- page wrap -->
 	<div class="section section--content">
 		<div class="section__content">
@@ -51,12 +54,22 @@
 	<!-- end page wrap -->
 
 	<!-- JS -->
-	<script src="js/bootstrap.bundle.min.js"></script>
-	<script src="js/smooth-scrollbar.js"></script>
-	<script src="js/splide.min.js"></script>
-	<script src="js/three.min.js"></script>
-	<script src="js/vanta.fog.min.js"></script>
-	<script src="js/main.js"></script>
+	<script src="app/js/bootstrap.bundle.min.js"></script>
+	<script src="app/js/smooth-scrollbar.js"></script>
+	<script src="app/js/splide.min.js"></script>
+	<script src="app/js/three.min.js"></script>
+	<script src="app/js/vanta.fog.min.js"></script>
+	<script src="app/js/main.js"></script>
+	<script>
+		window.addEventListener('scroll', function () {
+			var header = document.getElementById('header_main');
+			if (window.scrollY > 50) {
+				header.classList.add('scrolled');
+			} else {
+				header.classList.remove('scrolled');
+			}
+		});
+	</script>
 </body>
 
 <!-- Mirrored from centure.volkovdesign.com/404.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 11 Apr 2025 15:48:43 GMT -->

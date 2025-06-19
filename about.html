@@ -12,9 +12,9 @@
 
     <link rel="stylesheet" href="app/dist/app.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-   
+
     <style>
-        
+
     </style>
     <link href="app/dist/aos.css" rel="stylesheet">
     <!-- end Styles -->
@@ -22,6 +22,11 @@
     <!-- Favicon and Touch Icons  -->
     <link rel="shortcut icon" href="assets/images/logo/logo.png">
     <link rel="apple-touch-icon-precomposed" href="assets/images/logo/logo.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="app/js/particles.js"></script>
+    <link href="css/custom.css" rel="stylesheet" />
+
+
     <style>
         .header {
             background: transparent;
@@ -127,37 +132,31 @@
                 gap: 15px;
                 /* Space between logos */
             }
-            .about .style-1{
+
+            .about .style-1 {
                 padding: 0px !important;
             }
         }
     </style>
 
     <style>
-        /* Pricing section styling */
-        .pricing-section.style-2 {
-            padding: 60px 0;
-            /* Vertical padding for spacing */
-            color: white;
-            /* White text */
-        }
-
+       
         /* Title styling */
         .pricing-section .title {
-            font-size: 2.5rem;
+            font-size: 2.5rem ;
             font-weight: 700;
             text-align: center;
             margin-bottom: 40px;
         }
 
         .pricing-section .title span {
-            color: #00b4d8;
+            color: #00b4d8 ;
             /* Cyan accent for "EVERYONE" */
         }
 
         /* Image styling */
         .pricing-section__image {
-            text-align: center;
+            text-align: center ;
             /* Center image */
             width: 400px;
         }
@@ -169,7 +168,7 @@
 
         /* Pricing card styling */
         .pricing-section__card {
-            background-color: #1a2d3a;
+            background-color: #1a2d3a ;
             color: #333;
             padding: 30px;
             border-radius: 10px;
@@ -266,25 +265,26 @@
         /* Responsive adjustments */
         @media (max-width: 767px) {
             .pricing-section__image {
-                margin-bottom: 30px;
+                margin-bottom: 30px ;
                 /* Space between image and card on mobile */
             }
 
             .pricing-section .title {
-                font-size: 2rem;
+                font-size: 2rem ;
                 /* Smaller title on mobile */
             }
 
             .pricing-section__card {
                 padding: 20px;
-                /* Less padding on mobile */
+                /* Less padding on mobile * /
             }
 
             .discounted-price {
                 font-size: 1.5rem;
                 /* Smaller price on mobile */
             }
-            .aboycustom{
+
+            .aboycustom {
                 padding: 0px !important;
             }
 
@@ -381,6 +381,8 @@
 </head>
 
 <body class="home-nft header-fixed " data-magic-cursor="show">
+    <!-- Add particles container -->
+    <div id="particles-container"></div>
     <!-- Preloading -->
     <!-- <div class="preloader">
         <div class=" loader">
@@ -543,9 +545,9 @@
     <!-- end header -->
 
 
-    <section class="page-title pricing-section ">
+    <section class="page-title  ">
         <div class="container">
-            <div class="row">
+            <div class="row" >
                 <div class="col-md-12">
                     <div class="content">
                         <h2 class="title">About Us</h2>
@@ -560,7 +562,7 @@
 
     <!-- Section Features -->
 
-    <section class="road-map style-1 pricing-section " style="margin-top: 30px;" id="roadmap">
+    <section class="road-map  " style="padding: 70px 0px;"  id="roadmap">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -589,70 +591,72 @@
     </section>
     <!-- end Section RoadMap -->
 
+
+
     <section class="features style-4" id="features">
         <div class="container">
             <div class="row">
-                <!-- Our Mission -->
+               
+
                 <div class="col-xl-4 col-md-6">
                     <div class="features-box-4 center aos-init aos-animate" data-aos="fade-up" data-aos-duration="800">
                         <div class="icon">
-                            <i class="fas fa-bullseye"></i> <!-- Target icon for mission -->
+                            <span class="fas fa-bullseye"></span>
                         </div>
                         <div class="features-box-content">
-                            <a href="#" class="h5 title">Our Mission</a>
-                            <p class="fs-17">To deliver safe, smart, and consistent profits through disciplined,
-                                data-driven algorithmic trading for every investor.</p>
-                            <p>Our mission is to revolutionize retail trading in India by offering algorithmic solutions
+                            <a href="#" class="h5 title mt-2">Our Mission</a>
+                            <p class="fs-17">
+                                To deliver safe, smart, and consistent profits through disciplined,
+                                data-driven algorithmic trading for every investor.
+                            </p>
+                            <p class="fs-17">Our mission is to revolutionize retail trading in India by offering algorithmic solutions
                                 that focus on consistent performance, capital safety, and complete transparency.</p>
-                            </br>
-                            <p>We're committed to helping you earn steady returns while minimizing risks, without you
+                            
+                            <p class="fs-17">We're committed to helping you earn steady returns while minimizing risks, without you
                                 having to spend hours analyzing the market or chasing unreliable tips.</p>
                         </div>
                     </div>
                 </div>
-
-                <!-- Our Vision -->
                 <div class="col-xl-4 col-md-6">
                     <div class="features-box-4 center aos-init aos-animate" data-aos="fade-up" data-aos-duration="1200">
                         <div class="icon">
-                            <i class="fas fa-eye"></i> <!-- Eye icon for vision -->
+                            <span class="fas fa-eye"></span>
                         </div>
                         <div class="features-box-content">
-                            <a href="#" class="h5 title">Our Vision</a>
+                            <a href="#" class="h5 title mt-2">Our Vision </a>
                             <p class="fs-17">To make automated, algorithmic trading profitable, transparent, and
                                 accessible to every Indian investor.</p>
-                            <p>Our vision is to simplify the future of stock market trading by bringing world-class
+                            <p class="fs-17">Our vision is to simplify the future of stock market trading by bringing world-class
                                 algorithmic strategies into the hands of retail investors.</p>
-                            <p>We aim to empower individuals — whether students, professionals, or full-time traders —
+                            <p class="fs-17">We aim to empower individuals — whether students, professionals, or full-time traders —
                                 with reliable, automated systems that help grow wealth consistently while eliminating
                                 emotional biases from trading.</p>
                         </div>
                     </div>
                 </div>
-
-                <!-- Our Promise -->
                 <div class="col-xl-4 col-md-6">
                     <div class="features-box-4 center aos-init aos-animate" data-aos="fade-up" data-aos-duration="1600">
                         <div class="icon">
-                            <i class="fas fa-handshake"></i> <!-- Handshake icon for promise -->
+                            <span class="fas fa-handshake"></span>
                         </div>
                         <div class="features-box-content">
                             <a href="#" class="h5 title">Our Promise</a>
                             <p class="fs-17">We don't sell dreams — we deliver disciplined, data-backed trading that
                                 works.</p>
-                            <p>We promise transparency, reliability, and performance. No emotional trades, no hidden
+                            <p class="fs-17">We promise transparency, reliability, and performance. No emotional trades, no hidden
                                 agendas — only proven strategies executed through your Demat account with full control
                                 in your hands.</p></br>
                             </br>
-                            <p>At TheAlgoman, your success is our only benchmark, and we're relentless about delivering
+                            <p class="fs-17">At TheAlgoman, your success is our only benchmark, and we're relentless about delivering
                                 it.</p>
                         </div>
                     </div>
                 </div>
-
+               
             </div>
         </div>
     </section>
+    
 
     <section class="about style-1 aboycustom" style="padding: 10px 50px;">
         <div class="container">
@@ -1041,7 +1045,8 @@
                 <div class="footer-row">
                     <div class="footer-col brand-col">
                         <img src="assets/images/logo/logo.png" alt="TheAlgoman Logo" class="footer-logo" />
-                        <p class="footer-tagline">India's most trusted algo trading platform — helping you earn consistent profits through fully automated, data-driven strategies.</p>
+                        <p class="footer-tagline">India's most trusted algo trading platform — helping you earn
+                            consistent profits through fully automated, data-driven strategies.</p>
                     </div>
                     <div class="footer-col">
                         <h6 class="footer__title">Company</h6>
@@ -1086,134 +1091,7 @@
             </div>
         </div>
     </footer>
-    <style>
-        .footer {
-            background: linear-gradient(135deg, #1a2d3a 60%, #0a1929 100%);
-            color: #fff;
-            padding-top: 40px;
-            font-family: 'Poppins', sans-serif;
-        }
-        .footer__top {
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-            padding-bottom: 30px;
-        }
-        .footer-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            justify-content: space-between;
-        }
-        .footer-col {
-            min-width: 160px;
-            flex: 1 1 160px;
-            margin-bottom: 20px;
-        }
-        .brand-col {
-            flex: 2 1 260px;
-            min-width: 220px;
-        }
-        .footer-logo {
-            width: 120px;
-            margin-bottom: 12px;
-        }
-        .footer-tagline {
-            font-size: 1rem;
-            color: #b0c4d4;
-            margin-bottom: 0;
-        }
-        .footer__title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: #26bdf4;
-        }
-        .footer__nav a {
-            color: #e0e0e0;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 8px;
-            font-size: 0.98rem;
-            transition: color 0.2s;
-        }
-        .footer__nav a:hover {
-            color: #00b4d8;
-        }
-        .footer__bottom {
-            padding: 18px 0 0 0;
-        }
-        .footer-bottom-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .footer-social {
-            display: flex;
-            gap: 18px;
-        }
-        .footer-social a {
-            color: #fff;
-            font-size: 1.5rem;
-            background: rgba(255,255,255,0.08);
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.2s, color 0.2s, transform 0.2s;
-        }
-        .footer-social a:hover {
-            background: #00b4d8;
-            color: #fff;
-            transform: translateY(-4px) scale(1.08);
-        }
-        .footer-social .fab.fa-instagram {
-            font-size: 1.4rem;
-        }
-        @media (max-width: 900px) {
-            .footer-row {
-                flex-direction: column;
-                gap: 0;
-            }
-            .footer-col, .brand-col {
-                min-width: 100%;
-                flex: 1 1 100%;
-                margin-bottom: 24px;
-            }
-            .footer-bottom-row {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-            }
-            .footer-social {
-                margin-top: 10px;
-            }
-        }
-        @media (max-width: 600px) {
-            .footer {
-                padding-top: 24px;
-            }
-            .footer__top {
-                padding-bottom: 18px;
-            }
-            .footer-logo {
-                width: 90px;
-            }
-            .footer__title {
-                font-size: 1rem;
-            }
-            .footer-tagline {
-                font-size: 0.95rem;
-            }
-            .footer-social a {
-                width: 36px;
-                height: 36px;
-                font-size: 1.2rem;
-            }
-        }
-    </style>
+    
     <!-- End Footer -->
     <a id="scroll-top"></a>
 

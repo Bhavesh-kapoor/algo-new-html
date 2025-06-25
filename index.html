@@ -12,7 +12,7 @@
 
   <link rel="stylesheet" href="app/dist/app.css" />
   <link href="app/dist/aos.css" rel="stylesheet" />
-  <link   href="css/custom.css" rel="stylesheet"/>
+  <link href="css/custom.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -101,6 +101,11 @@
 
   <!-- Custom CSS -->
   <style>
+    :root{
+      --tech-gradient-1: #0a1420;
+    --tech-gradient-2: #102030;
+    --tech-gradient-3: #0b1a27;
+    }
     .header__dropdown-menu {
       display: none;
       position: absolute;
@@ -135,6 +140,515 @@
     .header__dropdown-menu li a:hover {
       background: #0f3543;
     }
+
+    /* Modern Tech Hero Section */
+    .hero-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, var(--tech-gradient-1), var(--tech-gradient-2)) !important
+      
+    }
+
+    section {
+      padding: 80px 0;
+      position: relative;
+      /* background: linear-gradient(180deg, var(--tech-gradient-1), var(--tech-gradient-2)) !important; */
+      color: var(--text-color);
+      border-bottom: 1px solid rgba(0, 224, 255, 0.1);
+    }
+
+    .hero-title {
+      font-size: 4.5rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 2rem;
+      color: #ffffff;
+      text-shadow: 0 0 30px rgba(0, 224, 255, 0.3);
+      position: relative;
+      display: inline-block;
+    }
+
+    .hero-subtitle {
+      font-size: 20px !important;
+      /* Explicitly set to 20px with !important */
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      color: rgba(255, 255, 255, 0.9);
+      max-width: 800px;
+      position: relative;
+    }
+
+    /* Hero Image Styles */
+    .hero-image {
+      position: relative;
+      z-index: 2;
+      padding: 2rem;
+    }
+
+    .hero-image img {
+      max-width: 100%;
+      height: auto;
+      filter: drop-shadow(0 0 30px rgba(0, 224, 255, 0.3));
+    }
+
+    /* Broker Logos Section */
+    .bouncing-logos {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 2rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 3;
+    }
+
+    .logo-container {
+      background-color: white;
+      border-radius: 10px;
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100px;
+      height: 100px;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 24px 0 #00e0ff66, 0 0 8px 0 #00e0ff44;
+      position: relative;
+    }
+
+    .logo-container.zerodha {
+      margin-top: -32px;
+      z-index: 4;
+      box-shadow: 0 0 36px 8px #00e0ffcc, 0 0 12px 0 #00e0ff99;
+    }
+
+    .logo-container:hover {
+      transform: translateY(-10px) scale(1.07);
+      box-shadow: 0 0 48px 8px #00e0ffcc, 0 0 16px 0 #00e0ff99;
+    }
+
+    .bouncing-logo {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 0 12px #00e0ffcc);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 991px) {
+      .hero-content {
+        padding-right: 0;
+        margin-bottom: 3rem;
+        text-align: center;
+      }
+
+      .hero-image {
+        text-align: center;
+      }
+
+      .hero-title {
+        font-size: 3.5rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.3rem;
+      }
+
+      .bouncing-logos {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .hero-title {
+        font-size: 2.8rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.1rem;
+      }
+
+      .hero-image img {
+        max-width: 80%;
+      }
+
+      .logo-container {
+        width: 80px;
+        height: 80px;
+      }
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(0, 224, 255, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(0, 255, 255, 0.15) 0%, transparent 50%);
+      animation: gradientShift 15s ease infinite;
+      z-index: 1;
+    }
+
+    /* Tech Grid Background */
+    .tech-grid {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image:
+        linear-gradient(rgba(0, 224, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 224, 255, 0.08) 1px, transparent 1px);
+      background-size: 50px 50px;
+      opacity: 0.2;
+      z-index: 1;
+      animation: gridFadeIn 2s forwards;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .hero-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #00e0ff, transparent);
+      animation: lineWidth 2s ease-in-out infinite;
+    }
+
+    .hero-subtitle {
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      color: rgba(255, 255, 255, 0.9);
+      max-width: 800px;
+      line-height: 1.6;
+      position: relative;
+
+    }
+
+    /* Enhanced Broker Logos Section */
+    .bouncing-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 3rem;
+      margin-top: 3rem;
+      flex-wrap: wrap;
+      padding: 2.5rem;
+      background: rgba(10, 25, 47, 0.7);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      border: 1px solid rgba(0, 224, 255, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bouncing-logos::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg,
+          rgba(0, 224, 255, 0.1) 0%,
+          rgba(0, 255, 255, 0.1) 50%,
+          rgba(0, 224, 255, 0.1) 100%);
+      animation: gradientMove 3s ease infinite;
+    }
+
+    .bouncing-logo {
+      width: 90px;
+      height: auto;
+      filter: brightness(1.2) drop-shadow(0 0 15px rgba(0, 224, 255, 0.2));
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      z-index: 2;
+    }
+
+    .bouncing-logo:hover {
+      transform: translateY(-15px) scale(1.1);
+      filter: brightness(1.4) drop-shadow(0 0 25px rgba(0, 224, 255, 0.4));
+    }
+
+    /* Tech Circles Animation */
+    .tech-circles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .tech-circle {
+      position: absolute;
+      border: 2px solid rgba(0, 224, 255, 0.1);
+      border-radius: 50%;
+      animation: circlePulse 4s ease-in-out infinite;
+    }
+
+    .tech-circle:nth-child(1) {
+      width: 300px;
+      height: 300px;
+      top: 20%;
+      left: 10%;
+      animation-delay: 0s;
+    }
+
+    .tech-circle:nth-child(2) {
+      width: 200px;
+      height: 200px;
+      top: 60%;
+      left: 70%;
+      animation-delay: 1s;
+    }
+
+    .tech-circle:nth-child(3) {
+      width: 150px;
+      height: 150px;
+      top: 30%;
+      left: 80%;
+      animation-delay: 2s;
+    }
+
+    /* Animated Broker Logos */
+    .animated-broker-logo {
+      position: absolute;
+      width: 150px;
+      height: auto;
+      filter: grayscale(100%) brightness(2) drop-shadow(0 0 35px var(--primary-color));
+      /* Enhanced glow */
+      opacity: 0.8;
+      z-index: 5;
+    }
+
+    .zerodha-logo {
+      top: 48%;
+      /* Moved even closer */
+      left: 38%;
+      /* Moved even closer */
+      animation: orbit1 30s infinite ease-in-out;
+    }
+
+    .dhan-logo {
+      top: 63%;
+      /* Moved even closer */
+      left: 43%;
+      /* Moved even closer */
+      animation: orbit2 35s infinite ease-in-out;
+    }
+
+    .angel-logo {
+      top: 40%;
+      right: 5%;
+      animation: orbit3 22s infinite linear;
+    }
+
+    .upstox-logo {
+      top: 75%;
+      right: 15%;
+      animation: orbit4 28s infinite linear;
+    }
+
+    @keyframes orbit1 {
+      0% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      25% {
+        transform: translate(10px, -20px) scale(1.05);
+      }
+
+      50% {
+        transform: translate(0px, -10px) scale(1);
+      }
+
+      75% {
+        transform: translate(-10px, 20px) scale(1.05);
+      }
+
+      100% {
+        transform: translate(0, 0) scale(1);
+      }
+    }
+
+    @keyframes orbit2 {
+      0% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      25% {
+        transform: translate(-15px, 10px) scale(1.05);
+      }
+
+      50% {
+        transform: translate(-5px, 0px) scale(1);
+      }
+
+      75% {
+        transform: translate(15px, -10px) scale(1.05);
+      }
+
+      100% {
+        transform: translate(0, 0) scale(1);
+      }
+    }
+
+    @keyframes orbit3 {
+      0% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      25% {
+        transform: translate(-20px, -30px) scale(1.05);
+      }
+
+      50% {
+        transform: translate(-10px, 0px) scale(1);
+      }
+
+      75% {
+        transform: translate(20px, 30px) scale(1.05);
+      }
+
+      100% {
+        transform: translate(0, 0) scale(1);
+      }
+    }
+
+    @keyframes orbit4 {
+      0% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      25% {
+        transform: translate(30px, 15px) scale(1.05);
+      }
+
+      50% {
+        transform: translate(10px, -5px) scale(1);
+      }
+
+      75% {
+        transform: translate(-30px, -15px) scale(1.05);
+      }
+
+      100% {
+        transform: translate(0, 0) scale(1);
+      }
+    }
+
+
+    /* New Animations */
+    @keyframes gradientMove {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    @keyframes lineWidth {
+
+      0%,
+      100% {
+        width: 0;
+        opacity: 0;
+      }
+
+      50% {
+        width: 100%;
+        opacity: 1;
+      }
+    }
+
+    @keyframes circlePulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 0.3;
+      }
+
+      50% {
+        transform: scale(1.1);
+        opacity: 0.5;
+      }
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-20px) rotate(2deg);
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 3rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.3rem;
+      }
+
+      .bouncing-logos {
+        gap: 1.5rem;
+        padding: 1.5rem;
+      }
+
+      .bouncing-logo {
+        width: 70px;
+      }
+
+      .tech-circle:nth-child(1) {
+        width: 200px;
+        height: 200px;
+      }
+
+      .tech-circle:nth-child(2) {
+        width: 150px;
+        height: 150px;
+      }
+
+      .tech-circle:nth-child(3) {
+        width: 100px;
+        height: 100px;
+      }
+    }
   </style>
 
   <!-- Custom JavaScript -->
@@ -163,109 +677,47 @@
   <!-- end Header -->
 
   <!-- Banner Top -->
-  <section class="banner-top style-2">
+
+  <section class="hero-section" style="overflow: hidden;">
+    <div class="tech-grid"></div>
+    <div class="abstract-particle"></div>
+    <div class="abstract-particle"></div>
+    <div class="abstract-particle"></div>
+    <div class="abstract-particle"></div>
+    <div class="abstract-particle"></div>
+    <div class="neon-ray"></div>
+    <div class="neon-ray"></div>
+    <div class="neon-ray"></div>
+
+    <!-- Animated Broker Logos -->
+    <img src="assets/images/zerodha.png" alt="Zerodha" class="animated-broker-logo zerodha-logo">
+    <img src="assets/images/dhan.png" alt="Dhan" class="animated-broker-logo dhan-logo">
+    <img src="assets/images/angel.svg" alt="Angel One" class="animated-broker-logo angel-logo">
+    <img src="assets/images/upstox.png" alt="Upstox" class="animated-broker-logo upstox-logo">
+
     <div class="container">
-      <div class="row">
-        <div class="col-xl-6 col-md-12">
-          <div class="banner-top__content">
-            <h2 class="title">
-              Automate Your Trades, <span>Accelerate Your Profits. </span>
-            </h2>
-            <p class="desc">
-              TheAlgoman is India's most trusted algo trading platform —
-              helping you earn consistent profits through fully automated,
-              data-driven strategies connected directly to your trading
-              account.
-            </p>
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <div class="hero-content">
+            <h1 class="hero-title"
+              style="color: #ffffff !important; -webkit-text-fill-color: #ffffff !important; -webkit-background-clip: unset !important; background-clip: unset !important; text-shadow: 0 0 30px rgba(0, 224, 255, 0.3);">
+              Trades, Accelerate Your Profits.</h1>
+            <p class="hero-subtitle">TheAlgoman is India's most trusted algo trading platform — helping you earn
+              consistent profits through fully automated, data-driven strategies connected directly to your trading
+              account.</p>
 
-            <style>
-              /* Base button styles */
-              .button-container {
-                display: flex;
-                flex-direction: column;
-                gap: 15px;
-                align-items: center;
-                padding: 20px;
-              }
-
-              .button a.btn-action {
-                text-decoration: none;
-                padding: 12px 24px !important;
-                font-size: 16px;
-                border-radius: 6px;
-                background-color: #007BFF;
-                color: white;
-                display: inline-block;
-                transition: background-color 0.3s ease;
-              }
-
-              .button a.btn-action:hover {
-                background-color: #0056b3;
-              }
-
-              /* Responsive layout for wider screens */
-              @media (max-width: 600px) {
-                .button-container {
-                  flex-direction: row;
-                  justify-content: center;
-                }
-                .pricing-highlight-content .current-price{
-                  font-size: 1.9rem;
-                  padding: 20px;
-                }
-
-                .pricing-highlight-content .title{
-                  font-size: 1.5rem !important;
-
-                }
-                .button a.btn-action {
-                  width: 100% !important;
-
-                  /* padding: 10px !important; */
-                  font-size: 15px;
-                }
-
-                .button a.btn-action span {
-                  display: inline-block !important;
-                  width: 100% !important;
-                }
-              }
-            </style>
-            <div class="mobilebutton" style="display: flex; gap: 10px">
-              <div class="button">
-                <a href="sign-in.html" class="btn-action style-2 w-100"><span>Start Trading Smarter</span></a>
-              </div>
-
-              <div class="button">
-                <a href="sign-in.html" class="btn-action style-2"><span>See Pricing Plans</span></a>
-              </div>
+            <!-- New Buttons -->
+            <div class="hero-buttons d-flex flex-column flex-sm-row gap-3 mt-4">
+              <a href="#" class="btn">Start Trading Smarter</a>
+              <a href="#" class="btn btn-outline">See Pricing Plans</a>
             </div>
           </div>
         </div>
-        <div class="col-xl-6 col-md-12">
-          <div class="bouncing-logos absolute ">
-            <div class="logo-container">
-              <img src="assets/images/logo.svg" alt="Logo 1" class="bouncing-logo" />
-            </div>
-            <div class="logo-container">
-              <img src="assets/images/upstox-new-logo.svg" alt="Logo 2" class="bouncing-logo" />
-            </div>
-            <div class="logo-container">
-              <img src="assets/images/1689270035-3662.avif" alt="Logo 3" class="bouncing-logo" />
-            </div>
-            <div class="logo-container">
-              <img src="assets/images/dhan.png" alt="Logo 4" class="bouncing-logo" />
-            </div>
+        <div class="col-lg-6">
+          <div class="hero-image" style="display: block !important; opacity: 1 !important; z-index: 10 !important;">
+            <img src="assets/images/algo1.png" alt="Algo Trading" class="img-fluid"
+              style="display: block !important; opacity: 1 !important; max-width: 100%; height: auto;">
           </div>
-          <div class="banner-top__sale bouncing-logo" style="width: 100%!important;">
-            <img src="assets/images/algo1.png" class="landingheroimage" alt="ICOLand" />
-            <!-- <div class="sale-content">
-            <h6>Our Brokers</h6>
-            <span class="js-countdown" data-timer="1865550"><div aria-hidden="true" class="countdown__timer"><span class="countdown__item"><span class="countdown__value countdown__value--0 js-countdown__value--0">21</span></span><span class="countdown__item"><span class="countdown__value countdown__value--1 js-countdown__value--1">14</span></span><span class="countdown__item"><span class="countdown__value countdown__value--2 js-countdown__value--2">12</span></span><span class="countdown__item"><span class="countdown__value countdown__value--3 js-countdown__value--3">16</span></span></div></span>
-        </div> -->
-          </div>
-          <!-- Added container for bouncing logos -->
-
         </div>
       </div>
     </div>
@@ -317,19 +769,19 @@
               <div class="tech-line"></div>
               <h2 class="section-title"
                 style="font-family: 'Orbitron', sans-serif; color: #ffffff; text-shadow: 0 0 1px #00e0ff, 0 0 2px #00e0ff;">
-                OUR CORE  <span class="text-primary">FEATURES</span>
+                OUR CORE <span class="text-primary">FEATURES</span>
               </h2>
 
               <p class="subtitle"
-              style="font-family: 'Rajdhani', sans-serif; color: #e0e0e0; font-size: 1.2rem; letter-spacing: 2px;">
-              Discover the powerful features that make our platform stand out.
-            </p>
+                style="font-family: 'Rajdhani', sans-serif; color: #e0e0e0; font-size: 1.2rem; letter-spacing: 2px;">
+                Discover the powerful features that make our platform stand out.
+              </p>
 
               <div class="tech-line"></div>
             </div>
           </div>
         </div>
-       
+
         <div class="col-xl-3 col-md-6">
           <div class="features-box-4 center aos-init aos-animate" data-aos="fade-up" data-aos-duration="800">
             <div class="icon">
@@ -742,7 +1194,7 @@
                 <div class="product-level">ENTRY LEVEL</div>
                 <div class="product-price">
                   <span class="currency">₹</span>
-                  <span class="amount">30,000</span>
+                  <span class="amount">4,999 </span>
                 </div>
                 <div class="product-features">
                   <div class="feature">
@@ -780,8 +1232,8 @@
                 <h3>OPTIONS SELLING</h3>
                 <div class="product-level">ADVANCED</div>
                 <div class="product-price">
-                  <span class="currency">₹</span>
-                  <span class="amount">10,00,000</span>
+                  <span class="currency">Comming Soon</span>
+                  <span class="amount"></span>
                 </div>
                 <div class="product-features">
                   <div class="feature">
@@ -819,8 +1271,8 @@
                 <h3>FUTURES TRADING</h3>
                 <div class="product-level">PROFESSIONAL</div>
                 <div class="product-price">
-                  <span class="currency">₹</span>
-                  <span class="amount">5,00,000</span>
+                  <span class="currency">Comming Soon</span>
+                  <span class="amount"></span>
                 </div>
                 <div class="product-features">
                   <div class="feature">
@@ -858,8 +1310,8 @@
                 <h3>EQUITY BUYING</h3>
                 <div class="product-level">ENTERPRISE</div>
                 <div class="product-price">
-                  <span class="currency">₹</span>
-                  <span class="amount">10,00,000</span>
+                  <span class="currency">Comming Soon</span>
+                  <span class="amount"></span>
                 </div>
                 <div class="product-features">
                   <div class="feature">
@@ -979,7 +1431,7 @@
       </div>
     </div>
   </section>
-  
+
   <script>
     (function () {
       // Features and icons (Font Awesome or SVG)

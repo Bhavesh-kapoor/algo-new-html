@@ -29,8 +29,8 @@ const initParticles = () => {
         
         const posArray = new Float32Array(particlesCount * 3);
         
-        for(let i = 0; i < particlesCount * 3; i++) {
-            posArray[i] = (Math.random() - 0.5) * 5;
+        for(let i = 0; i < particlesCount * 5; i++) {
+            posArray[i] = (Math.random() - 0.5) * 100;
         }
         
         particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
@@ -38,7 +38,7 @@ const initParticles = () => {
         
         // Create material
         const particlesMaterial = new THREE.PointsMaterial({
-            size: 0.005,
+            size: 0.096,
             color: 0x00e0ff,
             transparent: true,
             opacity: 0.8

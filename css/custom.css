@@ -1509,3 +1509,15 @@
       border-radius: 18px;
     }
   }
+
+
+  .footer{
+    background: #0a1420 !important;
+  }
+  .broker-info{
+    padding: 1rem !important;
+  }
+  .calculator-form{
+        padding: 1rem !important;
+
+  }

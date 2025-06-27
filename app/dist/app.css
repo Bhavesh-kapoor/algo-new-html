@@ -963,7 +963,7 @@ h5 {
   padding: 14px 41px;
   border-radius: 12px;
   justify-content: center;
-  font-family: "Zen Dots";
+  font-family: var(--body-font-family);
   font-weight: 400;
   background: linear-gradient(
       90deg,
@@ -12201,7 +12201,7 @@ img.mfp-img {
 .home-nft {
   /* background: url("../../assets/images/background/bg-bd.png"); */
   /* background-color: #181818; */
-  background: linear-gradient(180deg, #0a1420, #102030);
+  background: linear-gradient(270deg, #0a1420, #102030);
 
 }
 .home-nft p {

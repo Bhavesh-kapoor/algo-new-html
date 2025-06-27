@@ -5,11 +5,12 @@
     --text-color: #ffffff;
     --gradient-start: #1a2d3a;
     --gradient-end: #0a1929;
+    --body-font-family: 'Poppins', sans-serif;
   }
 
   body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    font-family: var(--body-font-family);
+    background: linear-gradient(270deg, var(--gradient-start), var(--gradient-end));
     color: var(--text-color);
     overflow-x: hidden;
   }
@@ -483,7 +484,6 @@
   }
 
   .connect-account-section {
-    background: linear-gradient(180deg, var(--tech-gradient-1), var(--tech-gradient-2));
     position: relative;
     overflow: hidden;
   }
@@ -495,9 +495,6 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background:
-      radial-gradient(circle at 20% 20%, rgba(0, 224, 255, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 80% 80%, rgba(0, 255, 255, 0.1) 0%, transparent 50%);
     z-index: 1;
   }
 
@@ -1099,7 +1096,6 @@
 
     .launch-offer {
       font-size: 0.9rem;
-      
       padding: 16px 12px;
     }
 
@@ -1521,3 +1517,7 @@
         padding: 1rem !important;
 
   }
+ 
+ .icon-youtobe{
+  font-size: 1rem;
+ }

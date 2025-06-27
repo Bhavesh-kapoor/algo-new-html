@@ -34,9 +34,6 @@
   <style>
     .calculator-section {
       padding: 3rem 0;
-      background: linear-gradient(150deg,
-          rgba(255, 255, 255, 0.03) 0%,
-          rgba(255, 255, 255, 0.01) 100%);
     }
 
     select option {
@@ -214,11 +211,15 @@
   </style>
 </head>
 
-<body class="body body--home home-nft">
+<body class="body body--home">
   <!-- Add particles container -->
   <div id="particles-container"></div>
 
   <!-- Header -->
+    <!-- MAGIC CURSOR -->
+    <div class="mouse-cursor cursor-outer"></div>
+    <div class="mouse-cursor cursor-inner"></div>
+    <!-- /MAGIC CURSOR -->
   <!-- Header -->
   <header id="header_main" class="header">
     <div class="container">
@@ -349,7 +350,7 @@
   <!-- end Header -->
 
   <!-- head -->
-  <div class="section section--head">
+  <div class="section section--head" style="padding: 40px 0 20px 0;">
     <div class="container">
       <div class="row">
         <!-- title -->

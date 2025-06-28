@@ -14674,8 +14674,8 @@ select option {
   position: fixed;
   width: 60px;
   height: 60px;
-  bottom: 40px;
-  right: 40px;
+  bottom: 90px;
+  right: 15px;
   background-color: #1e94be;
   color: #fff;
   border-radius: 50px;
@@ -14687,6 +14687,10 @@ select option {
 
 .my-float {
   margin-top: 16px;
+}
+
+.icon-WhatsApp-hover:hover {
+color: white;
 }
 
 .footer-logo{

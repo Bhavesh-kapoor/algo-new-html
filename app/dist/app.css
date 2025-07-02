@@ -751,7 +751,7 @@ body[data-magic-cursor="hide"] .mouse-cursor {
   right: 15px;
   text-align: center;
   top: 0;
-  width: 48px;
+  width: 100%;
   transition: 0.3s all ease-in-out;
 }
 .header #main-nav-mobi ul li .arrow::before {
